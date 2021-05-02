@@ -1,0 +1,14 @@
+{
+    "name": "melange-prolog-webpage",
+    "sources": {
+      "dir" : "src"
+    },
+    "suffix": ".bs.js",
+    "bs-dependencies": [
+      "bs-webapi"
+    ],
+    "warnings": {
+      "number": "+A-42-48-44",
+      "error": "+A-3-102-103"
+    }
+  }

@@ -1,0 +1,16 @@
+{
+  "name": "melange-prolog-webpage",
+  "dependencies": {
+    "ocaml": "4.12.x",
+    "melange": "melange-re/melange",
+    "esbuild": "^0.11.14"
+  },
+  "esy": {
+    "buildsInSource": "unsafe",
+    "pack": "esbuild _build/default/src/Client.bs.js --bundle --outfile=static/Client.js",
+    "build": "bsb -make-world"
+  },
+  "installConfig": {
+    "pnp": false
+  }
+}
