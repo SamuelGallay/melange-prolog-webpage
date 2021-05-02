@@ -12,7 +12,7 @@
   "scripts": {
     "pack": "esbuild _build/default/src/Client.bs.js --bundle --outfile=docs/Client.js",
     "watch":
-      "sh -c 'esy build; esy pack; while true; do inotifywait src -e modify -qq; esy build; esy pack; done'",
+      "sh -c 'esy build && esy pack; while true; do inotifywait src -e modify -qq; esy build && esy pack; done'",
     "start":
       "python -m http.server 8080 --directory docs"
 },

@@ -625,6 +625,173 @@
     exports.__8 = __8;
   });
 
+  // node_modules/bs-platform/lib/js/caml_option.js
+  var require_caml_option = __commonJS((exports) => {
+    "use strict";
+    function isNested(x) {
+      return x.BS_PRIVATE_NESTED_SOME_NONE !== void 0;
+    }
+    function some(x) {
+      if (x === void 0) {
+        return {
+          BS_PRIVATE_NESTED_SOME_NONE: 0
+        };
+      } else if (x !== null && x.BS_PRIVATE_NESTED_SOME_NONE !== void 0) {
+        return {
+          BS_PRIVATE_NESTED_SOME_NONE: x.BS_PRIVATE_NESTED_SOME_NONE + 1 | 0
+        };
+      } else {
+        return x;
+      }
+    }
+    function nullable_to_opt(x) {
+      if (x == null) {
+        return;
+      } else {
+        return some(x);
+      }
+    }
+    function undefined_to_opt(x) {
+      if (x === void 0) {
+        return;
+      } else {
+        return some(x);
+      }
+    }
+    function null_to_opt(x) {
+      if (x === null) {
+        return;
+      } else {
+        return some(x);
+      }
+    }
+    function valFromOption(x) {
+      if (!(x !== null && x.BS_PRIVATE_NESTED_SOME_NONE !== void 0)) {
+        return x;
+      }
+      var depth = x.BS_PRIVATE_NESTED_SOME_NONE;
+      if (depth === 0) {
+        return;
+      } else {
+        return {
+          BS_PRIVATE_NESTED_SOME_NONE: depth - 1 | 0
+        };
+      }
+    }
+    function option_get(x) {
+      if (x === void 0) {
+        return;
+      } else {
+        return valFromOption(x);
+      }
+    }
+    function option_unwrap(x) {
+      if (x !== void 0) {
+        return x.VAL;
+      } else {
+        return x;
+      }
+    }
+    exports.nullable_to_opt = nullable_to_opt;
+    exports.undefined_to_opt = undefined_to_opt;
+    exports.null_to_opt = null_to_opt;
+    exports.valFromOption = valFromOption;
+    exports.some = some;
+    exports.isNested = isNested;
+    exports.option_get = option_get;
+    exports.option_unwrap = option_unwrap;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_exceptions.js
+  var require_caml_exceptions = __commonJS((exports) => {
+    "use strict";
+    var id = {
+      contents: 0
+    };
+    function create(str) {
+      id.contents = id.contents + 1 | 0;
+      return str + ("/" + id.contents);
+    }
+    function caml_is_extension(e) {
+      if (e == null) {
+        return false;
+      } else {
+        return typeof e.RE_EXN_ID === "string";
+      }
+    }
+    function caml_exn_slot_name(x) {
+      return x.RE_EXN_ID;
+    }
+    exports.id = id;
+    exports.create = create;
+    exports.caml_is_extension = caml_is_extension;
+    exports.caml_exn_slot_name = caml_exn_slot_name;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_js_exceptions.js
+  var require_caml_js_exceptions = __commonJS((exports) => {
+    "use strict";
+    var Caml_option = require_caml_option();
+    var Caml_exceptions = require_caml_exceptions();
+    var $$Error = /* @__PURE__ */ Caml_exceptions.create("Caml_js_exceptions.Error");
+    function internalToOCamlException(e) {
+      if (Caml_exceptions.caml_is_extension(e)) {
+        return e;
+      } else {
+        return {
+          RE_EXN_ID: $$Error,
+          _1: e
+        };
+      }
+    }
+    function caml_as_js_exn(exn) {
+      if (exn.RE_EXN_ID === $$Error) {
+        return Caml_option.some(exn._1);
+      }
+    }
+    exports.$$Error = $$Error;
+    exports.internalToOCamlException = internalToOCamlException;
+    exports.caml_as_js_exn = caml_as_js_exn;
+  });
+
+  // node_modules/bs-platform/lib/js/js_exn.js
+  var require_js_exn = __commonJS((exports) => {
+    "use strict";
+    var Caml_js_exceptions = require_caml_js_exceptions();
+    var anyToExnInternal = Caml_js_exceptions.internalToOCamlException;
+    function raiseError(str) {
+      throw new Error(str);
+    }
+    function raiseEvalError(str) {
+      throw new EvalError(str);
+    }
+    function raiseRangeError(str) {
+      throw new RangeError(str);
+    }
+    function raiseReferenceError(str) {
+      throw new ReferenceError(str);
+    }
+    function raiseSyntaxError(str) {
+      throw new SyntaxError(str);
+    }
+    function raiseTypeError(str) {
+      throw new TypeError(str);
+    }
+    function raiseUriError(str) {
+      throw new URIError(str);
+    }
+    var $$Error$1 = Caml_js_exceptions.$$Error;
+    exports.$$Error = $$Error$1;
+    exports.anyToExnInternal = anyToExnInternal;
+    exports.raiseError = raiseError;
+    exports.raiseEvalError = raiseEvalError;
+    exports.raiseRangeError = raiseRangeError;
+    exports.raiseReferenceError = raiseReferenceError;
+    exports.raiseSyntaxError = raiseSyntaxError;
+    exports.raiseTypeError = raiseTypeError;
+    exports.raiseUriError = raiseUriError;
+  });
+
   // node_modules/bs-platform/lib/js/caml_bytes.js
   var require_caml_bytes = __commonJS((exports) => {
     "use strict";
@@ -1086,135 +1253,6 @@
     exports.caml_float_max = caml_float_max;
     exports.caml_string_max = caml_string_max;
     exports.caml_int32_max = caml_int32_max;
-  });
-
-  // node_modules/bs-platform/lib/js/caml_option.js
-  var require_caml_option = __commonJS((exports) => {
-    "use strict";
-    function isNested(x) {
-      return x.BS_PRIVATE_NESTED_SOME_NONE !== void 0;
-    }
-    function some(x) {
-      if (x === void 0) {
-        return {
-          BS_PRIVATE_NESTED_SOME_NONE: 0
-        };
-      } else if (x !== null && x.BS_PRIVATE_NESTED_SOME_NONE !== void 0) {
-        return {
-          BS_PRIVATE_NESTED_SOME_NONE: x.BS_PRIVATE_NESTED_SOME_NONE + 1 | 0
-        };
-      } else {
-        return x;
-      }
-    }
-    function nullable_to_opt(x) {
-      if (x == null) {
-        return;
-      } else {
-        return some(x);
-      }
-    }
-    function undefined_to_opt(x) {
-      if (x === void 0) {
-        return;
-      } else {
-        return some(x);
-      }
-    }
-    function null_to_opt(x) {
-      if (x === null) {
-        return;
-      } else {
-        return some(x);
-      }
-    }
-    function valFromOption(x) {
-      if (!(x !== null && x.BS_PRIVATE_NESTED_SOME_NONE !== void 0)) {
-        return x;
-      }
-      var depth = x.BS_PRIVATE_NESTED_SOME_NONE;
-      if (depth === 0) {
-        return;
-      } else {
-        return {
-          BS_PRIVATE_NESTED_SOME_NONE: depth - 1 | 0
-        };
-      }
-    }
-    function option_get(x) {
-      if (x === void 0) {
-        return;
-      } else {
-        return valFromOption(x);
-      }
-    }
-    function option_unwrap(x) {
-      if (x !== void 0) {
-        return x.VAL;
-      } else {
-        return x;
-      }
-    }
-    exports.nullable_to_opt = nullable_to_opt;
-    exports.undefined_to_opt = undefined_to_opt;
-    exports.null_to_opt = null_to_opt;
-    exports.valFromOption = valFromOption;
-    exports.some = some;
-    exports.isNested = isNested;
-    exports.option_get = option_get;
-    exports.option_unwrap = option_unwrap;
-  });
-
-  // node_modules/bs-platform/lib/js/caml_exceptions.js
-  var require_caml_exceptions = __commonJS((exports) => {
-    "use strict";
-    var id = {
-      contents: 0
-    };
-    function create(str) {
-      id.contents = id.contents + 1 | 0;
-      return str + ("/" + id.contents);
-    }
-    function caml_is_extension(e) {
-      if (e == null) {
-        return false;
-      } else {
-        return typeof e.RE_EXN_ID === "string";
-      }
-    }
-    function caml_exn_slot_name(x) {
-      return x.RE_EXN_ID;
-    }
-    exports.id = id;
-    exports.create = create;
-    exports.caml_is_extension = caml_is_extension;
-    exports.caml_exn_slot_name = caml_exn_slot_name;
-  });
-
-  // node_modules/bs-platform/lib/js/caml_js_exceptions.js
-  var require_caml_js_exceptions = __commonJS((exports) => {
-    "use strict";
-    var Caml_option = require_caml_option();
-    var Caml_exceptions = require_caml_exceptions();
-    var $$Error = /* @__PURE__ */ Caml_exceptions.create("Caml_js_exceptions.Error");
-    function internalToOCamlException(e) {
-      if (Caml_exceptions.caml_is_extension(e)) {
-        return e;
-      } else {
-        return {
-          RE_EXN_ID: $$Error,
-          _1: e
-        };
-      }
-    }
-    function caml_as_js_exn(exn) {
-      if (exn.RE_EXN_ID === $$Error) {
-        return Caml_option.some(exn._1);
-      }
-    }
-    exports.$$Error = $$Error;
-    exports.internalToOCamlException = internalToOCamlException;
-    exports.caml_as_js_exn = caml_as_js_exn;
   });
 
   // node_modules/bs-platform/lib/js/bytes.js
@@ -7680,20 +7718,76 @@
     exports.basic_interpreter = basic_interpreter;
   });
 
+  // _build/default/src/Examples.bs.js
+  var require_Examples_bs = __commonJS((exports) => {
+    "use strict";
+    var zebra_code = "member(X, [X | Xs]).\nmember(X, [Y | Ys]) :- member(X, Ys).\nisright(L, R, [L, R | T]).\nisright(L, R, [H | T]) :- isright(L, R, T).\nnextto(A, B, X) :- isright(A, B, X).\nnextto(A, B, X) :- isright(B, A, X).\nequal(X, X).\nzebra(H, W, Z):-\nequal(H, [[norwegian, _, _, _, _], _, [_, _, _, milk, _], _, _]),\nmember([englishman, _, _, _, red], H),\nmember([spaniard, dog, _, _, _], H),\nmember([_, _, _, coffee, green], H),\nmember([ukrainian, _, _, tea, _], H),\nmember([_, snails, winston, _, _], H),\nmember([_, _, kools, _, yellow], H),\nmember([_, _, luckystrike, orangejuice, _], H),\nmember([japanese, _, parliaments, _, _], H),\nnextto([norwegian, _, _, _, _], [_, _, _, _, blue], H),\nisright([_, _, _, _, ivory], [_, _, _, _, green], H),\nnextto([_, _, chesterfields, _, _], [_, fox, _, _, _], H),\nnextto([_, _, kools, _, _], [_, horse, _, _, _], H),\nmember([W, _, _, water, _], H),\nmember([Z, zebra, _, _, _], H).\n";
+    var zebra_request = "zebra(Houses, WaterDrinker, ZebraOwner)?";
+    exports.zebra_code = zebra_code;
+    exports.zebra_request = zebra_request;
+  });
+
   // _build/default/src/Client.bs.js
   var require_Client_bs = __commonJS((exports) => {
     "use strict";
     var Curry = require_curry();
+    var Js_exn = require_js_exn();
     var Prolog = require_Prolog_bs();
+    var Examples = require_Examples_bs();
+    var Caml_option = require_caml_option();
     var CompatibilityCrap = require_CompatibilityCrap_bs();
-    function display_text(s) {
-      var body = document.querySelector("body");
-      if (body == null) {
-        return;
+    var a = document.querySelector("body");
+    var body = a == null ? Js_exn.raiseError("No <body> found !") : a;
+    function apply(f, a2) {
+      if (a2 !== void 0) {
+        return Curry._1(f, Caml_option.valFromOption(a2));
       }
-      var p = document.createElement("p");
-      p.innerText = s;
-      body.appendChild(p);
+    }
+    function get_value(c) {
+      return c.value;
+    }
+    function set_value(c, s) {
+      c.value = s;
+    }
+    function create_element(text, id, classname, father, attributes, onclick, node_type) {
+      var elt = document.createElement(node_type);
+      apply(function(param) {
+        elt.innerText = param;
+      }, text);
+      apply(function(param) {
+        elt.id = param;
+      }, id);
+      apply(function(param) {
+        elt.className = param;
+      }, classname);
+      apply(function(param) {
+        param.appendChild(elt);
+      }, father);
+      apply(function(param) {
+        elt.onclick = param;
+      }, onclick);
+      apply(Curry._1(CompatibilityCrap.List.iter, function(param) {
+        elt.setAttribute(param[0], param[1]);
+      }), attributes);
+      return elt;
+    }
+    var grid_container = create_element(void 0, void 0, "grid-container", Caml_option.some(body), void 0, void 0, "div");
+    var left = create_element(void 0, void 0, "grid-item left", Caml_option.some(grid_container), void 0, void 0, "div");
+    var right_up = create_element(void 0, void 0, "grid-item rightup", Caml_option.some(grid_container), void 0, void 0, "div");
+    var right_middle = create_element(void 0, void 0, "grid-item rightmiddle", Caml_option.some(grid_container), void 0, void 0, "div");
+    var right_down = create_element(void 0, void 0, "grid-item rightdown", Caml_option.some(grid_container), void 0, void 0, "div");
+    var input_code = create_element(void 0, void 0, "editor-input", Caml_option.some(left), void 0, void 0, "textarea");
+    var input_request = create_element(void 0, void 0, "editor-input", Caml_option.some(right_middle), void 0, void 0, "textarea");
+    var $$console = create_element(void 0, void 0, "console-output", Caml_option.some(right_up), {
+      hd: [
+        "readonly",
+        "true"
+      ],
+      tl: 0
+    }, void 0, "textarea");
+    function display_text(s) {
+      var s$1 = $$console.value + (s + "\n");
+      $$console.value = s$1;
     }
     function html_interpreter(program_string, request_string) {
       var s = Prolog.program_of_string(program_string);
@@ -7717,10 +7811,31 @@
       display_text("Unable to parse program :");
       return display_text(s._0);
     }
-    display_text("Hello melange!!");
-    html_interpreter("a.", "X?");
+    function execute(param) {
+      var program = input_code.value;
+      var request = input_request.value;
+      return html_interpreter(program, request);
+    }
+    var button = create_element("Execute", void 0, void 0, Caml_option.some(right_down), void 0, execute, "button");
+    input_code.value = Examples.zebra_code;
+    input_request.value = Examples.zebra_request;
+    exports.body = body;
+    exports.apply = apply;
+    exports.get_value = get_value;
+    exports.set_value = set_value;
+    exports.create_element = create_element;
+    exports.grid_container = grid_container;
+    exports.left = left;
+    exports.right_up = right_up;
+    exports.right_middle = right_middle;
+    exports.right_down = right_down;
+    exports.input_code = input_code;
+    exports.input_request = input_request;
+    exports.$$console = $$console;
     exports.display_text = display_text;
     exports.html_interpreter = html_interpreter;
+    exports.execute = execute;
+    exports.button = button;
   });
   require_Client_bs();
 })();
