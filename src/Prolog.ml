@@ -30,7 +30,7 @@ type substitution = subst list
    ************************************ *)
 
 let rec string_of_term : term -> string = function
-  | `GeneralVar (Id (s, _)) -> s
+  | `GeneralVar (Id (s, _)) -> if s.[0] = '_' then "_" else s
   | `TableVar (Id (s, _)) -> s
   | (`EmptyTable | `Table _) as t -> "[" ^ string_of_tblcontent t ^ "]"
   | `Predicate (s, []) -> s
@@ -46,11 +46,11 @@ and string_of_tblcontent : [ `EmptyTable | `Table of term * table ] -> string = 
 
 let string_of_clause (Clause (t, tl)) =
   string_of_term t
-  ^ (if tl = [] then "" else " :- ")
-  ^ (tl |> List.map string_of_term |> String.concat ", ")
+  ^ (if tl = [] then ""
+    else " :-" ^ (tl |> List.map (fun t -> "\n  " ^ string_of_term t) |> String.concat ","))
   ^ "."
 
-let _string_of_program cl = cl |> List.map string_of_clause |> String.concat "\n"
+let string_of_program cl = cl |> List.map string_of_clause |> String.concat "\n\n"
 
 (* ************************************
             Parsing

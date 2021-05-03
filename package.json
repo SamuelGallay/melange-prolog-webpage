@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ace-builds": "^1.4.12",
     "bs-platform": "^9.0.2",
     "bs-webapi": "^0.19.1"
   }

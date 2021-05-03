@@ -10,7 +10,7 @@
     "build": "bsb -make-world"
   },
   "scripts": {
-    "pack": "esbuild _build/default/src/Client.bs.js --bundle --outfile=docs/Client.js",
+    "pack": "esbuild _build/default/src/Client.bs.js --bundle --outfile=docs/Client.js --minify",
     "watch":
       "sh -c 'esy build && esy pack; while true; do inotifywait src -e modify -qq; esy build && esy pack; done'",
     "start":
