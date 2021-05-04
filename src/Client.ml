@@ -5,24 +5,20 @@ module D = Dom.Document
 module I = Dom.HtmlInputElement
 
 (* ************************************
-                    Bindings (ACE editor mostly)
+                    Bindings (CodeJar mostly)
    ************************************ *)
-
-external ace : unit = "default" [@@bs.module "ace-builds/src-min-noconflict/ace.js"]
-
-let () = ace
 
 external dangerousCast : E.t -> I.t = "%identity"
 
-module Editor = struct
+module CodeJar = struct
   type t
 
-  external getValue : t -> string = "getValue" [@@bs.send]
+  external toString : t -> string = "toString" [@@bs.send]
 
-  external setValue : t -> string -> unit = "setValue" [@@bs.send]
-
-  external create : string -> t = "edit" [@@bs.val] [@@bs.scope "ace"]
+  external updateCode : t -> string -> unit = "updateCode" [@@bs.send]
 end
+
+external codeJar : E.t -> ('a -> unit) -> CodeJar.t = "CodeJar" [@@bs.module "codejar/codejar.js"]
 
 (* ************************************
               Utilitaries for DOM manipulation
@@ -67,23 +63,41 @@ let right_down = create_element ~father:grid_container ~classname:"grid-item rig
 
 (* Containers for the editors *)
 
-let input_code_div = create_element ~father:left ~id:"editor-code" "div"
+let input_code_div = create_element ~father:left ~classname:"jar" "div"
 
-let input_request_div = create_element ~father:right_middle ~id:"editor-request" "div"
-
-let editor_code = Editor.create "editor-code"
-
-let editor_request = Editor.create "editor-request"
+let input_request_div = create_element ~father:right_middle ~classname:"jar" "div"
 
 let console =
   create_element ~father:right_up ~classname:"console-output" ~attributes:[ ("readonly", "true") ]
     "textarea"
 
+let highlight editor =
+  E.innerText editor
+  |> Js.String.replaceByRe [%re "/(\\b[a-z]\\w*)/g"] "<font color=\"#48c9b0\">$1</font>"
+  |> Js.String.replaceByRe [%re "/(\\b[A-Z]\\w*|\\b_)/g"] "<font color=\"#ff51b3\">$1</font>"
+  |> Js.String.replaceByRe [%re "/(,)/g"] "<font color=\"#fffffff\">$1</font>"
+  |> Js.String.replaceByRe [%re "/((:-)|\.|\?)/g"] "<font color=\"#ff5733\">$1</font>"
+  |> Js.String.replaceByRe [%re "/([\[\]|])/g"] "<font color=\"#71fb1d\">$1</font>"
+  |> Js.String.replaceByRe [%re "/([\(\)])/g"] "<font color=\"#fef014\">$1</font>"
+  |> E.setInnerHTML editor
+
+let code_jar = codeJar input_code_div highlight
+
+let request_jar = codeJar input_request_div highlight
+
 (* ************************************
                     Logic
    ************************************ *)
 
+(* Helpers *)
+
+let getText jar = CodeJar.toString jar
+
+let setText jar s = CodeJar.updateCode jar s
+
 let display_text s = set_value console (get_value console ^ s ^ "\n")
+
+(* Interpreter *)
 
 let html_interpreter program_string request_string =
   match Prolog.program_of_string program_string with
@@ -105,15 +119,13 @@ let html_interpreter program_string request_string =
       print_newline ()
 
 let execute _ =
-  let program = Editor.getValue editor_code in
-  let request = Editor.getValue editor_request in
-  html_interpreter program request
+  display_text "Executing...\n";
+  html_interpreter (getText code_jar) (getText request_jar)
 
 let format_code _ =
-  let program_string = Editor.getValue editor_code in
-  match Prolog.program_of_string program_string with
+  match Prolog.program_of_string (getText code_jar) with
   | Error err -> display_text err
-  | Ok prog -> Editor.setValue editor_code (Prolog.string_of_program prog)
+  | Ok prog -> setText code_jar (Prolog.string_of_program prog)
 
 let button = create_element ~father:right_down ~text:"Execute" ~onclick:execute "button"
 
@@ -121,5 +133,7 @@ let button_format =
   create_element ~father:right_down ~text:"Format Code" ~onclick:format_code "button"
 
 let () =
-  Editor.setValue editor_code Examples.zebra_code;
-  Editor.setValue editor_request Examples.zebra_request
+  setText code_jar Examples.zebra_code;
+  setText request_jar Examples.zebra_request
+
+let () = display_text "~ Welcome to my small Prolog interpreter!\n"

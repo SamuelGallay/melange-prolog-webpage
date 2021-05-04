@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
   grid-gap: 0px;
-  background-color: #2196f3;
+  background-color: #bb8fce;
   width: 100%;
   height: 100%;
   left: 0;
@@ -9,13 +9,11 @@
   padding: 0px 0px;
   position: absolute;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 25% 25%;
+  grid-template-rows: 50% 15% 35%;
 }
 
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-
   padding: 20px;
   font-size: 18px;
 }
@@ -40,16 +38,29 @@
   grid-row: 3;
 }
 
-#editor-code,
-#editor-request {
+.jar {
   width: 100%;
   height: 100%;
-  resize: none;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  resize: none !important;
+  /* font-family: Menlo, Monaco, Consolas, "Courier New", monospace; */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: aliceblue;
+
+  border-radius: 6px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  font-family: "Source Code Pro", monospace;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+  tab-size: 4;
 }
 
 .console-output {
   width: 100%;
   height: 100%;
   resize: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: aliceblue;
 }
