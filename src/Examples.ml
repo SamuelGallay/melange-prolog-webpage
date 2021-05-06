@@ -24,4 +24,4 @@ member([W, _, _, water, _], H),
 member([Z, zebra, _, _, _], H).
 "
 
-let zebra_request = "zebra(Houses, WaterDrinker, ZebraOwner)?"
+let zebra_request = "zebra(Houses, WaterDrinker, ZebraOwner)"

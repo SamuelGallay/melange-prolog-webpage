@@ -55,4 +55,6 @@ end
 
 module Result = struct
   let map f = function Error e -> Error e | Ok a -> Ok (f a)
+
+  let bind res f = match res with Error e -> Error e | Ok a -> f a
 end

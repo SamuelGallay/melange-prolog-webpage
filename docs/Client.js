@@ -1,41 +1,8536 @@
-(()=>{var iu=Object.defineProperty;var uu=(r,e)=>()=>(r&&(e=r(r=0)),e),B=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),au=(r,e)=>{for(var t in e)iu(r,t,{get:e[t],enumerable:!0})};var Wt=B(Tr=>{"use strict";function ou(r,e,t){for(var n=new Array(t),i=0,u=e;i<t;)n[i]=r[u],i=i+1|0,u=u+1|0;return n}function _u(r,e){for(;;){var t=e,n=r;if(!t)return n;e=t.tl,r=t.hd.length+n|0}}function lu(r,e,t){for(;;){var n=t,i=e;if(!n)return;for(var u=n.hd,a=u.length,o=i,_=0;_<a;)r[o]=u[_],o=o+1|0,_=_+1|0;t=n.tl,e=o}}function fu(r){var e=_u(0,r),t=new Array(e);return lu(t,0,r),t}function su(r,e,t){if(e<0||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"index out of bounds",Error:new Error};r[e]=t}function cu(r,e){if(e<0||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"index out of bounds",Error:new Error};return r[e]}function du(r,e){for(var t=new Array(r),n=0;n<r;++n)t[n]=e;return t}function vu(r){for(var e=new Array(r),t=0;t<r;++t)e[t]=0;return e}function hu(r,e,t,n,i){if(n<=e){for(var u=0;u<i;++u)t[u+n|0]=r[u+e|0];return}for(var a=i-1|0;a>=0;--a)t[a+n|0]=r[a+e|0]}function mu(r){return r.slice(0)}Tr.caml_array_dup=mu;Tr.caml_array_sub=ou;Tr.caml_array_concat=fu;Tr.caml_make_vect=du;Tr.caml_make_float_vect=vu;Tr.caml_array_blit=hu;Tr.get=cu;Tr.set=su});var Vr=B(Q=>{"use strict";var Jt=Wt();function R(r,e){for(;;){var t=e,n=r,i=n.length,u=i===0?1:i,a=t.length,o=u-a|0;if(o===0)return n.apply(null,t);if(o>=0)return function(_,l){return function(s){return R(_,l.concat([s]))}}(n,t);e=Jt.caml_array_sub(t,u,-o|0),r=n.apply(null,Jt.caml_array_sub(t,0,u))}}function Kt(r,e){var t=r.length;if(t===1)return r(e);switch(t){case 1:return r(e);case 2:return function(n){return r(e,n)};case 3:return function(n,i){return r(e,n,i)};case 4:return function(n,i,u){return r(e,n,i,u)};case 5:return function(n,i,u,a){return r(e,n,i,u,a)};case 6:return function(n,i,u,a,o){return r(e,n,i,u,a,o)};case 7:return function(n,i,u,a,o,_){return r(e,n,i,u,a,o,_)};default:return R(r,[e])}}function gu(r){var e=r.length;return e===1?r:function(t){return Kt(r,t)}}function Qt(r,e,t){var n=r.length;if(n===2)return r(e,t);switch(n){case 1:return R(r(e),[t]);case 2:return r(e,t);case 3:return function(i){return r(e,t,i)};case 4:return function(i,u){return r(e,t,i,u)};case 5:return function(i,u,a){return r(e,t,i,u,a)};case 6:return function(i,u,a,o){return r(e,t,i,u,a,o)};case 7:return function(i,u,a,o,_){return r(e,t,i,u,a,o,_)};default:return R(r,[e,t])}}function pu(r){var e=r.length;return e===2?r:function(t,n){return Qt(r,t,n)}}function $t(r,e,t,n){var i=r.length;if(i===3)return r(e,t,n);switch(i){case 1:return R(r(e),[t,n]);case 2:return R(r(e,t),[n]);case 3:return r(e,t,n);case 4:return function(u){return r(e,t,n,u)};case 5:return function(u,a){return r(e,t,n,u,a)};case 6:return function(u,a,o){return r(e,t,n,u,a,o)};case 7:return function(u,a,o,_){return r(e,t,n,u,a,o,_)};default:return R(r,[e,t,n])}}function Eu(r){var e=r.length;return e===3?r:function(t,n,i){return $t(r,t,n,i)}}function xt(r,e,t,n,i){var u=r.length;if(u===4)return r(e,t,n,i);switch(u){case 1:return R(r(e),[t,n,i]);case 2:return R(r(e,t),[n,i]);case 3:return R(r(e,t,n),[i]);case 4:return r(e,t,n,i);case 5:return function(a){return r(e,t,n,i,a)};case 6:return function(a,o){return r(e,t,n,i,a,o)};case 7:return function(a,o,_){return r(e,t,n,i,a,o,_)};default:return R(r,[e,t,n,i])}}function bu(r){var e=r.length;return e===4?r:function(t,n,i,u){return xt(r,t,n,i,u)}}function rn(r,e,t,n,i,u){var a=r.length;if(a===5)return r(e,t,n,i,u);switch(a){case 1:return R(r(e),[t,n,i,u]);case 2:return R(r(e,t),[n,i,u]);case 3:return R(r(e,t,n),[i,u]);case 4:return R(r(e,t,n,i),[u]);case 5:return r(e,t,n,i,u);case 6:return function(o){return r(e,t,n,i,u,o)};case 7:return function(o,_){return r(e,t,n,i,u,o,_)};default:return R(r,[e,t,n,i,u])}}function wu(r){var e=r.length;return e===5?r:function(t,n,i,u,a){return rn(r,t,n,i,u,a)}}function en(r,e,t,n,i,u,a){var o=r.length;if(o===6)return r(e,t,n,i,u,a);switch(o){case 1:return R(r(e),[t,n,i,u,a]);case 2:return R(r(e,t),[n,i,u,a]);case 3:return R(r(e,t,n),[i,u,a]);case 4:return R(r(e,t,n,i),[u,a]);case 5:return R(r(e,t,n,i,u),[a]);case 6:return r(e,t,n,i,u,a);case 7:return function(_){return r(e,t,n,i,u,a,_)};default:return R(r,[e,t,n,i,u,a])}}function yu(r){var e=r.length;return e===6?r:function(t,n,i,u,a,o){return en(r,t,n,i,u,a,o)}}function tn(r,e,t,n,i,u,a,o){var _=r.length;if(_===7)return r(e,t,n,i,u,a,o);switch(_){case 1:return R(r(e),[t,n,i,u,a,o]);case 2:return R(r(e,t),[n,i,u,a,o]);case 3:return R(r(e,t,n),[i,u,a,o]);case 4:return R(r(e,t,n,i),[u,a,o]);case 5:return R(r(e,t,n,i,u),[a,o]);case 6:return R(r(e,t,n,i,u,a),[o]);case 7:return r(e,t,n,i,u,a,o);default:return R(r,[e,t,n,i,u,a,o])}}function Nu(r){var e=r.length;return e===7?r:function(t,n,i,u,a,o,_){return tn(r,t,n,i,u,a,o,_)}}function nn(r,e,t,n,i,u,a,o,_){var l=r.length;if(l===8)return r(e,t,n,i,u,a,o,_);switch(l){case 1:return R(r(e),[t,n,i,u,a,o,_]);case 2:return R(r(e,t),[n,i,u,a,o,_]);case 3:return R(r(e,t,n),[i,u,a,o,_]);case 4:return R(r(e,t,n,i),[u,a,o,_]);case 5:return R(r(e,t,n,i,u),[a,o,_]);case 6:return R(r(e,t,n,i,u,a),[o,_]);case 7:return R(r(e,t,n,i,u,a,o),[_]);default:return R(r,[e,t,n,i,u,a,o,_])}}function Iu(r){var e=r.length;return e===8?r:function(t,n,i,u,a,o,_,l){return nn(r,t,n,i,u,a,o,_,l)}}Q.app=R;Q._1=Kt;Q.__1=gu;Q._2=Qt;Q.__2=pu;Q._3=$t;Q.__3=Eu;Q._4=xt;Q.__4=bu;Q._5=rn;Q.__5=wu;Q._6=en;Q.__6=yu;Q._7=tn;Q.__7=Nu;Q._8=nn;Q.__8=Iu});var ue=B(Cr=>{"use strict";function Au(r){return r.BS_PRIVATE_NESTED_SOME_NONE!==void 0}function Ce(r){return r===void 0?{BS_PRIVATE_NESTED_SOME_NONE:0}:r!==null&&r.BS_PRIVATE_NESTED_SOME_NONE!==void 0?{BS_PRIVATE_NESTED_SOME_NONE:r.BS_PRIVATE_NESTED_SOME_NONE+1|0}:r}function qu(r){if(r!=null)return Ce(r)}function Tu(r){if(r!==void 0)return Ce(r)}function Cu(r){if(r!==null)return Ce(r)}function un(r){if(!(r!==null&&r.BS_PRIVATE_NESTED_SOME_NONE!==void 0))return r;var e=r.BS_PRIVATE_NESTED_SOME_NONE;if(e!==0)return{BS_PRIVATE_NESTED_SOME_NONE:e-1|0}}function Lu(r){if(r!==void 0)return un(r)}function Du(r){return r!==void 0?r.VAL:r}Cr.nullable_to_opt=qu;Cr.undefined_to_opt=Tu;Cr.null_to_opt=Cu;Cr.valFromOption=un;Cr.some=Ce;Cr.isNested=Au;Cr.option_get=Lu;Cr.option_unwrap=Du});var De=B(ae=>{"use strict";var Le={contents:0};function Ru(r){return Le.contents=Le.contents+1|0,r+("/"+Le.contents)}function Su(r){return r==null?!1:typeof r.RE_EXN_ID=="string"}function Xu(r){return r.RE_EXN_ID}ae.id=Le;ae.create=Ru;ae.caml_is_extension=Su;ae.caml_exn_slot_name=Xu});var oe=B(Re=>{"use strict";var Ou=ue(),an=De(),Qe=an.create("Caml_js_exceptions.Error");function Vu(r){return an.caml_is_extension(r)?r:{RE_EXN_ID:Qe,_1:r}}function ku(r){if(r.RE_EXN_ID===Qe)return Ou.some(r._1)}Re.$$Error=Qe;Re.internalToOCamlException=Vu;Re.caml_as_js_exn=ku});var _n=B(Ir=>{"use strict";var on=oe(),ju=on.internalToOCamlException;function Mu(r){throw new Error(r)}function Fu(r){throw new EvalError(r)}function Gu(r){throw new RangeError(r)}function zu(r){throw new ReferenceError(r)}function Pu(r){throw new SyntaxError(r)}function Bu(r){throw new TypeError(r)}function Hu(r){throw new URIError(r)}var Uu=on.$$Error;Ir.$$Error=Uu;Ir.anyToExnInternal=ju;Ir.raiseError=Mu;Ir.raiseEvalError=Fu;Ir.raiseRangeError=Gu;Ir.raiseReferenceError=zu;Ir.raiseSyntaxError=Pu;Ir.raiseTypeError=Bu;Ir.raiseUriError=Hu});var le=B(nr=>{"use strict";function Yu(r,e,t){if(e<0||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"index out of bounds",Error:new Error};r[e]=t}function Zu(r,e){if(e<0||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"index out of bounds",Error:new Error};return r[e]}function Wu(r,e,t,n){if(!(t<=0))for(var i=e,u=t+e|0;i<u;++i)r[i]=n}function Ju(r){if(r<0)throw{RE_EXN_ID:"Invalid_argument",_1:"String.create",Error:new Error};for(var e=new Array(r),t=0;t<r;++t)e[t]=0;return e}function Ku(r,e,t,n,i){if(!(i<=0)){if(r===t){if(e<n){for(var u=(r.length-n|0)-1|0,a=i-1|0,o=u>a?a:u,_=o;_>=0;--_)r[n+_|0]=r[e+_|0];return}if(e<=n)return;for(var l=(r.length-e|0)-1|0,s=i-1|0,c=l>s?s:l,v=0;v<=c;++v)r[n+v|0]=r[e+v|0];return}var p=r.length-e|0;if(i<=p){for(var E=0;E<i;++E)t[n+E|0]=r[e+E|0];return}for(var A=0;A<p;++A)t[n+A|0]=r[e+A|0];for(var D=p;D<i;++D)t[n+D|0]=0}}function Qu(r){var e=0,t=r.length,n="",i=t;if(e===0&&t<=4096&&t===r.length)return String.fromCharCode.apply(null,r);for(var u=0;i>0;){for(var a=i<1024?i:1024,o=new Array(a),_=0;_<a;++_)o[_]=r[_+u|0];n=n+String.fromCharCode.apply(null,o),i=i-a|0,u=u+a|0}return n}function $u(r,e,t,n,i){if(!(i<=0)){var u=r.length-e|0;if(i<=u){for(var a=0;a<i;++a)t[n+a|0]=r.charCodeAt(e+a|0);return}for(var o=0;o<u;++o)t[n+o|0]=r.charCodeAt(e+o|0);for(var _=u;_<i;++_)t[n+_|0]=0}}function xu(r){for(var e=r.length,t=new Array(e),n=0;n<e;++n)t[n]=r.charCodeAt(n);return t}function $e(r,e,t,n,i){for(;;){var u=t;if(u>=n)return i;var a=r[u],o=e[u];if(a>o)return 1;if(a<o)return-1;t=u+1|0}}function _e(r,e){var t=r.length,n=e.length;return t===n?$e(r,e,0,t,0):t<n?$e(r,e,0,t,-1):$e(r,e,0,n,1)}function ra(r,e){var t=r.length,n=e.length;if(t===n)for(var i=0;;){var u=i;if(u===t)return!0;var a=r[u],o=e[u];if(a!==o)return!1;i=u+1|0}else return!1}function ea(r,e){return _e(r,e)>0}function ta(r,e){return _e(r,e)>=0}function na(r,e){return _e(r,e)<0}function ia(r,e){return _e(r,e)<=0}nr.caml_create_bytes=Ju;nr.caml_fill_bytes=Wu;nr.get=Zu;nr.set=Yu;nr.bytes_to_string=Qu;nr.caml_blit_bytes=Ku;nr.caml_blit_string=$u;nr.bytes_of_string=xu;nr.caml_bytes_compare=_e;nr.caml_bytes_greaterthan=ea;nr.caml_bytes_greaterequal=ta;nr.caml_bytes_lessthan=na;nr.caml_bytes_lessequal=ia;nr.caml_bytes_equal=ra});var fn=B(Lr=>{"use strict";var ln=le();function ua(r){if(r<0||r>255)throw{RE_EXN_ID:"Invalid_argument",_1:"Char.chr",Error:new Error};return r}function aa(r){var e=0;if(r>=40){if(r===92)return"\\\\";e=r>=127?1:2}else if(r>=32){if(r>=39)return"\\'";e=2}else if(r>=14)e=1;else switch(r){case 8:return"\\b";case 9:return"\\t";case 10:return"\\n";case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 11:case 12:e=1;break;case 13:return"\\r"}switch(e){case 1:var t=[0,0,0,0];return t[0]=92,t[1]=48+(r/100|0)|0,t[2]=48+(r/10|0)%10|0,t[3]=48+r%10|0,ln.bytes_to_string(t);case 2:var n=[0];return n[0]=r,ln.bytes_to_string(n)}}function oa(r){return r>=65&&r<=90||r>=192&&r<=214||r>=216&&r<=222?r+32|0:r}function _a(r){return r>=97&&r<=122||r>=224&&r<=246||r>=248&&r<=254?r-32|0:r}function la(r){return r>=65&&r<=90?r+32|0:r}function fa(r){return r>=97&&r<=122?r-32|0:r}function sa(r,e){return r-e|0}function ca(r,e){return(r-e|0)==0}Lr.chr=ua;Lr.escaped=aa;Lr.lowercase=oa;Lr.uppercase=_a;Lr.lowercase_ascii=la;Lr.uppercase_ascii=fa;Lr.compare=sa;Lr.equal=ca});var Se=B(rr=>{"use strict";function sn(r,e){return r<e?-1:r===e?0:1}function da(r,e){return r?e?0:1:e?-1:0}function va(r,e){return r===e?0:r<e?-1:r>e||r===r?1:e===e?-1:0}function ha(r,e){return r===e?0:r<e?-1:1}function ma(r,e){return r&&e}function ga(r,e){return r<e?r:e}function pa(r,e){return r<e?r:e}function Ea(r,e){return r<e?r:e}function ba(r,e){return r<e?r:e}function wa(r,e){return r||e}function ya(r,e){return r>e?r:e}function Na(r,e){return r>e?r:e}function Ia(r,e){return r>e?r:e}function Aa(r,e){return r>e?r:e}var qa=sn;rr.caml_int_compare=sn;rr.caml_bool_compare=da;rr.caml_float_compare=va;rr.caml_string_compare=ha;rr.caml_int32_compare=qa;rr.caml_bool_min=ma;rr.caml_int_min=ga;rr.caml_float_min=pa;rr.caml_string_min=Ea;rr.caml_int32_min=ba;rr.caml_bool_max=wa;rr.caml_int_max=ya;rr.caml_float_max=Na;rr.caml_string_max=Ia;rr.caml_int32_max=Aa});var pn=B(q=>{"use strict";var kr=fn(),$r=Vr(),F=le(),Ta=Se(),cn=oe();function Ca(r,e){var t=F.caml_create_bytes(r);return F.caml_fill_bytes(t,0,r,e),t}function La(r,e){for(var t=F.caml_create_bytes(r),n=0;n<r;++n)t[n]=$r._1(e,n);return t}var xe=[];function fe(r){var e=r.length,t=F.caml_create_bytes(e);return F.caml_blit_bytes(r,0,t,0,e),t}function Da(r){return F.bytes_to_string(fe(r))}function Ra(r){return fe(F.bytes_of_string(r))}function rt(r,e,t){if(e<0||t<0||e>(r.length-t|0))throw{RE_EXN_ID:"Invalid_argument",_1:"String.sub / Bytes.sub",Error:new Error};var n=F.caml_create_bytes(t);return F.caml_blit_bytes(r,e,n,0,t),n}function Sa(r,e,t){return F.bytes_to_string(rt(r,e,t))}function dn(r,e){var t=r+e|0,n=r<0,i=e<0,u=t<0;if(n){if(!i||u)return t;throw{RE_EXN_ID:"Invalid_argument",_1:"Bytes.extend",Error:new Error}}if(i)return t;if(u)throw{RE_EXN_ID:"Invalid_argument",_1:"Bytes.extend",Error:new Error};return t}function Xa(r,e,t){var n=dn(dn(r.length,e),t),i=F.caml_create_bytes(n),u=e<0?[-e|0,0]:[0,e],a=u[1],o=u[0],_=Ta.caml_int_min(r.length-o|0,n-a|0);return _>0&&F.caml_blit_bytes(r,o,i,a,_),i}function Oa(r,e,t,n){if(e<0||t<0||e>(r.length-t|0))throw{RE_EXN_ID:"Invalid_argument",_1:"String.fill / Bytes.fill",Error:new Error};return F.caml_fill_bytes(r,e,t,n)}function Va(r,e,t,n,i){if(i<0||e<0||e>(r.length-i|0)||n<0||n>(t.length-i|0))throw{RE_EXN_ID:"Invalid_argument",_1:"Bytes.blit",Error:new Error};return F.caml_blit_bytes(r,e,t,n,i)}function ka(r,e,t,n,i){if(i<0||e<0||e>(r.length-i|0)||n<0||n>(t.length-i|0))throw{RE_EXN_ID:"Invalid_argument",_1:"String.blit / Bytes.blit_string",Error:new Error};return F.caml_blit_string(r,e,t,n,i)}function ja(r,e){for(var t=0,n=e.length;t<n;++t)$r._1(r,e[t])}function Ma(r,e){for(var t=0,n=e.length;t<n;++t)$r._2(r,t,e[t])}function Fa(r,e){if(r>=e)return r;throw{RE_EXN_ID:"Invalid_argument",_1:"Bytes.concat",Error:new Error}}function Ga(r,e,t){for(;;){var n=t,i=r;if(!n)return i;var u=n.tl,a=n.hd;if(!u)return a.length+i|0;t=u,r=Fa((a.length+e|0)+i|0,i)}}function za(r,e){if(!e)return xe;for(var t=r.length,n=F.caml_create_bytes(Ga(0,t,e)),i=0,u=e;;){var a=u,o=i;if(!a)return n;var _=a.tl,l=a.hd;if(_){F.caml_blit_bytes(l,0,n,o,l.length),F.caml_blit_bytes(r,0,n,o+l.length|0,t),u=_,i=(o+l.length|0)+t|0;continue}return F.caml_blit_bytes(l,0,n,o,l.length),n}}function Pa(r,e){var t=r.length,n=e.length,i=F.caml_create_bytes(t+n|0);return F.caml_blit_bytes(r,0,i,0,t),F.caml_blit_bytes(e,0,i,t,n),i}function vn(r){return r>13||r<9?r===32:r!==11}function Ba(r){for(var e=r.length,t=0;t<e&&vn(r[t]);)t=t+1|0;for(var n=e-1|0;n>=t&&vn(r[n]);)n=n-1|0;return n>=t?rt(r,t,(n-t|0)+1|0):xe}function Ha(r){for(var e=0,t=0,n=r.length;t<n;++t){var i=r[t];e=e+(i>=32?i>92||i<34?i>=127?4:1:i>91||i<35?2:1:i>=11?i!==13?4:2:i>=8?2:4)|0}if(e===r.length)return fe(r);var u=F.caml_create_bytes(e);e=0;for(var a=0,o=r.length;a<o;++a){var _=r[a],l=0;if(_>=35)_!==92?_>=127?l=1:u[e]=_:l=2;else if(_>=32)_>=34?l=2:u[e]=_;else if(_>=14)l=1;else switch(_){case 8:u[e]=92,e=e+1|0,u[e]=98;break;case 9:u[e]=92,e=e+1|0,u[e]=116;break;case 10:u[e]=92,e=e+1|0,u[e]=110;break;case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 11:case 12:l=1;break;case 13:u[e]=92,e=e+1|0,u[e]=114;break}switch(l){case 1:u[e]=92,e=e+1|0,u[e]=48+(_/100|0)|0,e=e+1|0,u[e]=48+(_/10|0)%10|0,e=e+1|0,u[e]=48+_%10|0;break;case 2:u[e]=92,e=e+1|0,u[e]=_;break}e=e+1|0}return u}function se(r,e){var t=e.length;if(t===0)return e;for(var n=F.caml_create_bytes(t),i=0;i<t;++i)n[i]=$r._1(r,e[i]);return n}function Ua(r,e){var t=e.length;if(t===0)return e;for(var n=F.caml_create_bytes(t),i=0;i<t;++i)n[i]=$r._2(r,i,e[i]);return n}function Ya(r){return se(kr.uppercase_ascii,r)}function Za(r){return se(kr.lowercase_ascii,r)}function Xe(r,e){if(e.length===0)return e;var t=fe(e);return t[0]=$r._1(r,e[0]),t}function Wa(r){return Xe(kr.uppercase_ascii,r)}function Ja(r){return Xe(kr.lowercase_ascii,r)}function et(r,e,t,n){for(;;){var i=t;if(i>=e)throw{RE_EXN_ID:"Not_found",Error:new Error};if(r[i]===n)return i;t=i+1|0}}function Ka(r,e){return et(r,r.length,0,e)}function hn(r,e,t,n){for(;;){var i=t;if(i>=e)return;if(r[i]===n)return i;t=i+1|0}}function Qa(r,e){return hn(r,r.length,0,e)}function $a(r,e,t){var n=r.length;if(e<0||e>n)throw{RE_EXN_ID:"Invalid_argument",_1:"String.index_from / Bytes.index_from",Error:new Error};return et(r,n,e,t)}function xa(r,e,t){var n=r.length;if(e<0||e>n)throw{RE_EXN_ID:"Invalid_argument",_1:"String.index_from_opt / Bytes.index_from_opt",Error:new Error};return hn(r,n,e,t)}function tt(r,e,t){for(;;){var n=e;if(n<0)throw{RE_EXN_ID:"Not_found",Error:new Error};if(r[n]===t)return n;e=n-1|0}}function ro(r,e){return tt(r,r.length-1|0,e)}function eo(r,e,t){if(e<-1||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"String.rindex_from / Bytes.rindex_from",Error:new Error};return tt(r,e,t)}function mn(r,e,t){for(;;){var n=e;if(n<0)return;if(r[n]===t)return n;e=n-1|0}}function to(r,e){return mn(r,r.length-1|0,e)}function no(r,e,t){if(e<-1||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"String.rindex_from_opt / Bytes.rindex_from_opt",Error:new Error};return mn(r,e,t)}function gn(r,e,t){var n=r.length;if(e<0||e>n)throw{RE_EXN_ID:"Invalid_argument",_1:"String.contains_from / Bytes.contains_from",Error:new Error};try{return et(r,n,e,t),!0}catch(u){var i=cn.internalToOCamlException(u);if(i.RE_EXN_ID==="Not_found")return!1;throw i}}function io(r,e){return gn(r,0,e)}function uo(r,e,t){if(e<0||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"String.rcontains_from / Bytes.rcontains_from",Error:new Error};try{return tt(r,e,t),!0}catch(i){var n=cn.internalToOCamlException(i);if(n.RE_EXN_ID==="Not_found")return!1;throw n}}var ao=F.caml_bytes_compare;function oo(r){return se(kr.uppercase,r)}function _o(r){return se(kr.lowercase,r)}function lo(r){return Xe(kr.uppercase,r)}function fo(r){return Xe(kr.lowercase,r)}var so=F.caml_bytes_equal,co=F.bytes_to_string,vo=F.bytes_of_string;q.make=Ca;q.init=La;q.empty=xe;q.copy=fe;q.of_string=Ra;q.to_string=Da;q.sub=rt;q.sub_string=Sa;q.extend=Xa;q.fill=Oa;q.blit=Va;q.blit_string=ka;q.concat=za;q.cat=Pa;q.iter=ja;q.iteri=Ma;q.map=se;q.mapi=Ua;q.trim=Ba;q.escaped=Ha;q.index=Ka;q.index_opt=Qa;q.rindex=ro;q.rindex_opt=to;q.index_from=$a;q.index_from_opt=xa;q.rindex_from=eo;q.rindex_from_opt=no;q.contains=io;q.contains_from=gn;q.rcontains_from=uo;q.uppercase=oo;q.lowercase=_o;q.capitalize=lo;q.uncapitalize=fo;q.uppercase_ascii=Ya;q.lowercase_ascii=Za;q.capitalize_ascii=Wa;q.uncapitalize_ascii=Ja;q.compare=ao;q.equal=so;q.unsafe_to_string=co;q.unsafe_of_string=vo});var Oe=B(nt=>{"use strict";function ho(r,e){if(e>=r.length||e<0)throw{RE_EXN_ID:"Invalid_argument",_1:"index out of bounds",Error:new Error};return r.charCodeAt(e)}function mo(r,e){return String.fromCharCode(e).repeat(r)}nt.get=ho;nt.make=mo});var An=B(O=>{"use strict";var $=pn(),En=Vr(),k=le(),go=Oe(),po=Se(),bn=oe();function Eo(r,e){return k.bytes_to_string($.init(r,e))}function bo(r){return k.bytes_to_string($.copy(k.bytes_of_string(r)))}function it(r,e,t){return k.bytes_to_string($.sub(k.bytes_of_string(r),e,t))}function wo(r,e){if(r>=e)return r;throw{RE_EXN_ID:"Invalid_argument",_1:"String.concat",Error:new Error}}function yo(r,e,t){for(;;){var n=t,i=r;if(!n)return i;var u=n.tl,a=n.hd;if(!u)return a.length+i|0;t=u,r=wo((a.length+e|0)+i|0,i)}}function No(r,e,t,n,i){for(;;){var u=i,a=e;if(!u)return r;var o=u.tl,_=u.hd;if(o){k.caml_blit_string(_,0,r,a,_.length),k.caml_blit_string(t,0,r,a+_.length|0,n),i=o,e=(a+_.length|0)+n|0;continue}return k.caml_blit_string(_,0,r,a,_.length),r}}function Io(r,e){if(!e)return"";var t=r.length;return k.bytes_to_string(No(k.caml_create_bytes(yo(0,t,e)),0,r,t,e))}function Ao(r,e){for(var t=0,n=e.length;t<n;++t)En._1(r,e.charCodeAt(t))}function qo(r,e){for(var t=0,n=e.length;t<n;++t)En._2(r,t,e.charCodeAt(t))}function To(r,e){return k.bytes_to_string($.map(r,k.bytes_of_string(e)))}function Co(r,e){return k.bytes_to_string($.mapi(r,k.bytes_of_string(e)))}function wn(r){return r>13||r<9?r===32:r!==11}function Lo(r){return r===""||!(wn(r.charCodeAt(0))||wn(r.charCodeAt(r.length-1|0)))?r:k.bytes_to_string($.trim(k.bytes_of_string(r)))}function Do(r){var e=function(t){for(;;){var n=t;if(n>=r.length)return!1;var i=r.charCodeAt(n);if(i<32)return!0;if(i>92||i<34){if(i>=127)return!0;t=n+1|0;continue}if(i>91||i<35)return!0;t=n+1|0}};return e(0)?k.bytes_to_string($.escaped(k.bytes_of_string(r))):r}function ut(r,e,t,n){for(;;){var i=t;if(i>=e)throw{RE_EXN_ID:"Not_found",Error:new Error};if(r.charCodeAt(i)===n)return i;t=i+1|0}}function Ro(r,e){return ut(r,r.length,0,e)}function yn(r,e,t,n){for(;;){var i=t;if(i>=e)return;if(r.charCodeAt(i)===n)return i;t=i+1|0}}function So(r,e){return yn(r,r.length,0,e)}function Xo(r,e,t){var n=r.length;if(e<0||e>n)throw{RE_EXN_ID:"Invalid_argument",_1:"String.index_from / Bytes.index_from",Error:new Error};return ut(r,n,e,t)}function Oo(r,e,t){var n=r.length;if(e<0||e>n)throw{RE_EXN_ID:"Invalid_argument",_1:"String.index_from_opt / Bytes.index_from_opt",Error:new Error};return yn(r,n,e,t)}function at(r,e,t){for(;;){var n=e;if(n<0)throw{RE_EXN_ID:"Not_found",Error:new Error};if(r.charCodeAt(n)===t)return n;e=n-1|0}}function Vo(r,e){return at(r,r.length-1|0,e)}function ko(r,e,t){if(e<-1||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"String.rindex_from / Bytes.rindex_from",Error:new Error};return at(r,e,t)}function Nn(r,e,t){for(;;){var n=e;if(n<0)return;if(r.charCodeAt(n)===t)return n;e=n-1|0}}function jo(r,e){return Nn(r,r.length-1|0,e)}function Mo(r,e,t){if(e<-1||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"String.rindex_from_opt / Bytes.rindex_from_opt",Error:new Error};return Nn(r,e,t)}function In(r,e,t){var n=r.length;if(e<0||e>n)throw{RE_EXN_ID:"Invalid_argument",_1:"String.contains_from / Bytes.contains_from",Error:new Error};try{return ut(r,n,e,t),!0}catch(u){var i=bn.internalToOCamlException(u);if(i.RE_EXN_ID==="Not_found")return!1;throw i}}function Fo(r,e){return In(r,0,e)}function Go(r,e,t){if(e<0||e>=r.length)throw{RE_EXN_ID:"Invalid_argument",_1:"String.rcontains_from / Bytes.rcontains_from",Error:new Error};try{return at(r,e,t),!0}catch(i){var n=bn.internalToOCamlException(i);if(n.RE_EXN_ID==="Not_found")return!1;throw n}}function zo(r){return k.bytes_to_string($.uppercase_ascii(k.bytes_of_string(r)))}function Po(r){return k.bytes_to_string($.lowercase_ascii(k.bytes_of_string(r)))}function Bo(r){return k.bytes_to_string($.capitalize_ascii(k.bytes_of_string(r)))}function Ho(r){return k.bytes_to_string($.uncapitalize_ascii(k.bytes_of_string(r)))}var Uo=po.caml_string_compare;function Yo(r,e){for(var t=0,n=e.length,i=e.length-1|0;i>=0;--i)e.charCodeAt(i)===r&&(t={hd:it(e,i+1|0,(n-i|0)-1|0),tl:t},n=i);return{hd:it(e,0,n),tl:t}}function Zo(r){return k.bytes_to_string($.uppercase(k.bytes_of_string(r)))}function Wo(r){return k.bytes_to_string($.lowercase(k.bytes_of_string(r)))}function Jo(r){return k.bytes_to_string($.capitalize(k.bytes_of_string(r)))}function Ko(r){return k.bytes_to_string($.uncapitalize(k.bytes_of_string(r)))}var Qo=go.make,$o=$.fill,xo=$.blit_string;function r_(r,e){return r===e}O.make=Qo;O.init=Eo;O.copy=bo;O.sub=it;O.fill=$o;O.blit=xo;O.concat=Io;O.iter=Ao;O.iteri=qo;O.map=To;O.mapi=Co;O.trim=Lo;O.escaped=Do;O.index=Ro;O.index_opt=So;O.rindex=Vo;O.rindex_opt=jo;O.index_from=Xo;O.index_from_opt=Oo;O.rindex_from=ko;O.rindex_from_opt=Mo;O.contains=Fo;O.contains_from=In;O.rcontains_from=Go;O.uppercase=Zo;O.lowercase=Wo;O.capitalize=Jo;O.uncapitalize=Ko;O.uppercase_ascii=zo;O.lowercase_ascii=Po;O.capitalize_ascii=Bo;O.uncapitalize_ascii=Ho;O.compare=Uo;O.equal=r_;O.split_on_char=Yo});var ot=B(ir=>{"use strict";var ce=Se(),Ve=function(r,e){for(var t in r)e(t)},e_=function(r){if(Array.isArray(r)){for(var e=r.length,t=new Array(e),n=0;n<e;++n)t[n]=r[n];return r.TAG!==void 0&&(t.TAG=r.TAG),t}return Object.assign({},r)},t_=function(r,e){var t;if(Array.isArray(e)){for(t=0;t<e.length;++t)r[t]=e[t];e.TAG!==void 0&&(r.TAG=e.TAG)}else for(var t in e)r[t]=e[t]};function br(r,e){if(r===e)return 0;var t=typeof r,n=typeof e;switch(t){case"boolean":if(n==="boolean")return ce.caml_bool_compare(r,e);break;case"function":if(n==="function")throw{RE_EXN_ID:"Invalid_argument",_1:"compare: functional value",Error:new Error};break;case"number":if(n==="number")return ce.caml_int_compare(r,e);break;case"string":return n==="string"?ce.caml_string_compare(r,e):1;case"undefined":return-1;default:}switch(n){case"string":return-1;case"undefined":return 1;default:if(t==="boolean")return 1;if(n==="boolean")return-1;if(t==="function")return 1;if(n==="function")return-1;if(t==="number")return e===null||e.BS_PRIVATE_NESTED_SOME_NONE!==void 0?1:-1;if(n==="number")return r===null||r.BS_PRIVATE_NESTED_SOME_NONE!==void 0?-1:1;if(r===null)return e.BS_PRIVATE_NESTED_SOME_NONE!==void 0?1:-1;if(e===null)return r.BS_PRIVATE_NESTED_SOME_NONE!==void 0?-1:1;if(r.BS_PRIVATE_NESTED_SOME_NONE!==void 0)return e.BS_PRIVATE_NESTED_SOME_NONE!==void 0?qn(r,e):-1;var i=r.TAG|0,u=e.TAG|0;if(i===248)return ce.caml_int_compare(r[1],e[1]);if(i===251)throw{RE_EXN_ID:"Invalid_argument",_1:"equal: abstract value",Error:new Error};if(i!==u)return i<u?-1:1;var a=r.length|0,o=e.length|0;if(a===o)if(Array.isArray(r))for(var _=0;;){var l=_;if(l===a)return 0;var s=br(r[l],e[l]);if(s!==0)return s;_=l+1|0}else return r instanceof Date&&e instanceof Date?r-e:qn(r,e);else if(a<o)for(var c=0;;){var v=c;if(v===a)return-1;var p=br(r[v],e[v]);if(p!==0)return p;c=v+1|0}else for(var E=0;;){var A=E;if(A===o)return 1;var D=br(r[A],e[A]);if(D!==0)return D;E=A+1|0}}}function qn(r,e){var t={contents:void 0},n={contents:void 0},i=function(c,v){var p=c[2],E=c[1];if(!E.hasOwnProperty(v)||br(c[0][v],E[v])>0){var A=p.contents;if(!(A!==void 0&&v>=A)){p.contents=v;return}}},u=[r,e,n],a=function(c){return i(u,c)},o=[e,r,t],_=function(c){return i(o,c)};Ve(r,a),Ve(e,_);var l=t.contents,s=n.contents;return l!==void 0?s!==void 0?ce.caml_string_compare(l,s):-1:s!==void 0?1:0}function Ur(r,e){if(r===e)return!0;var t=typeof r;if(t==="string"||t==="number"||t==="boolean"||t==="undefined"||r===null)return!1;var n=typeof e;if(t==="function"||n==="function")throw{RE_EXN_ID:"Invalid_argument",_1:"equal: functional value",Error:new Error};if(n==="number"||n==="undefined"||e===null)return!1;var i=r.TAG|0,u=e.TAG|0;if(i===248)return r[1]===e[1];if(i===251)throw{RE_EXN_ID:"Invalid_argument",_1:"equal: abstract value",Error:new Error};if(i!==u)return!1;var a=r.length|0,o=e.length|0;if(a===o)if(Array.isArray(r))for(var _=0;;){var l=_;if(l===a)return!0;if(!Ur(r[l],e[l]))return!1;_=l+1|0}else{if(r instanceof Date&&e instanceof Date)return!(r>e||r<e);var s={contents:!0},c=function(p){if(!e.hasOwnProperty(p)){s.contents=!1;return}},v=function(p){if(!r.hasOwnProperty(p)||!Ur(e[p],r[p])){s.contents=!1;return}};return Ve(r,c),s.contents&&Ve(e,v),s.contents}else return!1}function n_(r,e){return e!==null?Ur(r,e):r===e}function i_(r,e){return e!==void 0?Ur(r,e):r===e}function u_(r,e){return e==null?r===e:Ur(r,e)}function a_(r,e){return!Ur(r,e)}function o_(r,e){return br(r,e)>=0}function __(r,e){return br(r,e)>0}function l_(r,e){return br(r,e)<=0}function f_(r,e){return br(r,e)<0}function s_(r,e){return br(r,e)<=0?r:e}function c_(r,e){return br(r,e)>=0?r:e}ir.caml_obj_dup=e_;ir.update_dummy=t_;ir.caml_compare=br;ir.caml_equal=Ur;ir.caml_equal_null=n_;ir.caml_equal_undefined=i_;ir.caml_equal_nullable=u_;ir.caml_notequal=a_;ir.caml_greaterequal=o_;ir.caml_greaterthan=__;ir.caml_lessthan=f_;ir.caml_lessequal=l_;ir.caml_min=s_;ir.caml_max=c_});var Dn=B(de=>{"use strict";var d_=De();function v_(r){return r.LAZY_DONE}var Tn=d_.create("CamlinternalLazy.Undefined");function Cn(r,e){var t=e();return r.VAL=t,r.LAZY_DONE=!0,t}function Ln(){throw{RE_EXN_ID:Tn,Error:new Error}}function h_(r){if(r.LAZY_DONE)return r.VAL;var e=r.VAL;r.VAL=Ln;try{return Cn(r,e)}catch(t){throw r.VAL=function(){throw t},t}}function m_(r){if(r.LAZY_DONE)return r.VAL;var e=r.VAL;return r.VAL=Ln,Cn(r,e)}de.Undefined=Tn;de.force=h_;de.force_val=m_;de.is_val=v_});var On=B(jr=>{"use strict";var _t={buffer:"",output:function(r,e){var t=e.length-1|0;if(typeof process!="undefined"&&process.stdout&&process.stdout.write)return process.stdout.write(e);e[t]===`
-`?console.log(e.slice(0,t)):console.log(e)}},Rn={buffer:"",output:function(r,e){var t=e.length-1|0;e[t]===`
-`?console.log(e.slice(0,t)):console.log(e)}};function Sn(r){if(r.buffer!==""){r.output(r,r.buffer),r.buffer="";return}}function Xn(r,e,t,n){var i=t===0&&n===e.length?e:e.slice(t,n);if(typeof process!="undefined"&&process.stdout&&process.stdout.write&&r===_t)return process.stdout.write(i);var u=i.lastIndexOf(`
-`);u<0?r.buffer=r.buffer+i:(r.buffer=r.buffer+i.slice(0,u+1|0),Sn(r),r.buffer=r.buffer+i.slice(u+1|0))}function g_(r,e){return Xn(r,String.fromCharCode(e),0,1)}function p_(r){return{hd:_t,tl:{hd:Rn,tl:0}}}var E_;jr.stdin=E_;jr.stdout=_t;jr.stderr=Rn;jr.caml_ml_flush=Sn;jr.caml_ml_output=Xn;jr.caml_ml_output_char=g_;jr.caml_ml_out_channels_list=p_});var Vn=B(Ar=>{"use strict";function b_(r){if(typeof process=="undefined"||process.env===void 0)throw{RE_EXN_ID:"Not_found",Error:new Error};var e=process.env[r];if(e!==void 0)return e;throw{RE_EXN_ID:"Not_found",Error:new Error}}var w_=function(r){return typeof process!="undefined"&&process.platform==="win32"?"Win32":"Unix"};function y_(r){return typeof process=="undefined"||process.uptime===void 0?-1:process.uptime()}function N_(r){return 127}var I_=function(r){return typeof process=="undefined"||process.cwd===void 0?"/":process.cwd()};function A_(r){if(typeof process=="undefined")return["",[""]];var e=process.argv;return e==null?["",[""]]:[e[0],e]}function q_(r){if(typeof process!="undefined")return process.exit(r)}function T_(r){throw{RE_EXN_ID:"Failure",_1:"caml_sys_is_directory not implemented",Error:new Error}}function C_(r){throw{RE_EXN_ID:"Failure",_1:"caml_sys_file_exists not implemented",Error:new Error}}Ar.caml_sys_getenv=b_;Ar.caml_sys_time=y_;Ar.os_type=w_;Ar.caml_sys_system_command=N_;Ar.caml_sys_getcwd=I_;Ar.caml_sys_get_argv=A_;Ar.caml_sys_exit=q_;Ar.caml_sys_is_directory=T_;Ar.caml_sys_file_exists=C_});var Pn=B(T=>{"use strict";function L_(r,e){return[e,r>>>0]}var ve=[-2147483648,0],kn=[2147483647,4294967295],xr=[0,1],Mr=[0,0],jn=[-1,4294967295];function lt(r){return(r&-2147483648)!=0}function Mn(r){return(r&-2147483648)==0}function D_(r){var e=r[1],t=r[0],n=e+1|0;return[t+(n===0?1:0)|0,n>>>0]}function er(r){var e=(r[1]^-1)+1|0;return[(r[0]^-1)+(e===0?1:0)|0,e>>>0]}function ft(r,e,t){var n=r[1],i=n+e|0,u=lt(n)&&(lt(e)||Mn(i))||lt(e)&&Mn(i)?1:0;return[r[0]+t+u|0,i>>>0]}function st(r,e){return ft(r,e[1],e[0])}function Dr(r,e){return r[0]===e[0]?r[1]===e[1]:!1}function R_(r,e){return e!==null?Dr(r,e):!1}function S_(r,e){return e!==void 0?Dr(r,e):!1}function X_(r,e){return e==null?!1:Dr(r,e)}function ke(r,e,t){var n=(e^-1)+1>>>0,i=(t^-1)+(n===0?1:0)|0;return ft(r,n,i)}function he(r,e){return ke(r,e[1],e[0])}function Fn(r,e){if(e===0)return r;var t=r[1];return e>=32?[t<<(e-32|0),0]:[t>>>(32-e|0)|r[0]<<e,t<<e>>>0]}function O_(r,e){if(e===0)return r;var t=r[0],n=e-32|0;return n===0?[0,t>>>0]:n>0?[0,t>>>n]:[t>>>e,(t<<(-n|0)|r[1]>>>e)>>>0]}function Gn(r,e){if(e===0)return r;var t=r[0];return e<32?[t>>e,(t<<(32-e|0)|r[1]>>>e)>>>0]:[t>=0?0:-1,t>>(e-32|0)>>>0]}function zn(r){return r[0]!==0?!1:r[1]===0}function Fr(r,e){for(;;){var t=e,n=r,i,u=n[0],a=0,o=0,_=0;if(u!==0)_=4;else{if(n[1]===0)return Mr;_=4}if(_===4)if(t[0]!==0)o=3;else{if(t[1]===0)return Mr;o=3}if(o===3&&(u!==-2147483648||n[1]!==0?a=2:i=t[1]),a===2){var l=t[0],s=n[1],c=0;if(l!==-2147483648||t[1]!==0?c=3:i=s,c===3){var v=t[1];if(u<0){if(l>=0)return er(Fr(er(n),t));e=er(t),r=er(n);continue}if(l<0)return er(Fr(n,er(t)));var p=u>>>16,E=u&65535,A=s>>>16,D=s&65535,M=l>>>16,V=l&65535,C=v>>>16,X=v&65535,G=0,j=0,H=0,J=D*X;return H=(J>>>16)+A*X,j=H>>>16,H=(H&65535)+D*C,j=j+(H>>>16)+E*X,G=j>>>16,j=(j&65535)+A*C,G=G+(j>>>16),j=(j&65535)+D*V,G=G+(j>>>16),j=j&65535,G=G+(p*X+E*C+A*V+D*M)&65535,[j|G<<16,(J&65535|(H&65535)<<16)>>>0]}}return(i&1)==0?Mr:ve}}function V_(r,e){return[r[0]^e[0],(r[1]^e[1])>>>0]}function k_(r,e){return[r[0]|e[0],(r[1]|e[1])>>>0]}function j_(r,e){return[r[0]&e[0],(r[1]&e[1])>>>0]}function je(r,e){var t=e[0],n=r[0];return n>t?!0:n<t?!1:r[1]>=e[1]}function M_(r,e){return!Dr(r,e)}function F_(r,e){return!je(r,e)}function Me(r,e){return r[0]>e[0]?!0:r[0]<e[0]?!1:r[1]>e[1]}function G_(r,e){return!Me(r,e)}function z_(r,e){return je(r,e)?e:r}function P_(r,e){return Me(r,e)?r:e}function me(r){return r[0]*4294967296+r[1]}function ge(r){if(isNaN(r)||!isFinite(r))return Mr;if(r<=-9223372036854776e3)return ve;if(r+1>=9223372036854776e3)return kn;if(r<0)return er(ge(-r));var e=r/4294967296|0,t=r%4294967296|0;return[e,t>>>0]}function B_(r){var e=r[0],t=e>>21;return t===0?!0:t===-1?!(r[1]===0&&e===-2097152):!1}function pe(r){if(B_(r))return String(me(r));if(r[0]<0)return Dr(r,ve)?"-9223372036854775808":"-"+pe(er(r));var e=ge(Math.floor(me(r)/10)),t=e[1],n=e[0],i=ke(ke(r,t<<3,t>>>29|n<<3),t<<1,t>>>31|n<<1),u=i[1],a=i[0];if(u===0&&a===0)return pe(e)+"0";if(a<0){var o=(u^-1)+1>>>0,_=Math.ceil(o/10),l=10*_-o;return pe(ke(e,_|0,0))+String(l|0)}var s=Math.floor(u/10),c=u-10*s;return pe(ft(e,s|0,0))+String(c|0)}function Yr(r,e){for(;;){var t=e,n=r,i=n[0],u=0,a=0;if(t[0]!==0||t[1]!==0)a=2;else throw{RE_EXN_ID:"Division_by_zero",Error:new Error};if(a===2)if(i!==-2147483648)if(i!==0)u=1;else{if(n[1]===0)return Mr;u=1}else if(n[1]!==0)u=1;else{if(Dr(t,xr)||Dr(t,jn))return n;if(Dr(t,ve))return xr;var o=Gn(n,1),_=Fn(Yr(o,t),1),l=0;if(_[0]!==0)l=3;else{if(_[1]===0)return t[0]<0?xr:er(xr);l=3}if(l===3){var s=he(n,Fr(t,_));return st(_,Yr(s,t))}}if(u===1){var c=t[0],v=0;if(c!==-2147483648)v=2;else{if(t[1]===0)return Mr;v=2}if(v===2){if(i<0){if(c>=0)return er(Yr(er(n),t));e=er(t),r=er(n);continue}if(c<0)return er(Yr(n,er(t)));for(var p=Mr,E=n;je(E,t);){for(var A=Math.floor(me(E)/me(t)),D=1>A?1:A,M=Math.ceil(Math.log(D)/Math.LN2),V=M<=48?1:Math.pow(2,M-48),C=ge(D),X=Fr(C,t);X[0]<0||Me(X,E);)D=D-V,C=ge(D),X=Fr(C,t);zn(C)&&(C=xr),p=st(p,C),E=he(E,X)}return p}}}}function H_(r,e){return he(r,Fr(Yr(r,e),e))}function U_(r,e){var t=Yr(r,e);return[t,he(r,Fr(t,e))]}function Y_(r,e){var t=e[0],n=r[0],i=n<t?-1:n===t?0:1;if(i!==0)return i;var u=e[1],a=r[1];return a<u?-1:a===u?0:1}function Z_(r){return[r<0?-1:0,r>>>0]}function W_(r){return r[1]|0}function J_(r){var e=r[1],t=r[0],n=function(a){return(a>>>0).toString(16)};if(t===0&&e===0)return"0";if(e===0)return n(t)+"00000000";if(t===0)return n(e);var i=n(e),u=8-i.length|0;return u<=0?n(t)+i:n(t)+("0".repeat(u)+i)}function K_(r){return[2147483647&r[0],r[1]]}function Q_(r){return function(e,t){return new Float64Array(new Int32Array([e,t]).buffer)[0]}(r[1],r[0])}function $_(r){var e=function(t){return new Int32Array(new Float64Array([t]).buffer)}(r);return[e[1],e[0]>>>0]}T.mk=L_;T.succ=D_;T.min_int=ve;T.max_int=kn;T.one=xr;T.zero=Mr;T.neg_one=jn;T.of_int32=Z_;T.to_int32=W_;T.add=st;T.neg=er;T.sub=he;T.lsl_=Fn;T.lsr_=O_;T.asr_=Gn;T.is_zero=zn;T.mul=Fr;T.xor=V_;T.or_=k_;T.and_=j_;T.ge=je;T.eq=Dr;T.neq=M_;T.lt=F_;T.gt=Me;T.le=G_;T.equal_null=R_;T.equal_undefined=S_;T.equal_nullable=X_;T.min=z_;T.max=P_;T.to_float=me;T.of_float=ge;T.div=Yr;T.mod_=H_;T.compare=Y_;T.float_of_bits=Q_;T.bits_of_float=$_;T.div_mod=U_;T.to_hex=J_;T.discard_sign=K_;T.to_string=pe});var Un=B(gr=>{"use strict";var g=Pn();function Fe(r){return r>=65?r>=97?r>=123?-1:r-87|0:r>=91?-1:r-55|0:r>57||r<48?-1:r-48|0}function Bn(r){switch(r){case 0:return 8;case 1:return 16;case 2:return 10;case 3:return 2}}function Hn(r){var e=1,t=2,n=0,i=r.charCodeAt(n);switch(i){case 43:n=n+1|0;break;case 44:break;case 45:e=-1,n=n+1|0;break;default:}if(r[n]==="0"){var u=r.charCodeAt(n+1|0);if(u>=89)if(u>=111){if(u<121)switch(u){case 111:t=0,n=n+2|0;break;case 117:n=n+2|0;break;case 112:case 113:case 114:case 115:case 116:case 118:case 119:break;case 120:t=1,n=n+2|0;break}}else u===98&&(t=3,n=n+2|0);else if(u!==66){if(u>=79)switch(u){case 79:t=0,n=n+2|0;break;case 85:n=n+2|0;break;case 80:case 81:case 82:case 83:case 84:case 86:case 87:break;case 88:t=1,n=n+2|0;break}}else t=3,n=n+2|0}return[n,e,t]}function ct(r){var e=Hn(r),t=e[0],n=Bn(e[2]),i=4294967295,u=r.length,a=t<u?r.charCodeAt(t):0,o=Fe(a);if(o<0||o>=n)throw{RE_EXN_ID:"Failure",_1:"int_of_string",Error:new Error};var _=function(c,v){for(;;){var p=v,E=c;if(p===u)return E;var A=r.charCodeAt(p);if(A===95){v=p+1|0;continue}var D=Fe(A);if(D<0||D>=n)throw{RE_EXN_ID:"Failure",_1:"int_of_string",Error:new Error};var M=n*E+D;if(M>i)throw{RE_EXN_ID:"Failure",_1:"int_of_string",Error:new Error};v=p+1|0,c=M}},l=e[1]*_(o,t+1|0),s=l|0;if(n===10&&l!==s)throw{RE_EXN_ID:"Failure",_1:"int_of_string",Error:new Error};return s}function x_(r){var e=Hn(r),t=e[2],n=e[0],i=g.of_int32(Bn(t)),u=g.of_int32(e[1]),a;switch(t){case 0:a=g.mk(-1,536870911);break;case 1:a=g.mk(-1,268435455);break;case 2:a=g.mk(-1717986919,429496729);break;case 3:a=g.max_int;break}var o=r.length,_=n<o?r.charCodeAt(n):0,l=g.of_int32(Fe(_));if(g.lt(l,g.zero)||g.ge(l,i))throw{RE_EXN_ID:"Failure",_1:"int64_of_string",Error:new Error};var s=function(p,E){for(;;){var A=E,D=p;if(A===o)return D;var M=r.charCodeAt(A);if(M===95){E=A+1|0;continue}var V=g.of_int32(Fe(M));if(g.lt(V,g.zero)||g.ge(V,i)||g.gt(D,a))throw{RE_EXN_ID:"Failure",_1:"int64_of_string",Error:new Error};var C=g.add(g.mul(i,D),V);E=A+1|0,p=C}},c=g.mul(u,s(l,n+1|0)),v=g.or_(c,g.zero);if(g.eq(i,g.mk(10,0))&&g.neq(c,v))throw{RE_EXN_ID:"Failure",_1:"int64_of_string",Error:new Error};return v}function rl(r){switch(r){case 0:return 8;case 1:return 16;case 2:return 10}}function el(r){return r>=65&&r<=90||r>=192&&r<=214||r>=216&&r<=222?r+32|0:r}function dt(r){var e=r.length;if(e>31)throw{RE_EXN_ID:"Invalid_argument",_1:"format_int: format too long",Error:new Error};for(var t={justify:"+",signstyle:"-",filter:" ",alternate:!1,base:2,signedconv:!1,width:0,uppercase:!1,sign:1,prec:-1,conv:"f"},n=0;;){var i=n;if(i>=e)return t;var u=r.charCodeAt(i),a=0;if(u>=69)if(u>=88)if(u>=121)a=1;else switch(u){case 88:t.base=1,t.uppercase=!0,n=i+1|0;continue;case 101:case 102:case 103:a=5;break;case 100:case 105:a=4;break;case 111:t.base=0,n=i+1|0;continue;case 117:t.base=2,n=i+1|0;continue;case 89:case 90:case 91:case 92:case 93:case 94:case 95:case 96:case 97:case 98:case 99:case 104:case 106:case 107:case 108:case 109:case 110:case 112:case 113:case 114:case 115:case 116:case 118:case 119:a=1;break;case 120:t.base=1,n=i+1|0;continue}else if(u>=72)a=1;else{t.signedconv=!0,t.uppercase=!0,t.conv=String.fromCharCode(el(u)),n=i+1|0;continue}else switch(u){case 35:t.alternate=!0,n=i+1|0;continue;case 32:case 43:a=2;break;case 45:t.justify="-",n=i+1|0;continue;case 46:t.prec=0;for(var o=i+1|0;function(l){return function(){var s=r.charCodeAt(l)-48|0;return s>=0&&s<=9}}(o)();)t.prec=(Math.imul(t.prec,10)+r.charCodeAt(o)|0)-48|0,o=o+1|0;n=o;continue;case 33:case 34:case 36:case 37:case 38:case 39:case 40:case 41:case 42:case 44:case 47:a=1;break;case 48:t.filter="0",n=i+1|0;continue;case 49:case 50:case 51:case 52:case 53:case 54:case 55:case 56:case 57:a=3;break;default:a=1}switch(a){case 1:n=i+1|0;continue;case 2:t.signstyle=String.fromCharCode(u),n=i+1|0;continue;case 3:t.width=0;for(var _=i;function(l){return function(){var s=r.charCodeAt(l)-48|0;return s>=0&&s<=9}}(_)();)t.width=(Math.imul(t.width,10)+r.charCodeAt(_)|0)-48|0,_=_+1|0;n=_;continue;case 4:t.signedconv=!0,t.base=2,n=i+1|0;continue;case 5:t.signedconv=!0,t.conv=String.fromCharCode(u),n=i+1|0;continue}}}function vt(r,e){var t=r.justify,n=r.signstyle,i=r.filter,u=r.alternate,a=r.base,o=r.signedconv,_=r.width,l=r.uppercase,s=r.sign,c=e.length;o&&(s<0||n!=="-")&&(c=c+1|0),u&&(a===0?c=c+1|0:a===1&&(c=c+2|0));var v="";if(t==="+"&&i===" ")for(var p=c;p<_;++p)v=v+i;if(o&&(s<0?v=v+"-":n!=="-"&&(v=v+n)),u&&a===0&&(v=v+"0"),u&&a===1&&(v=v+"0x"),t==="+"&&i==="0")for(var E=c;E<_;++E)v=v+i;if(v=l?v+e.toUpperCase():v+e,t==="-")for(var A=c;A<_;++A)v=v+" ";return v}function ht(r,e){if(r==="%d")return String(e);var t=dt(r),n=e<0?t.signedconv?(t.sign=-1,-e>>>0):e>>>0:e,i=n.toString(rl(t.base));if(t.prec>=0){t.filter=" ";var u=t.prec-i.length|0;u>0&&(i="0".repeat(u)+i)}return vt(t,i)}function tl(r){if(!g.lt(r,g.zero))return g.to_string(r);var e=g.mk(10,0),t=g.discard_sign(r),n=g.div_mod(t,e),i=g.div_mod(g.add(g.mk(8,0),n[1]),e),u=g.add(g.add(g.mk(-858993460,214748364),n[0]),i[0]);return g.to_string(u)+"0123456789"[g.to_int32(i[1])]}function nl(r){var e="",t=g.mk(8,0),n="01234567";if(g.lt(r,g.zero)){var i=g.discard_sign(r),u=g.div_mod(i,t),a=g.add(g.mk(0,268435456),u[0]),o=u[1];for(e=n[g.to_int32(o)]+e;g.neq(a,g.zero);){var _=g.div_mod(a,t);a=_[0],o=_[1],e=n[g.to_int32(o)]+e}}else{var l=g.div_mod(r,t),s=l[0],c=l[1];for(e=n[g.to_int32(c)]+e;g.neq(s,g.zero);){var v=g.div_mod(s,t);s=v[0],c=v[1],e=n[g.to_int32(c)]+e}}return e}function il(r,e){if(r==="%d")return g.to_string(e);var t=dt(r),n=t.signedconv&&g.lt(e,g.zero)?(t.sign=-1,g.neg(e)):e,i=t.base,u;switch(i){case 0:u=nl(n);break;case 1:u=g.to_hex(n);break;case 2:u=tl(n);break}var a;if(t.prec>=0){t.filter=" ";var o=t.prec-u.length|0;a=o>0?"0".repeat(o)+u:u}else a=u;return vt(t,a)}function ul(r,e){var t=dt(r),n=t.prec<0?6:t.prec,i=e<0?(t.sign=-1,-e):e,u="";if(isNaN(i))u="nan",t.filter=" ";else if(isFinite(i)){var a=t.conv;switch(a){case"e":u=i.toExponential(n);var o=u.length;u[o-3|0]==="e"&&(u=u.slice(0,o-1|0)+("0"+u.slice(o-1|0)));break;case"f":u=i.toFixed(n);break;case"g":var _=n!==0?n:1;u=i.toExponential(_-1|0);var l=u.indexOf("e"),s=Number(u.slice(l+1|0))|0;if(s<-4||i>=1e21||i.toFixed().length>_){for(var c=l-1|0;u[c]==="0";)c=c-1|0;u[c]==="."&&(c=c-1|0),u=u.slice(0,c+1|0)+u.slice(l);var v=u.length;u[v-3|0]==="e"&&(u=u.slice(0,v-1|0)+("0"+u.slice(v-1|0)))}else{var p=_;if(s<0)p=p-(s+1|0)|0,u=i.toFixed(p);else for(;function(){return u=i.toFixed(p),u.length>(_+1|0)}();)p=p-1|0;if(p!==0){for(var E=u.length-1|0;u[E]==="0";)E=E-1|0;u[E]==="."&&(E=E-1|0),u=u.slice(0,E+1|0)}}break;default:}}else u="inf",t.filter=" ";return vt(t,u)}var al=function(r,e,t){if(!isFinite(r))return isNaN(r)?"nan":r>0?"infinity":"-infinity";var n=r==0&&1/r==-Infinity?1:r>=0?0:1;n&&(r=-r);var i=0;if(r!=0)if(r<1)for(;r<1&&i>-1022;)r*=2,i--;else for(;r>=2;)r/=2,i++;var u=i<0?"":"+",a="";if(n)a="-";else switch(t){case 43:a="+";break;case 32:a=" ";break;default:break}if(e>=0&&e<13){var o=Math.pow(2,e*4);r=Math.round(r*o)/o}var _=r.toString(16);if(e>=0){var l=_.indexOf(".");if(l<0)_+="."+"0".repeat(e);else{var s=l+1+e;_.length<s?_+="0".repeat(s-_.length):_=_.substr(0,s)}}return a+"0x"+_+"p"+u+i.toString(10)},ol=function(r,e){var t=+r;if(r.length>0&&t===t||(r=r.replace(/_/g,""),t=+r,r.length>0&&t===t||/^[+-]?nan$/i.test(r)))return t;var n=/^ *([+-]?)0x([0-9a-f]+)\.?([0-9a-f]*)p([+-]?[0-9]+)/i.exec(r);if(n){var i=n[3].replace(/0+$/,""),u=parseInt(n[1]+n[2]+i,16),a=(n[4]|0)-4*i.length;return t=u*Math.pow(2,a),t}if(/^\+?inf(inity)?$/i.test(r))return Infinity;if(/^-inf(inity)?$/i.test(r))return-Infinity;throw e};function _l(r){return ol(r,{RE_EXN_ID:"Failure",_1:"float_of_string"})}var ll=ht,fl=ht,sl=ct,cl=ct;gr.caml_format_float=ul;gr.caml_hexstring_of_float=al;gr.caml_format_int=ht;gr.caml_nativeint_format=ll;gr.caml_int32_format=fl;gr.caml_float_of_string=_l;gr.caml_int64_format=il;gr.caml_int_of_string=ct;gr.caml_int32_of_string=sl;gr.caml_int64_of_string=x_;gr.caml_nativeint_of_string=cl});var Yn=B(Ge=>{"use strict";var mt=function(){if(typeof globalThis!="undefined")return globalThis;if(typeof self!="undefined")return self;if(typeof window!="undefined")return window;if(typeof global!="undefined")return global;if(typeof this!="undefined")return this;throw new Error("Unable to locate global `this`")},dl=function(r){var e=mt();if(e[r]===void 0)throw new Error(r+` not polyfilled by BuckleScript yet
-`);return e[r]},vl=function(r,e){var t=mt();return t[r]=e,0};Ge.getGlobalThis=mt;Ge.resolve=dl;Ge.register=vl});var ri=B(d=>{"use strict";var gt=Vr(),U=On(),hl=Vn(),Gr=le(),Zr=Un(),ml=Oe(),gl=De(),pt=oe(),S=Yn();function pl(r){throw{RE_EXN_ID:"Failure",_1:r,Error:new Error}}function El(r){throw{RE_EXN_ID:"Invalid_argument",_1:r,Error:new Error}}var bl=gl.create("Pervasives.Exit");function wl(r){return r>=0?r:-r|0}function yl(r){return r^-1}var Nl=-2147483648;function Il(r){return isFinite(r)?Math.abs(r)>=22250738585072014e-324?0:r!==0?1:2:isNaN(r)?4:3}function Al(r){if(r<0||r>255)throw{RE_EXN_ID:"Invalid_argument",_1:"char_of_int",Error:new Error};return r}function ql(r){return r?"true":"false"}function Tl(r){switch(r){case"false":return!1;case"true":return!0;default:throw{RE_EXN_ID:"Invalid_argument",_1:"bool_of_string",Error:new Error}}}function Cl(r){switch(r){case"false":return!1;case"true":return!0;default:return}}function Zn(r){try{return Zr.caml_int_of_string(r)}catch(t){var e=pt.internalToOCamlException(t);if(e.RE_EXN_ID==="Failure")return;throw e}}function ze(r){for(var e=r.length,t=0;;){var n=t;if(n>=e)return r+".";var i=ml.get(r,n);if(i>=48){if(i>=58)return r;t=n+1|0;continue}if(i!==45)return r;t=n+1|0}}function Ll(r){return ze(Zr.caml_format_float("%.12g",r))}function Wn(r){try{return Zr.caml_float_of_string(r)}catch(t){var e=pt.internalToOCamlException(t);if(e.RE_EXN_ID==="Failure")return;throw e}}function Jn(r,e){return r?{hd:r.hd,tl:Jn(r.tl,e)}:e}var re=U.stdin,dr=U.stdout,zr=U.stderr;function Et(r,e,t){var n=S.resolve("caml_ml_open_descriptor_out")(S.resolve("caml_sys_open")(t,r,e));return S.resolve("caml_ml_set_channel_name")(n,t),n}function Dl(r){return Et({hd:1,tl:{hd:3,tl:{hd:4,tl:{hd:7,tl:0}}}},438,r)}function Rl(r){return Et({hd:1,tl:{hd:3,tl:{hd:4,tl:{hd:6,tl:0}}}},438,r)}function Kn(r){for(var e=U.caml_ml_out_channels_list(void 0);;){var t=e;if(!t)return;try{U.caml_ml_flush(t.hd)}catch(i){var n=pt.internalToOCamlException(i);if(n.RE_EXN_ID!=="Sys_error")throw n}e=t.tl}}function bt(r,e){return S.resolve("caml_ml_output_bytes")(r,e,0,e.length)}function Wr(r,e){return U.caml_ml_output(r,e,0,e.length)}function Sl(r,e,t,n){if(t<0||n<0||t>(e.length-n|0))throw{RE_EXN_ID:"Invalid_argument",_1:"output",Error:new Error};return S.resolve("caml_ml_output_bytes")(r,e,t,n)}function Xl(r,e,t,n){if(t<0||n<0||t>(e.length-n|0))throw{RE_EXN_ID:"Invalid_argument",_1:"output_substring",Error:new Error};return U.caml_ml_output(r,e,t,n)}function Ol(r,e){return S.resolve("caml_output_value")(r,e,0)}function Vl(r){return U.caml_ml_flush(r),S.resolve("caml_ml_close_channel")(r)}function kl(r){try{U.caml_ml_flush(r)}catch(e){}try{return S.resolve("caml_ml_close_channel")(r)}catch(e){return}}function wt(r,e,t){var n=S.resolve("caml_ml_open_descriptor_in")(S.resolve("caml_sys_open")(t,r,e));return S.resolve("caml_ml_set_channel_name")(n,t),n}function jl(r){return wt({hd:0,tl:{hd:7,tl:0}},0,r)}function Ml(r){return wt({hd:0,tl:{hd:6,tl:0}},0,r)}function Fl(r,e,t,n){if(t<0||n<0||t>(e.length-n|0))throw{RE_EXN_ID:"Invalid_argument",_1:"input",Error:new Error};return S.resolve("caml_ml_input")(r,e,t,n)}function Qn(r,e,t,n){for(;;){var i=n,u=t;if(i<=0)return;var a=S.resolve("caml_ml_input")(r,e,u,i);if(a===0)throw{RE_EXN_ID:"End_of_file",Error:new Error};n=i-a|0,t=u+a|0}}function $n(r,e,t,n){if(t<0||n<0||t>(e.length-n|0))throw{RE_EXN_ID:"Invalid_argument",_1:"really_input",Error:new Error};return Qn(r,e,t,n)}function Gl(r,e){var t=Gr.caml_create_bytes(e);return $n(r,t,0,e),Gr.bytes_to_string(t)}function ee(r){var e=function(n,i,u){for(;;){var a=u,o=i;if(!a)return n;var _=a.hd,l=_.length;Gr.caml_blit_bytes(_,0,n,o-l|0,l),u=a.tl,i=o-l|0}},t=function(n,i){for(;;){var u=i,a=n,o=S.resolve("caml_ml_input_scan_line")(r);if(o===0){if(a)return e(Gr.caml_create_bytes(u),u,a);throw{RE_EXN_ID:"End_of_file",Error:new Error}}if(o>0){var _=Gr.caml_create_bytes(o-1|0);if(S.resolve("caml_ml_input")(r,_,0,o-1|0),S.resolve("caml_ml_input_char")(r),!a)return _;var l=(u+o|0)-1|0;return e(Gr.caml_create_bytes(l),l,{hd:_,tl:a})}var s=Gr.caml_create_bytes(-o|0);S.resolve("caml_ml_input")(r,s,0,-o|0),i=u-o|0,n={hd:s,tl:a}}};return Gr.bytes_to_string(t(0,0))}function zl(r){try{return S.resolve("caml_ml_close_channel")(r)}catch(e){return}}function Pl(r){return U.caml_ml_output_char(dr,r)}function Bl(r){return Wr(dr,r)}function Hl(r){return bt(dr,r)}function Ul(r){return Wr(dr,String(r))}function Yl(r){return Wr(dr,ze(Zr.caml_format_float("%.12g",r)))}function Zl(r){return U.caml_ml_output_char(dr,10),U.caml_ml_flush(dr)}function Wl(r){return U.caml_ml_output_char(zr,r)}function Jl(r){return Wr(zr,r)}function Kl(r){return bt(zr,r)}function Ql(r){return Wr(zr,String(r))}function $l(r){return Wr(zr,ze(Zr.caml_format_float("%.12g",r)))}function xl(r){return U.caml_ml_output_char(zr,10),U.caml_ml_flush(zr)}function rf(r){return U.caml_ml_flush(dr),ee(re)}function ef(r){return Zr.caml_int_of_string((U.caml_ml_flush(dr),ee(re)))}function tf(r){return Zn((U.caml_ml_flush(dr),ee(re)))}function nf(r){return Zr.caml_float_of_string((U.caml_ml_flush(dr),ee(re)))}function uf(r){return Wn((U.caml_ml_flush(dr),ee(re)))}function af(r){return r._1}var yt={contents:Kn};function of(r){var e=yt.contents;yt.contents=function(t){return gt._1(r,void 0),gt._1(e,void 0)}}function xn(r){return gt._1(yt.contents,void 0)}function _f(r){return xn(void 0),hl.caml_sys_exit(r)}var lf=2147483647,ff=Infinity,sf=-Infinity,cf=17976931348623157e292,df=22250738585072014e-324,vf=2220446049250313e-31,hf=U.caml_ml_flush,mf=U.caml_ml_output_char,gf=U.caml_ml_output_char;function pf(r,e){return S.resolve("caml_ml_output_int")(r,e)}function Ef(r,e){return S.resolve("caml_ml_seek_out")(r,e)}function bf(r){return S.resolve("caml_ml_pos_out")(r)}function wf(r){return S.resolve("caml_ml_channel_size")(r)}function yf(r,e){return S.resolve("caml_ml_set_binary_mode")(r,e)}function Nf(r){return S.resolve("caml_ml_input_char")(r)}function If(r){return S.resolve("caml_ml_input_char")(r)}function Af(r){return S.resolve("caml_ml_input_int")(r)}function qf(r){return S.resolve("caml_input_value")(r)}function Tf(r,e){return S.resolve("caml_ml_seek_in")(r,e)}function Cf(r){return S.resolve("caml_ml_pos_in")(r)}function Lf(r){return S.resolve("caml_ml_channel_size")(r)}function Df(r){return S.resolve("caml_ml_close_channel")(r)}function Rf(r,e){return S.resolve("caml_ml_set_binary_mode")(r,e)}function Sf(r,e){return S.resolve("caml_ml_seek_out_64")(r,e)}function Xf(r){return S.resolve("caml_ml_pos_out_64")(r)}function Of(r){return S.resolve("caml_ml_channel_size_64")(r)}function Vf(r,e){return S.resolve("caml_ml_seek_in_64")(r,e)}function kf(r){return S.resolve("caml_ml_pos_in_64")(r)}function jf(r){return S.resolve("caml_ml_channel_size_64")(r)}var Mf={seek_out:Sf,pos_out:Xf,out_channel_length:Of,seek_in:Vf,pos_in:kf,in_channel_length:jf};d.invalid_arg=El;d.failwith=pl;d.Exit=bl;d.abs=wl;d.max_int=lf;d.min_int=Nl;d.lnot=yl;d.infinity=ff;d.neg_infinity=sf;d.max_float=cf;d.min_float=df;d.epsilon_float=vf;d.classify_float=Il;d.char_of_int=Al;d.string_of_bool=ql;d.bool_of_string=Tl;d.bool_of_string_opt=Cl;d.int_of_string_opt=Zn;d.string_of_float=Ll;d.float_of_string_opt=Wn;d.$at=Jn;d.stdin=re;d.stdout=dr;d.stderr=zr;d.print_char=Pl;d.print_string=Bl;d.print_bytes=Hl;d.print_int=Ul;d.print_float=Yl;d.print_newline=Zl;d.prerr_char=Wl;d.prerr_string=Jl;d.prerr_bytes=Kl;d.prerr_int=Ql;d.prerr_float=$l;d.prerr_newline=xl;d.read_line=rf;d.read_int=ef;d.read_int_opt=tf;d.read_float=nf;d.read_float_opt=uf;d.open_out=Dl;d.open_out_bin=Rl;d.open_out_gen=Et;d.flush=hf;d.flush_all=Kn;d.output_char=mf;d.output_string=Wr;d.output_bytes=bt;d.output=Sl;d.output_substring=Xl;d.output_byte=gf;d.output_binary_int=pf;d.output_value=Ol;d.seek_out=Ef;d.pos_out=bf;d.out_channel_length=wf;d.close_out=Vl;d.close_out_noerr=kl;d.set_binary_mode_out=yf;d.open_in=jl;d.open_in_bin=Ml;d.open_in_gen=wt;d.input_char=Nf;d.input_line=ee;d.input=Fl;d.really_input=$n;d.really_input_string=Gl;d.input_byte=If;d.input_binary_int=Af;d.input_value=qf;d.seek_in=Tf;d.pos_in=Cf;d.in_channel_length=Lf;d.close_in=Df;d.close_in_noerr=zl;d.set_binary_mode_in=Rf;d.LargeFile=Mf;d.string_of_format=af;d.exit=_f;d.at_exit=of;d.valid_float_lexem=ze;d.unsafe_really_input=Qn;d.do_at_exit=xn});var di=B(y=>{"use strict";var N=Vr(),Ee=ot(),ei=ri(),Pe=ue();function Nt(r){for(var e=0,t=r;;){var n=t,i=e;if(!n)return i;t=n.tl,e=i+1|0}}function Ff(r,e){return{hd:r,tl:e}}function Gf(r){if(r)return r.hd;throw{RE_EXN_ID:"Failure",_1:"hd",Error:new Error}}function zf(r){if(r)return r.tl;throw{RE_EXN_ID:"Failure",_1:"tl",Error:new Error}}function Pf(r,e){if(e<0)throw{RE_EXN_ID:"Invalid_argument",_1:"List.nth",Error:new Error};for(var t=r,n=e;;){var i=n,u=t;if(u){if(i===0)return u.hd;n=i-1|0,t=u.tl;continue}throw{RE_EXN_ID:"Failure",_1:"nth",Error:new Error}}}function Bf(r,e){if(e<0)throw{RE_EXN_ID:"Invalid_argument",_1:"List.nth",Error:new Error};for(var t=r,n=e;;){var i=n,u=t;if(!u)return;if(i===0)return Pe.some(u.hd);n=i-1|0,t=u.tl}}function lr(r,e){for(;;){var t=e,n=r;if(!n)return t;e={hd:n.hd,tl:t},r=n.tl}}function Hf(r){return lr(r,0)}function Uf(r,e,t,n){for(;;){var i=e,u=r;if(i>=t)return u;e=i+1|0,r={hd:N._1(n,i),tl:u}}}function ti(r,e,t){if(r>=e)return 0;var n=N._1(t,r);return{hd:n,tl:ti(r+1|0,e,t)}}function Yf(r,e){if(r<0)throw{RE_EXN_ID:"Invalid_argument",_1:"List.init",Error:new Error};return r>1e4?lr(Uf(0,0,r,e),0):ti(0,r,e)}function It(r){return r?ei.$at(r.hd,It(r.tl)):0}function ni(r,e){if(!e)return 0;var t=N._1(r,e.hd);return{hd:t,tl:ni(r,e.tl)}}function ii(r,e,t){if(!t)return 0;var n=N._2(e,r,t.hd);return{hd:n,tl:ii(r+1|0,e,t.tl)}}function Zf(r,e){return ii(0,r,e)}function Wf(r,e){for(var t=0,n=e;;){var i=n,u=t;if(!i)return u;n=i.tl,t={hd:N._1(r,i.hd),tl:u}}}function Jf(r,e){for(;;){var t=e;if(!t)return;N._1(r,t.hd),e=t.tl}}function Kf(r,e){for(var t=0,n=e;;){var i=n,u=t;if(!i)return;N._2(r,u,i.hd),n=i.tl,t=u+1|0}}function Qf(r,e,t){for(;;){var n=t,i=e;if(!n)return i;t=n.tl,e=N._2(r,i,n.hd)}}function ui(r,e,t){return e?N._2(r,e.hd,ui(r,e.tl,t)):t}function ai(r,e,t){if(e){if(t){var n=N._2(r,e.hd,t.hd);return{hd:n,tl:ai(r,e.tl,t.tl)}}throw{RE_EXN_ID:"Invalid_argument",_1:"List.map2",Error:new Error}}if(!t)return 0;throw{RE_EXN_ID:"Invalid_argument",_1:"List.map2",Error:new Error}}function $f(r,e,t){for(var n=0,i=e,u=t;;){var a=u,o=i,_=n;if(o){if(a){u=a.tl,i=o.tl,n={hd:N._2(r,o.hd,a.hd),tl:_};continue}throw{RE_EXN_ID:"Invalid_argument",_1:"List.rev_map2",Error:new Error}}if(a)throw{RE_EXN_ID:"Invalid_argument",_1:"List.rev_map2",Error:new Error};return _}}function xf(r,e,t){for(;;){var n=t,i=e;if(i){if(n){N._2(r,i.hd,n.hd),t=n.tl,e=i.tl;continue}throw{RE_EXN_ID:"Invalid_argument",_1:"List.iter2",Error:new Error}}if(!n)return;throw{RE_EXN_ID:"Invalid_argument",_1:"List.iter2",Error:new Error}}}function rs(r,e,t,n){for(;;){var i=n,u=t,a=e;if(u){if(i){n=i.tl,t=u.tl,e=N._3(r,a,u.hd,i.hd);continue}throw{RE_EXN_ID:"Invalid_argument",_1:"List.fold_left2",Error:new Error}}if(i)throw{RE_EXN_ID:"Invalid_argument",_1:"List.fold_left2",Error:new Error};return a}}function oi(r,e,t,n){if(e){if(t)return N._3(r,e.hd,t.hd,oi(r,e.tl,t.tl,n));throw{RE_EXN_ID:"Invalid_argument",_1:"List.fold_right2",Error:new Error}}if(t)throw{RE_EXN_ID:"Invalid_argument",_1:"List.fold_right2",Error:new Error};return n}function es(r,e){for(;;){var t=e;if(!t)return!0;if(!N._1(r,t.hd))return!1;e=t.tl}}function ts(r,e){for(;;){var t=e;if(!t)return!1;if(N._1(r,t.hd))return!0;e=t.tl}}function ns(r,e,t){for(;;){var n=t,i=e;if(i){if(n){if(!N._2(r,i.hd,n.hd))return!1;t=n.tl,e=i.tl;continue}throw{RE_EXN_ID:"Invalid_argument",_1:"List.for_all2",Error:new Error}}if(!n)return!0;throw{RE_EXN_ID:"Invalid_argument",_1:"List.for_all2",Error:new Error}}}function is(r,e,t){for(;;){var n=t,i=e;if(i){if(n){if(N._2(r,i.hd,n.hd))return!0;t=n.tl,e=i.tl;continue}throw{RE_EXN_ID:"Invalid_argument",_1:"List.exists2",Error:new Error}}if(!n)return!1;throw{RE_EXN_ID:"Invalid_argument",_1:"List.exists2",Error:new Error}}}function us(r,e){for(;;){var t=e;if(!t)return!1;if(Ee.caml_equal(t.hd,r))return!0;e=t.tl}}function as(r,e){for(;;){var t=e;if(!t)return!1;if(t.hd===r)return!0;e=t.tl}}function os(r,e){for(;;){var t=e;if(t){var n=t.hd;if(Ee.caml_equal(n[0],r))return n[1];e=t.tl;continue}throw{RE_EXN_ID:"Not_found",Error:new Error}}}function _s(r,e){for(;;){var t=e;if(!t)return;var n=t.hd;if(Ee.caml_equal(n[0],r))return Pe.some(n[1]);e=t.tl}}function ls(r,e){for(;;){var t=e;if(t){var n=t.hd;if(n[0]===r)return n[1];e=t.tl;continue}throw{RE_EXN_ID:"Not_found",Error:new Error}}}function fs(r,e){for(;;){var t=e;if(!t)return;var n=t.hd;if(n[0]===r)return Pe.some(n[1]);e=t.tl}}function ss(r,e){for(;;){var t=e;if(!t)return!1;if(Ee.caml_equal(t.hd[0],r))return!0;e=t.tl}}function cs(r,e){for(;;){var t=e;if(!t)return!1;if(t.hd[0]===r)return!0;e=t.tl}}function _i(r,e){if(!e)return 0;var t=e.tl,n=e.hd;return Ee.caml_equal(n[0],r)?t:{hd:n,tl:_i(r,t)}}function li(r,e){if(!e)return 0;var t=e.tl,n=e.hd;return n[0]===r?t:{hd:n,tl:li(r,t)}}function ds(r,e){for(;;){var t=e;if(t){var n=t.hd;if(N._1(r,n))return n;e=t.tl;continue}throw{RE_EXN_ID:"Not_found",Error:new Error}}}function vs(r,e){for(;;){var t=e;if(!t)return;var n=t.hd;if(N._1(r,n))return Pe.some(n);e=t.tl}}function fi(r){return function(e){for(var t=0,n=e;;){var i=n,u=t;if(!i)return lr(u,0);var a=i.tl,o=i.hd;if(N._1(r,o)){n=a,t={hd:o,tl:u};continue}n=a}}}function hs(r,e){for(var t=0,n=0,i=e;;){var u=i,a=n,o=t;if(!u)return[lr(o,0),lr(a,0)];var _=u.tl,l=u.hd;if(N._1(r,l)){i=_,t={hd:l,tl:o};continue}i=_,n={hd:l,tl:a}}}function si(r){if(!r)return[0,0];var e=r.hd,t=si(r.tl);return[{hd:e[0],tl:t[0]},{hd:e[1],tl:t[1]}]}function ci(r,e){if(r){if(e)return{hd:[r.hd,e.hd],tl:ci(r.tl,e.tl)};throw{RE_EXN_ID:"Invalid_argument",_1:"List.combine",Error:new Error}}if(!e)return 0;throw{RE_EXN_ID:"Invalid_argument",_1:"List.combine",Error:new Error}}function At(r,e,t){if(!e)return t;if(!t)return e;var n=t.hd,i=e.hd;return N._2(r,i,n)<=0?{hd:i,tl:At(r,e.tl,t)}:{hd:n,tl:At(r,e,t.tl)}}function Be(r,e){for(;;){var t=e,n=r;if(n===0)return t;if(t){e=t.tl,r=n-1|0;continue}throw{RE_EXN_ID:"Assert_failure",_1:["list.ml",262,11],Error:new Error}}}function qt(r,e){var t=function(u,a){if(u!==2){if(u===3&&a){var o=a.tl;if(o){var _=o.tl;if(_){var l=_.hd,s=o.hd,c=a.hd;return N._2(r,c,s)<=0?N._2(r,s,l)<=0?{hd:c,tl:{hd:s,tl:{hd:l,tl:0}}}:N._2(r,c,l)<=0?{hd:c,tl:{hd:l,tl:{hd:s,tl:0}}}:{hd:l,tl:{hd:c,tl:{hd:s,tl:0}}}:N._2(r,c,l)<=0?{hd:s,tl:{hd:c,tl:{hd:l,tl:0}}}:N._2(r,s,l)<=0?{hd:s,tl:{hd:l,tl:{hd:c,tl:0}}}:{hd:l,tl:{hd:s,tl:{hd:c,tl:0}}}}}}}else if(a){var v=a.tl;if(v){var p=v.hd,E=a.hd;return N._2(r,E,p)<=0?{hd:E,tl:{hd:p,tl:0}}:{hd:p,tl:{hd:E,tl:0}}}}for(var A=u>>1,D=u-A|0,M=Be(A,a),V=n(A,a),C=n(D,M),X=V,G=C,j=0;;){var H=j,J=G,tr=X;if(!tr)return lr(J,H);if(!J)return lr(tr,H);var Er=J.hd,W=tr.hd;if(N._2(r,W,Er)>0){j={hd:W,tl:H},X=tr.tl;continue}j={hd:Er,tl:H},G=J.tl}},n=function(u,a){if(u!==2){if(u===3&&a){var o=a.tl;if(o){var _=o.tl;if(_){var l=_.hd,s=o.hd,c=a.hd;return N._2(r,c,s)>0?N._2(r,s,l)>0?{hd:c,tl:{hd:s,tl:{hd:l,tl:0}}}:N._2(r,c,l)>0?{hd:c,tl:{hd:l,tl:{hd:s,tl:0}}}:{hd:l,tl:{hd:c,tl:{hd:s,tl:0}}}:N._2(r,c,l)>0?{hd:s,tl:{hd:c,tl:{hd:l,tl:0}}}:N._2(r,s,l)>0?{hd:s,tl:{hd:l,tl:{hd:c,tl:0}}}:{hd:l,tl:{hd:s,tl:{hd:c,tl:0}}}}}}}else if(a){var v=a.tl;if(v){var p=v.hd,E=a.hd;return N._2(r,E,p)>0?{hd:E,tl:{hd:p,tl:0}}:{hd:p,tl:{hd:E,tl:0}}}}for(var A=u>>1,D=u-A|0,M=Be(A,a),V=t(A,a),C=t(D,M),X=V,G=C,j=0;;){var H=j,J=G,tr=X;if(!tr)return lr(J,H);if(!J)return lr(tr,H);var Er=J.hd,W=tr.hd;if(N._2(r,W,Er)<=0){j={hd:W,tl:H},X=tr.tl;continue}j={hd:Er,tl:H},G=J.tl}},i=Nt(e);return i<2?e:t(i,e)}function ms(r,e){var t=function(u,a){if(u!==2){if(u===3&&a){var o=a.tl;if(o){var _=o.tl;if(_){var l=_.hd,s=o.hd,c=a.hd,v=N._2(r,c,s);if(v===0){var p=N._2(r,s,l);return p===0?{hd:s,tl:0}:p<0?{hd:s,tl:{hd:l,tl:0}}:{hd:l,tl:{hd:s,tl:0}}}if(v<0){var E=N._2(r,s,l);if(E===0)return{hd:c,tl:{hd:s,tl:0}};if(E<0)return{hd:c,tl:{hd:s,tl:{hd:l,tl:0}}};var A=N._2(r,c,l);return A===0?{hd:c,tl:{hd:s,tl:0}}:A<0?{hd:c,tl:{hd:l,tl:{hd:s,tl:0}}}:{hd:l,tl:{hd:c,tl:{hd:s,tl:0}}}}var D=N._2(r,c,l);if(D===0)return{hd:s,tl:{hd:c,tl:0}};if(D<0)return{hd:s,tl:{hd:c,tl:{hd:l,tl:0}}};var M=N._2(r,s,l);return M===0?{hd:s,tl:{hd:c,tl:0}}:M<0?{hd:s,tl:{hd:l,tl:{hd:c,tl:0}}}:{hd:l,tl:{hd:s,tl:{hd:c,tl:0}}}}}}}else if(a){var V=a.tl;if(V){var C=V.hd,X=a.hd,G=N._2(r,X,C);return G===0?{hd:X,tl:0}:G<0?{hd:X,tl:{hd:C,tl:0}}:{hd:C,tl:{hd:X,tl:0}}}}for(var j=u>>1,H=u-j|0,J=Be(j,a),tr=n(j,a),Er=n(H,J),W=tr,qr=Er,vr=0;;){var or=vr,hr=qr,mr=W;if(!mr)return lr(hr,or);if(!hr)return lr(mr,or);var fr=hr.tl,Sr=hr.hd,Xr=mr.tl,sr=mr.hd,_r=N._2(r,sr,Sr);if(_r===0){vr={hd:sr,tl:or},qr=fr,W=Xr;continue}if(_r>0){vr={hd:sr,tl:or},W=Xr;continue}vr={hd:Sr,tl:or},qr=fr}},n=function(u,a){if(u!==2){if(u===3&&a){var o=a.tl;if(o){var _=o.tl;if(_){var l=_.hd,s=o.hd,c=a.hd,v=N._2(r,c,s);if(v===0){var p=N._2(r,s,l);return p===0?{hd:s,tl:0}:p>0?{hd:s,tl:{hd:l,tl:0}}:{hd:l,tl:{hd:s,tl:0}}}if(v>0){var E=N._2(r,s,l);if(E===0)return{hd:c,tl:{hd:s,tl:0}};if(E>0)return{hd:c,tl:{hd:s,tl:{hd:l,tl:0}}};var A=N._2(r,c,l);return A===0?{hd:c,tl:{hd:s,tl:0}}:A>0?{hd:c,tl:{hd:l,tl:{hd:s,tl:0}}}:{hd:l,tl:{hd:c,tl:{hd:s,tl:0}}}}var D=N._2(r,c,l);if(D===0)return{hd:s,tl:{hd:c,tl:0}};if(D>0)return{hd:s,tl:{hd:c,tl:{hd:l,tl:0}}};var M=N._2(r,s,l);return M===0?{hd:s,tl:{hd:c,tl:0}}:M>0?{hd:s,tl:{hd:l,tl:{hd:c,tl:0}}}:{hd:l,tl:{hd:s,tl:{hd:c,tl:0}}}}}}}else if(a){var V=a.tl;if(V){var C=V.hd,X=a.hd,G=N._2(r,X,C);return G===0?{hd:X,tl:0}:G>0?{hd:X,tl:{hd:C,tl:0}}:{hd:C,tl:{hd:X,tl:0}}}}for(var j=u>>1,H=u-j|0,J=Be(j,a),tr=t(j,a),Er=t(H,J),W=tr,qr=Er,vr=0;;){var or=vr,hr=qr,mr=W;if(!mr)return lr(hr,or);if(!hr)return lr(mr,or);var fr=hr.tl,Sr=hr.hd,Xr=mr.tl,sr=mr.hd,_r=N._2(r,sr,Sr);if(_r===0){vr={hd:sr,tl:or},qr=fr,W=Xr;continue}if(_r<0){vr={hd:sr,tl:or},W=Xr;continue}vr={hd:Sr,tl:or},qr=fr}},i=Nt(e);return i<2?e:t(i,e)}function gs(r,e){for(;;){var t=e,n=r;if(!n)return t?-1:0;if(!t)return 1;e=t.tl,r=n.tl}}function ps(r,e){for(;;){var t=e,n=r;if(!n)return t===0?0:t>0?-1:1;if(t<=0)return 1;e=t-1|0,r=n.tl}}var Es=ei.$at,bs=It,ws=fi,ys=qt,Ns=qt;y.length=Nt;y.compare_lengths=gs;y.compare_length_with=ps;y.cons=Ff;y.hd=Gf;y.tl=zf;y.nth=Pf;y.nth_opt=Bf;y.rev=Hf;y.init=Yf;y.append=Es;y.rev_append=lr;y.concat=bs;y.flatten=It;y.iter=Jf;y.iteri=Kf;y.map=ni;y.mapi=Zf;y.rev_map=Wf;y.fold_left=Qf;y.fold_right=ui;y.iter2=xf;y.map2=ai;y.rev_map2=$f;y.fold_left2=rs;y.fold_right2=oi;y.for_all=es;y.exists=ts;y.for_all2=ns;y.exists2=is;y.mem=us;y.memq=as;y.find=ds;y.find_opt=vs;y.filter=ws;y.find_all=fi;y.partition=hs;y.assoc=os;y.assoc_opt=_s;y.assq=ls;y.assq_opt=fs;y.mem_assoc=ss;y.mem_assq=cs;y.remove_assoc=_i;y.remove_assq=li;y.split=si;y.combine=ci;y.sort=ys;y.stable_sort=qt;y.fast_sort=Ns;y.sort_uniq=ms;y.merge=At});var Ct=B(Jr=>{"use strict";var m=di(),pr=Vr(),He=ue();function Is(r,e){return m.concat({hd:r,tl:{hd:e,tl:0}})}function As(r){console.log(`
-`)}function qs(r,e){if(r!==void 0)return pr._1(e,He.valFromOption(r))}function Ts(r,e){if(e!==void 0)return He.some(pr._1(r,He.valFromOption(e)))}var Cs={bind:qs,map:Ts};function vi(r){return 0}function Ls(r,e){return{_0:r,_1:vi}}function Ds(r,e,t){return{_0:r,_1:e}}function Tt(r,e,t){var n=pr._1(r,void 0);if(!n)return pr._1(e,void 0);var i=n._1;return{_0:n._0,_1:function(u){return Tt(i,e,u)}}}function hi(r,e,t){var n=pr._1(e,void 0);if(!n)return 0;var i=n._1;return Tt(pr._1(r,n._0),function(u){return hi(r,i,u)},void 0)}function mi(r,e,t){var n=pr._1(e,void 0);if(!n)return 0;var i=n._1;return{_0:pr._1(r,n._0),_1:function(u){return mi(r,i,u)}}}function Rs(r,e){for(var t=e;;){var n=t,i=pr._1(n,void 0);if(!i)return;pr._1(r,i._0),t=i._1}}var Ss={empty:vi,$$return:Ls,cons:Ds,append:Tt,flat_map:hi,map:mi,iter:Rs};function Xs(r,e){return m.concat(m.map(r,e))}function gi(r,e){for(;;){var t=e;if(!t)return 0;var n=t.tl,i=pr._1(r,t.hd);if(i!==void 0)return{hd:He.valFromOption(i),tl:gi(r,n)};e=n}}var Os={length:m.length,compare_lengths:m.compare_lengths,compare_length_with:m.compare_length_with,cons:m.cons,hd:m.hd,tl:m.tl,nth:m.nth,nth_opt:m.nth_opt,rev:m.rev,init:m.init,append:m.append,rev_append:m.rev_append,concat:m.concat,flatten:m.flatten,equal:m.equal,compare:m.compare,iter:m.iter,iteri:m.iteri,map:m.map,mapi:m.mapi,rev_map:m.rev_map,fold_left_map:m.fold_left_map,fold_left:m.fold_left,fold_right:m.fold_right,iter2:m.iter2,map2:m.map2,rev_map2:m.rev_map2,fold_left2:m.fold_left2,fold_right2:m.fold_right2,for_all:m.for_all,exists:m.exists,for_all2:m.for_all2,exists2:m.exists2,mem:m.mem,memq:m.memq,find:m.find,find_opt:m.find_opt,find_map:m.find_map,filter:m.filter,find_all:m.find_all,filteri:m.filteri,partition:m.partition,partition_map:m.partition_map,assoc:m.assoc,assoc_opt:m.assoc_opt,assq:m.assq,assq_opt:m.assq_opt,mem_assoc:m.mem_assoc,mem_assq:m.mem_assq,remove_assoc:m.remove_assoc,remove_assq:m.remove_assq,split:m.split,combine:m.combine,sort:m.sort,stable_sort:m.stable_sort,fast_sort:m.fast_sort,sort_uniq:m.sort_uniq,merge:m.merge,to_seq:m.to_seq,of_seq:m.of_seq,concat_map:Xs,filter_map:gi};function Vs(r,e){return e.TAG===0?{TAG:0,_0:pr._1(r,e._0)}:{TAG:1,_0:e._0}}var ks={map:Vs};Jr.$at=Is;Jr.print_newline=As;Jr.$$Option=Cs;Jr.Seq=Ss;Jr.List=Os;Jr.Result=ks});var zi=B(b=>{"use strict";var L=Vr(),be=An(),te=ot(),pi=Oe(),js=Dn(),I=Ct();function Rr(r){if(typeof r=="string")return"["+(Ue(r)+"]");var e=r.NAME;if(e==="Table")return"["+(Ue(r)+"]");if(e==="TableVar")return r.VAL._0;if(e==="GeneralVar"){var t=r.VAL._0;return pi.get(t,0)===95?"_":t}var n=r.VAL,i=n[0];return n[1]?i+("("+(be.concat(", ",L._2(I.List.map,Rr,n[1]))+")")):i}function Ue(r){if(typeof r=="string")return"";var e=r.VAL,t=e[1],n=e[0];return typeof t=="string"?Rr(n):t.NAME==="TableVar"?Rr(n)+(" | "+t.VAL._0):Rr(n)+(", "+Ue(t))}function Ei(r){var e=r._1;return Rr(r._0)+((te.caml_equal(e,0)?"":" :-"+be.concat(",",L._2(I.List.map,function(t){return`
-  `+Rr(t)},e)))+".")}function Ms(r){return be.concat(`
+(() => {
+  var __defProp = Object.defineProperty;
+  var __esm = (fn, res) => () => (fn && (res = fn(fn = 0)), res);
+  var __commonJS = (cb, mod) => () => (mod || cb((mod = {exports: {}}).exports, mod), mod.exports);
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, {get: all[name], enumerable: true});
+  };
 
-`,L._2(I.List.map,Ei,r))}function Ye(r){for(;;){var e=r;if(!e)return 0;var t=e.hd;if(t>=11){if(t!==32)return{hd:t,tl:Ye(e.tl)};r=e.tl;continue}if(t<9)return{hd:t,tl:Ye(e.tl)};r=e.tl}}function Lt(r){return L._2(I.List.init,r.length,function(e){return pi.get(r,e)})}function ur(r,e){return e&&e.hd===r?{hd:[e.tl,be.make(1,r)],tl:0}:0}function ar(r,e,t){return I.$at(L._1(r,t),L._1(e,t))}function Y(r,e,t){return L._1(I.List.concat,L._2(I.List.map,function(n){var i=n[1];return L._2(I.List.map,function(u){return[u[0],[i,u[1]]]},L._1(e,n[0]))},L._1(r,t)))}function Z(r,e,t){return L._2(I.List.map,function(n){return[n[0],L._1(e,n[1])]},L._1(r,t))}function bi(r){return 0}function wi(r){return{hd:[r,void 0],tl:0}}function yi(r){return L._3(I.List.fold_left,ar,bi,r)}var Dt="abcdefghijklmnopqrstuvwxyz",Rt="ABCDEFGHIJKLMNOPQRSTUVWXYZ",Fs="0123456789_-",St="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-";function Kr(r){return yi(L._2(I.List.map,ur,Lt(r)))}function Ze(r){var e=Kr(St),t=function(n){return Y(e,Ze,n)};return ar(Kr(St),function(n){return Z(t,function(i){return i[0]+i[1]},n)},r)}var Gs=Kr(Dt);function zs(r){return Y(Gs,Ze,r)}function Ps(r){return Z(zs,function(e){return e[0]+e[1]},r)}var Bs=Kr(Dt);function Xt(r){return ar(Bs,Ps,r)}var Hs=Kr(Rt);function Us(r){return Y(Hs,Ze,r)}function Ys(r){return Z(Us,function(e){return e[0]+e[1]},r)}var Zs=Kr(Rt);function Ot(r){return ar(Zs,Ys,r)}var We={contents:0};function Ni(r){return We.contents=We.contents+1|0,{_0:"_"+String(We.contents),_1:0}}function Ii(r){return ar(function(e){return Z(function(t){return ur(95,t)},function(t){return{NAME:"GeneralVar",VAL:Ni(void 0)}},e)},function(e){return Z(Ot,function(t){return{NAME:"GeneralVar",VAL:{_0:t,_1:0}}},e)},r)}function we(r,e){return e?{NAME:"Table",VAL:[e.hd,we(r,e.tl)]}:r}function Ai(r){return function(e){return Z(function(t){return Y(function(n){return Y(function(i){return ur(40,i)},r,n)},function(n){return ur(41,n)},t)},function(t){return t[0][1]},e)}}function ye(r){return function(e){return Z(function(t){return Y(function(n){return Y(function(i){return ur(91,i)},r,n)},function(n){return ur(93,n)},t)},function(t){return t[0][1]},e)}}function ne(r){return ar(function(e){return ar(Ii,qi,e)},Ti,r)}function qi(r){var e=Ai(Pr),t=function(n){return Y(Xt,e,n)};return ar(function(n){return Z(t,function(i){return{NAME:"Predicate",VAL:[i[0],i[1]]}},n)},function(n){return Z(Xt,function(i){return{NAME:"Predicate",VAL:[i,0]}},n)},r)}function Vt(r){var e=ye(function(l){return Y(function(s){return Y(Pr,function(c){return ur(124,c)},s)},Vt,l)}),t=function(l){return Z(e,function(s){return we(s[1],s[0][0])},l)},n=ye(Pr),i=function(l){return Z(n,function(s){return we("EmptyTable",s)},l)},u=ye(wi),a=function(l){return Z(u,function(s){return"EmptyTable"},l)},o=function(l){return ar(a,i,l)},_=ye(function(l){return Y(function(s){return Y(Pr,function(c){return ur(124,c)},s)},Ot,l)});return ar(function(l){return ar(o,t,l)},function(l){return Z(_,function(s){return we({NAME:"TableVar",VAL:{_0:s[1],_1:0}},s[0][0])},l)},r)}function Ti(r){return L._2(I.List.map,function(e){return[e[0],e[1]]},Vt(r))}function Pr(r){return ar(function(e){return Z(ne,function(t){return{hd:t,tl:0}},e)},function(e){return Z(function(t){return Y(function(n){return Y(ne,function(i){return ur(44,i)},n)},Pr,t)},function(t){return{hd:t[0][0],tl:t[1]}},e)},r)}function kt(r){return ar(function(e){return Z(function(t){return Y(ne,function(n){return ur(46,n)},t)},function(t){return{_0:t[0],_1:0}},e)},function(e){return Z(function(t){return Y(function(n){return Y(function(i){return Y(function(u){return Y(ne,function(a){return ur(58,a)},u)},function(u){return ur(45,u)},i)},Pr,n)},function(n){return ur(46,n)},t)},function(t){var n=t[0];return{_0:n[0][0][0],_1:n[1]}},e)},r)}function jt(r){return ar(function(e){return Z(kt,function(t){return{hd:t,tl:0}},e)},function(e){return Z(function(t){return Y(kt,jt,t)},function(t){return{hd:t[0],tl:t[1]}},e)},r)}function Ci(r){return Z(function(e){return Y(Pr,function(t){return ur(63,t)},e)},function(e){return e[0]},r)}function Je(r,e){var t=L._2(I.List.filter,function(n){return te.caml_equal(n[0],0)},L._1(r,Ye(Lt(e))));return t?t.tl?{TAG:1,_0:"Parsing failed, my grammar in ambiguous !"}:{TAG:0,_0:t.hd[1]}:{TAG:1,_0:"Parsing failed, I don't understand what you're saying !"}}function Ws(r){return Je(ne,r)}function Ne(r,e){var t=function(i){if(typeof i=="string")return n(i);var u=i.NAME;if(u==="TableVar"||u==="Table")return n(i);if(u==="GeneralVar")return L._1(r,i);var a=i.VAL;return{NAME:"Predicate",VAL:[a[0],L._2(I.List.map,t,a[1])]}},n=function(i){if(typeof i=="string")return"EmptyTable";if(i.NAME==="TableVar")return L._1(e,i);var u=i.VAL;return{NAME:"Table",VAL:[t(u[0]),n(u[1])]}};return t}function Li(r){return r}function Di(r){if(r.TAG===0){var e=r._1,t=r._0;return Ne(function(u){return te.caml_equal(t,u)?e:u},Li)}var n=r._1,i=r._0;return Ne(Li,function(u){return te.caml_equal(i,u)?n:u})}function Ie(r,e){return L._3(I.List.fold_right,Di,r,e)}function Ke(r,e){for(;;){var t=e,n=r,i=function(V,C,X){return I.$$Option.bind(Ke(Ie(X,V),Ie(X,C)),function(G){return I.$at(G,X)})},u=0,a=0;if(typeof n=="string")if(typeof t=="string"){if(t==="EmptyTable")return 0;a=3}else{if(t.NAME==="Table")return;a=3}else{var o=n.NAME;if(o==="Table"){var _=n.VAL,l=_[1];if(typeof t=="string"){if(t==="EmptyTable")return;a=3}else{if(t.NAME==="Table"){var s=t.VAL,c=s[1];return I.$$Option.bind(Ke(_[0],s[0]),function(V,C){return function(X){return i(V,C,X)}}(l,c))}a=3}}else if(o==="TableVar")if(typeof t=="string"){if(t==="EmptyTable")return{hd:{TAG:1,_0:n,_1:t},tl:0};a=3}else{var v=t.NAME;if(v==="TableVar"||v==="Table")return{hd:{TAG:1,_0:n,_1:t},tl:0};a=3}else{if(o==="GeneralVar")return{hd:{TAG:0,_0:n,_1:t},tl:0};var p=n.VAL,E=p[1];if(typeof t=="string"){if(t==="EmptyTable")return;a=3}else{var A=t.NAME;if(A==="Predicate"){var D=t.VAL;if(p[0]!==D[0])return;var M=D[1];return L._1(I.List.length,E)!==L._1(I.List.length,M)?void 0:L._4(I.List.fold_left2,function(V,C,X){return I.$$Option.bind(V,function(G){return i(C,X,G)})},0,E,M)}if(A==="TableVar"||A==="Table")return;a=3}}}if(a===3)if(typeof t=="string")u=2;else{if(t.NAME==="GeneralVar"){e=n,r=t;continue}u=2}if(u===2){if(typeof n=="string"){if(n!=="EmptyTable")return}else if(n.NAME!=="Table")return}if(typeof t=="string"||t.NAME!=="TableVar")return;e=n,r=t}}function Br(r){if(typeof r=="string")return 0;var e=r.NAME;if(e!=="Table")return e==="TableVar"?{hd:{NAME:"TableVar",VAL:r.VAL},tl:0}:e==="GeneralVar"?{hd:{NAME:"GeneralVar",VAL:r.VAL},tl:0}:L._1(I.List.concat,L._2(I.List.map,Br,r.VAL[1]));var t=r.VAL;return I.$at(Br(t[0]),Br(t[1]))}function Ri(r){return I.List.concat_map(Br,{hd:r._0,tl:r._1})}function Js(r){return I.List.concat_map(Br,r)}function Mt(r){return Ne(function(e){var t=e.VAL;return L._2(I.List.mem,{NAME:"TableVar",VAL:t},r)?{NAME:"TableVar",VAL:t}:{NAME:"GeneralVar",VAL:t}},function(e){return e})}function Si(r){var e=Mt(Ri(r));return{_0:L._1(e,r._0),_1:L._2(I.List.map,e,r._1)}}function Xi(r){var e=Mt(I.List.concat_map(Br,r));return L._2(I.List.map,e,r)}var Oi=L._1(I.List.map,Si);function Vi(r,e){var t=Ne(function(n){return{NAME:"GeneralVar",VAL:{_0:n.VAL._0,_1:r}}},function(n){return{NAME:"TableVar",VAL:{_0:n.VAL._0,_1:r}}});return{_0:L._1(t,e._0),_1:L._2(I.List.map,t,e._1)}}function Ft(r,e,t,n){if(!e)return{TAG:0,_0:t};var i=e.tl,u=e.hd,a=function(o){var _=Vi(n,o),l=_._1,s=function(c){return{LAZY_DONE:!1,VAL:function(){return Ft(r,L._2(I.List.map,function(v){return Ie(c,v)},I.$at(l,i)),I.$at(c,t),n+1|0)}}};return I.$$Option.map(s,Ke(u,_._0))};return{TAG:1,_0:I.List.filter_map(a,r)}}function ki(r){return L._3(I.List.fold_right,function(e,t,n){return{_0:e,_1:t}},r,I.Seq.empty)}function Gt(r){if(r.TAG===0){var e=r._0;return function(n){return I.Seq.$$return(e,n)}}var t=ki(r._0);return function(n){return I.Seq.flat_map(function(i){return Gt(js.force(i))},t,n)}}function ji(r,e){var t=Gt(r);return function(n){return I.Seq.map(function(i){return[e,L._2(I.List.map,function(u){return Ie(i,u)},e)]},t,n)}}function Mi(r){return I.Result.map(Oi,Je(jt,r))}function Fi(r){return I.Result.map(Xi,Je(Ci,r))}function Gi(r,e){var t=L._2(I.List.sort_uniq,te.caml_compare,I.List.concat_map(Br,e)),n=ji(Ft(r,e,0,1),t),i=function(u){return te.caml_equal(t,0)?"This is true.":"A solution is : "+be.concat(", ",L._3(I.List.map2,function(a,o){return Rr(a)+(" = "+Rr(o))},u[0],u[1]))};return function(u){return I.Seq.map(i,n,u)}}function Ks(r,e){var t=Mi(r);if(t.TAG===0){var n=Fi(e);if(n.TAG===0){var i=Gi(t._0,n._0),u=L._1(i,void 0);u?(console.log(u._0),I.Seq.iter(function(a){console.log(a)},u._1)):console.log("No solution found.")}else console.log("Unable to parse request :"),console.log(n._0);return I.print_newline(void 0)}console.log("Unable to parse program :"),console.log(t._0)}b.string_of_term=Rr;b.string_of_tblcontent=Ue;b.string_of_clause=Ei;b.string_of_program=Ms;b.remove_spaces=Ye;b.charlist_of_string=Lt;b.parse_char=ur;b.$plus$tilde=ar;b.$star$tilde=Y;b.$star$great$tilde=Z;b.null_parser=bi;b.epsilon_parser=wi;b.any=yi;b.lower_case=Dt;b.upper_case=Rt;b.other_chars=Fs;b.all_chars=St;b.parse_char_of=Kr;b.parse_word=Ze;b.parse_predicate_string=Xt;b.parse_variable_string=Ot;b.counter_unnamed_ids=We;b.new_id=Ni;b.parse_generalvar=Ii;b.table_of_termlist=we;b.parenthesis=Ai;b.bracket=ye;b.parse_term=ne;b.parse_predicate=qi;b.parse_table=Vt;b.term_parsetable=Ti;b.parse_termlist=Pr;b.parse_clause=kt;b.parse_program=jt;b.parse_request=Ci;b.unambiguous_parser_of=Je;b._term_of_string=Ws;b.map_vars=Ne;b.apply_subst=Di;b.apply=Ie;b.unify=Ke;b.variables_in_term=Br;b.variables_in_clause=Ri;b.variables_in_request=Js;b.replace_tvars_in_term=Mt;b.type_inference_clause=Si;b.type_inference_request=Xi;b.type_inference_program=Oi;b.rename=Vi;b.sld_tree=Ft;b.list_to_seq=ki;b.to_seq=Gt;b.solutions=ji;b.program_of_string=Mi;b.request_of_string=Fi;b.string_sequence_of=Gi;b.basic_interpreter=Ks});var Pi=B(zt=>{"use strict";var Qs=`member(X, [X | Xs]).
-member(X, [Y | Ys]) :- member(X, Ys).
-isright(L, R, [L, R | T]).
-isright(L, R, [H | T]) :- isright(L, R, T).
-nextto(A, B, X) :- isright(A, B, X).
-nextto(A, B, X) :- isright(B, A, X).
-equal(X, X).
-zebra(H, W, Z):-
-equal(H, [[norwegian, _, _, _, _], _, [_, _, _, milk, _], _, _]),
-member([englishman, _, _, _, red], H),
-member([spaniard, dog, _, _, _], H),
-member([_, _, _, coffee, green], H),
-member([ukrainian, _, _, tea, _], H),
-member([_, snails, winston, _, _], H),
-member([_, _, kools, _, yellow], H),
-member([_, _, luckystrike, orangejuice, _], H),
-member([japanese, _, parliaments, _, _], H),
-nextto([norwegian, _, _, _, _], [_, _, _, _, blue], H),
-isright([_, _, _, _, ivory], [_, _, _, _, green], H),
-nextto([_, _, chesterfields, _, _], [_, fox, _, _, _], H),
-nextto([_, _, kools, _, _], [_, horse, _, _, _], H),
-member([W, _, _, water, _], H),
-member([Z, zebra, _, _, _], H).
-`,$s="zebra(Houses, WaterDrinker, ZebraOwner)?";zt.zebra_code=Qs;zt.zebra_request=$s});var Bi={};au(Bi,{CodeJar:()=>rc});function rc(r,e,t={}){let n=Object.assign({tab:"	",indentOn:/{$/,spellcheck:!1,catchTab:!0,preserveIdent:!0,addClosing:!0,history:!0,window:xs},t),i=n.window,u=i.document,a=[],o=[],_=-1,l=!1,s,c,v=navigator.userAgent.toLowerCase().indexOf("firefox")>-1;r.setAttribute("contentEditable",v?"true":"plaintext-only"),r.setAttribute("spellcheck",n.spellcheck?"true":"false"),r.style.outline="none",r.style.overflowWrap="break-word",r.style.overflowY="auto",r.style.resize="vertical",r.style.whiteSpace="pre-wrap",e(r);let p=Sr(()=>{let f=V();e(r,f),C(f)},30),E=!1,A=f=>!hr(f)&&!mr(f)&&f.key!=="Meta"&&f.key!=="Control"&&f.key!=="Alt"&&!f.key.startsWith("Arrow"),D=Sr(f=>{A(f)&&(W(),E=!1)},300),M=(f,h)=>{a.push([f,h]),r.addEventListener(f,h)};M("keydown",f=>{f.defaultPrevented||(c=sr(),n.preserveIdent?j(f):H(f),n.catchTab&&tr(f),n.addClosing&&J(f),n.history&&(Er(f),A(f)&&!E&&(W(),E=!0)))}),M("keyup",f=>{f.defaultPrevented||f.isComposing||(c!==sr()&&p(),D(f),s&&s(sr()))}),M("focus",f=>{l=!0}),M("blur",f=>{l=!1}),M("paste",f=>{W(),qr(f),W(),s&&s(sr())});function V(){let f=ie(),h={start:0,end:0,dir:void 0};return vr(r,w=>{if(w===f.anchorNode&&w===f.focusNode)return h.start+=f.anchorOffset,h.end+=f.focusOffset,h.dir=f.anchorOffset<=f.focusOffset?"->":"<-","stop";if(w===f.anchorNode)if(h.start+=f.anchorOffset,!h.dir)h.dir="->";else return"stop";else if(w===f.focusNode)if(h.end+=f.focusOffset,!h.dir)h.dir="<-";else return"stop";w.nodeType===Node.TEXT_NODE&&(h.dir!="->"&&(h.start+=w.nodeValue.length),h.dir!="<-"&&(h.end+=w.nodeValue.length))}),h}function C(f){let h=ie(),w,z=0,K,cr=0;if(f.dir||(f.dir="->"),f.start<0&&(f.start=0),f.end<0&&(f.end=0),f.dir=="<-"){let{start:x,end:Hr}=f;f.start=Hr,f.end=x}let Or=0;vr(r,x=>{if(x.nodeType!==Node.TEXT_NODE)return;let Hr=(x.nodeValue||"").length;if(Or+Hr>=f.start&&(w||(w=x,z=f.start-Or),Or+Hr>=f.end))return K=x,cr=f.end-Or,"stop";Or+=Hr}),w||(w=r),K||(K=r),f.dir=="<-"&&([w,z,K,cr]=[K,cr,w,z]),h.setBaseAndExtent(w,z,K,cr)}function X(){let h=ie().getRangeAt(0),w=u.createRange();return w.selectNodeContents(r),w.setEnd(h.startContainer,h.startOffset),w.toString()}function G(){let h=ie().getRangeAt(0),w=u.createRange();return w.selectNodeContents(r),w.setStart(h.endContainer,h.endOffset),w.toString()}function j(f){if(f.key==="Enter"){let h=X(),w=G(),[z]=Xr(h),K=z;if(n.indentOn.test(h)&&(K+=n.tab),K.length>0?(_r(f),f.stopPropagation(),fr(`
-`+K)):H(f),K!==z&&w[0]==="}"){let cr=V();fr(`
-`+z),C(cr)}}}function H(f){if(v&&f.key==="Enter")if(_r(f),f.stopPropagation(),G()==""){fr(`
- `);let h=V();h.start=--h.end,C(h)}else fr(`
-`)}function J(f){let h=`([{'"`,w=`)]}'"`,z=G(),K=X(),cr=K.substr(K.length-1)==="\\",Or=z.substr(0,1);if(w.includes(f.key)&&!cr&&Or===f.key){let x=V();_r(f),x.start=++x.end,C(x)}else if(h.includes(f.key)&&!cr&&(`"'`.includes(f.key)||[""," ",`
-`].includes(Or))){_r(f);let x=V(),Hr=x.start==x.end?"":ie().toString(),nu=f.key+Hr+w[h.indexOf(f.key)];fr(nu),x.start++,x.end++,C(x)}}function tr(f){if(f.key==="Tab")if(_r(f),f.shiftKey){let h=X(),[w,z]=Xr(h);if(w.length>0){let K=V(),cr=Math.min(n.tab.length,w.length);C({start:z,end:z+cr}),u.execCommand("delete"),K.start-=cr,K.end-=cr,C(K)}}else fr(n.tab)}function Er(f){if(hr(f)){_r(f),_--;let h=o[_];h&&(r.innerHTML=h.html,C(h.pos)),_<0&&(_=0)}if(mr(f)){_r(f),_++;let h=o[_];h&&(r.innerHTML=h.html,C(h.pos)),_>=o.length&&_--}}function W(){if(!l)return;let f=r.innerHTML,h=V(),w=o[_];if(w&&w.html===f&&w.pos.start===h.start&&w.pos.end===h.end)return;_++,o[_]={html:f,pos:h},o.splice(_+1);let z=300;_>z&&(_=z,o.splice(0,1))}function qr(f){_r(f);let h=(f.originalEvent||f).clipboardData.getData("text/plain").replace(/\r/g,""),w=V();fr(h),e(r),C({start:w.start+h.length,end:w.start+h.length})}function vr(f,h){let w=[];f.firstChild&&w.push(f.firstChild);let z=w.pop();for(;z&&h(z)!=="stop";)z.nextSibling&&w.push(z.nextSibling),z.firstChild&&w.push(z.firstChild),z=w.pop()}function or(f){return f.metaKey||f.ctrlKey}function hr(f){return or(f)&&!f.shiftKey&&f.key==="z"}function mr(f){return or(f)&&f.shiftKey&&f.key==="z"}function fr(f){f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"),u.execCommand("insertHTML",!1,f)}function Sr(f,h){let w=0;return(...z)=>{clearTimeout(w),w=i.setTimeout(()=>f(...z),h)}}function Xr(f){let h=f.length-1;for(;h>=0&&f[h]!==`
-`;)h--;h++;let w=h;for(;w<f.length&&/[ \t]/.test(f[w]);)w++;return[f.substring(h,w)||"",h,w]}function sr(){return r.textContent||""}function _r(f){f.preventDefault()}function ie(){var f;return((f=r.parentNode)===null||f===void 0?void 0:f.nodeType)==Node.DOCUMENT_FRAGMENT_NODE?r.parentNode.getSelection():i.getSelection()}return{updateOptions(f){f=Object.assign(Object.assign({},f),f)},updateCode(f){r.textContent=f,e(r)},onUpdate(f){s=f},toString:sr,save:V,restore:C,recordHistory:W,destroy(){for(let[f,h]of a)r.removeEventListener(f,h)}}}var xs,Hi=uu(()=>{xs=window});var lc=B(P=>{"use strict";var Pt=Vr(),ec=_n(),Ae=zi(),Ui=Pi(),wr=ue(),Bt=Ct(),Yi=(Hi(),Bi),tc={},Zi=document.querySelector("body"),Wi=Zi??ec.raiseError("No <body> found !");function Qr(r,e){if(e!==void 0)return Pt._1(r,wr.valFromOption(e))}function nc(r){return r.value}function ic(r,e){r.value=e}function yr(r,e,t,n,i,u,a){var o=document.createElement(a);return Qr(function(_){o.innerText=_},r),Qr(function(_){o.id=_},e),Qr(function(_){o.className=_},t),Qr(function(_){_.appendChild(o)},n),Qr(function(_){o.onclick=_},u),Qr(Pt._1(Bt.List.iter,function(_){o.setAttribute(_[0],_[1])}),i),o}var qe=yr(void 0,void 0,"grid-container",wr.some(Wi),void 0,void 0,"div"),Ji=yr(void 0,void 0,"grid-item left",wr.some(qe),void 0,void 0,"div"),Ki=yr(void 0,void 0,"grid-item rightup",wr.some(qe),void 0,void 0,"div"),Qi=yr(void 0,void 0,"grid-item rightmiddle",wr.some(qe),void 0,void 0,"div"),Ht=yr(void 0,void 0,"grid-item rightdown",wr.some(qe),void 0,void 0,"div"),$i=yr(void 0,void 0,"jar",wr.some(Ji),void 0,void 0,"div"),xi=yr(void 0,void 0,"jar",wr.some(Qi),void 0,void 0,"div"),Ut=yr(void 0,void 0,"console-output",wr.some(Ki),{hd:["readonly","true"],tl:0},void 0,"textarea");function Yt(r){r.innerHTML=r.innerText.replace(/(\b[a-z]\w*)/g,'<font color="#48c9b0">$1</font>').replace(/(\b[A-Z]\w*|\b_)/g,'<font color="#ff51b3">$1</font>').replace(/(,)/g,'<font color="#fffffff">$1</font>').replace(/((:-)|\.|\?)/g,'<font color="#ff5733">$1</font>').replace(/([\[\]|])/g,'<font color="#71fb1d">$1</font>').replace(/([\(\)])/g,'<font color="#fef014">$1</font>')}var Te=Yi.CodeJar($i,Yt),Zt=Yi.CodeJar(xi,Yt);function uc(r){return r.toString()}function ac(r,e){r.updateCode(e)}function Nr(r){var e=Ut.value+(r+`
-`);Ut.value=e}function ru(r,e){var t=Ae.program_of_string(r);if(t.TAG===0){var n=Ae.request_of_string(e);if(n.TAG===0){var i=Ae.string_sequence_of(t._0,n._0),u=Pt._1(i,void 0);u?(Nr(u._0),Bt.Seq.iter(Nr,u._1)):Nr("No solution found.")}else Nr("Unable to parse request :"),Nr(n._0);return Bt.print_newline(void 0)}return Nr("Unable to parse program :"),Nr(t._0)}function eu(r){return Nr(`Executing...
-`),ru(Te.toString(),Zt.toString())}function tu(r){var e=Ae.program_of_string(Te.toString());if(e.TAG!==0)return Nr(e._0);var t=Ae.string_of_program(e._0);Te.updateCode(t)}var oc=yr("Execute",void 0,void 0,wr.some(Ht),void 0,eu,"button"),_c=yr("Format Code",void 0,void 0,wr.some(Ht),void 0,tu,"button");Te.updateCode(Ui.zebra_code);Zt.updateCode(Ui.zebra_request);Nr(`~ Welcome to my small Prolog interpreter!
-`);P.CodeJar=tc;P.body=Wi;P.apply=Qr;P.get_value=nc;P.set_value=ic;P.create_element=yr;P.grid_container=qe;P.left=Ji;P.right_up=Ki;P.right_middle=Qi;P.right_down=Ht;P.input_code_div=$i;P.input_request_div=xi;P.$$console=Ut;P.highlight=Yt;P.code_jar=Te;P.request_jar=Zt;P.getText=uc;P.setText=ac;P.display_text=Nr;P.html_interpreter=ru;P.execute=eu;P.format_code=tu;P.button=oc;P.button_format=_c});lc();})();
+  // node_modules/bs-platform/lib/js/caml_array.js
+  var require_caml_array = __commonJS((exports) => {
+    "use strict";
+    function caml_array_sub(x, offset, len2) {
+      var result = new Array(len2);
+      var j = 0;
+      var i = offset;
+      while (j < len2) {
+        result[j] = x[i];
+        j = j + 1 | 0;
+        i = i + 1 | 0;
+      }
+      ;
+      return result;
+    }
+    function len(_acc, _l) {
+      while (true) {
+        var l = _l;
+        var acc = _acc;
+        if (!l) {
+          return acc;
+        }
+        _l = l.tl;
+        _acc = l.hd.length + acc | 0;
+        continue;
+      }
+      ;
+    }
+    function fill(arr, _i, _l) {
+      while (true) {
+        var l = _l;
+        var i = _i;
+        if (!l) {
+          return;
+        }
+        var x = l.hd;
+        var l$1 = x.length;
+        var k = i;
+        var j = 0;
+        while (j < l$1) {
+          arr[k] = x[j];
+          k = k + 1 | 0;
+          j = j + 1 | 0;
+        }
+        ;
+        _l = l.tl;
+        _i = k;
+        continue;
+      }
+      ;
+    }
+    function caml_array_concat(l) {
+      var v = len(0, l);
+      var result = new Array(v);
+      fill(result, 0, l);
+      return result;
+    }
+    function set(xs, index, newval) {
+      if (index < 0 || index >= xs.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "index out of bounds",
+          Error: new Error()
+        };
+      }
+      xs[index] = newval;
+    }
+    function get(xs, index) {
+      if (index < 0 || index >= xs.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "index out of bounds",
+          Error: new Error()
+        };
+      }
+      return xs[index];
+    }
+    function caml_make_vect(len2, init) {
+      var b = new Array(len2);
+      for (var i = 0; i < len2; ++i) {
+        b[i] = init;
+      }
+      return b;
+    }
+    function caml_make_float_vect(len2) {
+      var b = new Array(len2);
+      for (var i = 0; i < len2; ++i) {
+        b[i] = 0;
+      }
+      return b;
+    }
+    function caml_array_blit(a1, i1, a2, i2, len2) {
+      if (i2 <= i1) {
+        for (var j = 0; j < len2; ++j) {
+          a2[j + i2 | 0] = a1[j + i1 | 0];
+        }
+        return;
+      }
+      for (var j$1 = len2 - 1 | 0; j$1 >= 0; --j$1) {
+        a2[j$1 + i2 | 0] = a1[j$1 + i1 | 0];
+      }
+    }
+    function caml_array_dup(prim) {
+      return prim.slice(0);
+    }
+    exports.caml_array_dup = caml_array_dup;
+    exports.caml_array_sub = caml_array_sub;
+    exports.caml_array_concat = caml_array_concat;
+    exports.caml_make_vect = caml_make_vect;
+    exports.caml_make_float_vect = caml_make_float_vect;
+    exports.caml_array_blit = caml_array_blit;
+    exports.get = get;
+    exports.set = set;
+  });
+
+  // node_modules/bs-platform/lib/js/curry.js
+  var require_curry = __commonJS((exports) => {
+    "use strict";
+    var Caml_array = require_caml_array();
+    function app(_f, _args) {
+      while (true) {
+        var args = _args;
+        var f = _f;
+        var init_arity = f.length;
+        var arity = init_arity === 0 ? 1 : init_arity;
+        var len = args.length;
+        var d = arity - len | 0;
+        if (d === 0) {
+          return f.apply(null, args);
+        }
+        if (d >= 0) {
+          return function(f2, args2) {
+            return function(x) {
+              return app(f2, args2.concat([x]));
+            };
+          }(f, args);
+        }
+        _args = Caml_array.caml_array_sub(args, arity, -d | 0);
+        _f = f.apply(null, Caml_array.caml_array_sub(args, 0, arity));
+        continue;
+      }
+      ;
+    }
+    function _1(o, a0) {
+      var arity = o.length;
+      if (arity === 1) {
+        return o(a0);
+      } else {
+        switch (arity) {
+          case 1:
+            return o(a0);
+          case 2:
+            return function(param) {
+              return o(a0, param);
+            };
+          case 3:
+            return function(param, param$1) {
+              return o(a0, param, param$1);
+            };
+          case 4:
+            return function(param, param$1, param$2) {
+              return o(a0, param, param$1, param$2);
+            };
+          case 5:
+            return function(param, param$1, param$2, param$3) {
+              return o(a0, param, param$1, param$2, param$3);
+            };
+          case 6:
+            return function(param, param$1, param$2, param$3, param$4) {
+              return o(a0, param, param$1, param$2, param$3, param$4);
+            };
+          case 7:
+            return function(param, param$1, param$2, param$3, param$4, param$5) {
+              return o(a0, param, param$1, param$2, param$3, param$4, param$5);
+            };
+          default:
+            return app(o, [a0]);
+        }
+      }
+    }
+    function __1(o) {
+      var arity = o.length;
+      if (arity === 1) {
+        return o;
+      } else {
+        return function(a0) {
+          return _1(o, a0);
+        };
+      }
+    }
+    function _2(o, a0, a1) {
+      var arity = o.length;
+      if (arity === 2) {
+        return o(a0, a1);
+      } else {
+        switch (arity) {
+          case 1:
+            return app(o(a0), [a1]);
+          case 2:
+            return o(a0, a1);
+          case 3:
+            return function(param) {
+              return o(a0, a1, param);
+            };
+          case 4:
+            return function(param, param$1) {
+              return o(a0, a1, param, param$1);
+            };
+          case 5:
+            return function(param, param$1, param$2) {
+              return o(a0, a1, param, param$1, param$2);
+            };
+          case 6:
+            return function(param, param$1, param$2, param$3) {
+              return o(a0, a1, param, param$1, param$2, param$3);
+            };
+          case 7:
+            return function(param, param$1, param$2, param$3, param$4) {
+              return o(a0, a1, param, param$1, param$2, param$3, param$4);
+            };
+          default:
+            return app(o, [
+              a0,
+              a1
+            ]);
+        }
+      }
+    }
+    function __2(o) {
+      var arity = o.length;
+      if (arity === 2) {
+        return o;
+      } else {
+        return function(a0, a1) {
+          return _2(o, a0, a1);
+        };
+      }
+    }
+    function _3(o, a0, a1, a2) {
+      var arity = o.length;
+      if (arity === 3) {
+        return o(a0, a1, a2);
+      } else {
+        switch (arity) {
+          case 1:
+            return app(o(a0), [
+              a1,
+              a2
+            ]);
+          case 2:
+            return app(o(a0, a1), [a2]);
+          case 3:
+            return o(a0, a1, a2);
+          case 4:
+            return function(param) {
+              return o(a0, a1, a2, param);
+            };
+          case 5:
+            return function(param, param$1) {
+              return o(a0, a1, a2, param, param$1);
+            };
+          case 6:
+            return function(param, param$1, param$2) {
+              return o(a0, a1, a2, param, param$1, param$2);
+            };
+          case 7:
+            return function(param, param$1, param$2, param$3) {
+              return o(a0, a1, a2, param, param$1, param$2, param$3);
+            };
+          default:
+            return app(o, [
+              a0,
+              a1,
+              a2
+            ]);
+        }
+      }
+    }
+    function __3(o) {
+      var arity = o.length;
+      if (arity === 3) {
+        return o;
+      } else {
+        return function(a0, a1, a2) {
+          return _3(o, a0, a1, a2);
+        };
+      }
+    }
+    function _4(o, a0, a1, a2, a3) {
+      var arity = o.length;
+      if (arity === 4) {
+        return o(a0, a1, a2, a3);
+      } else {
+        switch (arity) {
+          case 1:
+            return app(o(a0), [
+              a1,
+              a2,
+              a3
+            ]);
+          case 2:
+            return app(o(a0, a1), [
+              a2,
+              a3
+            ]);
+          case 3:
+            return app(o(a0, a1, a2), [a3]);
+          case 4:
+            return o(a0, a1, a2, a3);
+          case 5:
+            return function(param) {
+              return o(a0, a1, a2, a3, param);
+            };
+          case 6:
+            return function(param, param$1) {
+              return o(a0, a1, a2, a3, param, param$1);
+            };
+          case 7:
+            return function(param, param$1, param$2) {
+              return o(a0, a1, a2, a3, param, param$1, param$2);
+            };
+          default:
+            return app(o, [
+              a0,
+              a1,
+              a2,
+              a3
+            ]);
+        }
+      }
+    }
+    function __4(o) {
+      var arity = o.length;
+      if (arity === 4) {
+        return o;
+      } else {
+        return function(a0, a1, a2, a3) {
+          return _4(o, a0, a1, a2, a3);
+        };
+      }
+    }
+    function _5(o, a0, a1, a2, a3, a4) {
+      var arity = o.length;
+      if (arity === 5) {
+        return o(a0, a1, a2, a3, a4);
+      } else {
+        switch (arity) {
+          case 1:
+            return app(o(a0), [
+              a1,
+              a2,
+              a3,
+              a4
+            ]);
+          case 2:
+            return app(o(a0, a1), [
+              a2,
+              a3,
+              a4
+            ]);
+          case 3:
+            return app(o(a0, a1, a2), [
+              a3,
+              a4
+            ]);
+          case 4:
+            return app(o(a0, a1, a2, a3), [a4]);
+          case 5:
+            return o(a0, a1, a2, a3, a4);
+          case 6:
+            return function(param) {
+              return o(a0, a1, a2, a3, a4, param);
+            };
+          case 7:
+            return function(param, param$1) {
+              return o(a0, a1, a2, a3, a4, param, param$1);
+            };
+          default:
+            return app(o, [
+              a0,
+              a1,
+              a2,
+              a3,
+              a4
+            ]);
+        }
+      }
+    }
+    function __5(o) {
+      var arity = o.length;
+      if (arity === 5) {
+        return o;
+      } else {
+        return function(a0, a1, a2, a3, a4) {
+          return _5(o, a0, a1, a2, a3, a4);
+        };
+      }
+    }
+    function _6(o, a0, a1, a2, a3, a4, a5) {
+      var arity = o.length;
+      if (arity === 6) {
+        return o(a0, a1, a2, a3, a4, a5);
+      } else {
+        switch (arity) {
+          case 1:
+            return app(o(a0), [
+              a1,
+              a2,
+              a3,
+              a4,
+              a5
+            ]);
+          case 2:
+            return app(o(a0, a1), [
+              a2,
+              a3,
+              a4,
+              a5
+            ]);
+          case 3:
+            return app(o(a0, a1, a2), [
+              a3,
+              a4,
+              a5
+            ]);
+          case 4:
+            return app(o(a0, a1, a2, a3), [
+              a4,
+              a5
+            ]);
+          case 5:
+            return app(o(a0, a1, a2, a3, a4), [a5]);
+          case 6:
+            return o(a0, a1, a2, a3, a4, a5);
+          case 7:
+            return function(param) {
+              return o(a0, a1, a2, a3, a4, a5, param);
+            };
+          default:
+            return app(o, [
+              a0,
+              a1,
+              a2,
+              a3,
+              a4,
+              a5
+            ]);
+        }
+      }
+    }
+    function __6(o) {
+      var arity = o.length;
+      if (arity === 6) {
+        return o;
+      } else {
+        return function(a0, a1, a2, a3, a4, a5) {
+          return _6(o, a0, a1, a2, a3, a4, a5);
+        };
+      }
+    }
+    function _7(o, a0, a1, a2, a3, a4, a5, a6) {
+      var arity = o.length;
+      if (arity === 7) {
+        return o(a0, a1, a2, a3, a4, a5, a6);
+      } else {
+        switch (arity) {
+          case 1:
+            return app(o(a0), [
+              a1,
+              a2,
+              a3,
+              a4,
+              a5,
+              a6
+            ]);
+          case 2:
+            return app(o(a0, a1), [
+              a2,
+              a3,
+              a4,
+              a5,
+              a6
+            ]);
+          case 3:
+            return app(o(a0, a1, a2), [
+              a3,
+              a4,
+              a5,
+              a6
+            ]);
+          case 4:
+            return app(o(a0, a1, a2, a3), [
+              a4,
+              a5,
+              a6
+            ]);
+          case 5:
+            return app(o(a0, a1, a2, a3, a4), [
+              a5,
+              a6
+            ]);
+          case 6:
+            return app(o(a0, a1, a2, a3, a4, a5), [a6]);
+          case 7:
+            return o(a0, a1, a2, a3, a4, a5, a6);
+          default:
+            return app(o, [
+              a0,
+              a1,
+              a2,
+              a3,
+              a4,
+              a5,
+              a6
+            ]);
+        }
+      }
+    }
+    function __7(o) {
+      var arity = o.length;
+      if (arity === 7) {
+        return o;
+      } else {
+        return function(a0, a1, a2, a3, a4, a5, a6) {
+          return _7(o, a0, a1, a2, a3, a4, a5, a6);
+        };
+      }
+    }
+    function _8(o, a0, a1, a2, a3, a4, a5, a6, a7) {
+      var arity = o.length;
+      if (arity === 8) {
+        return o(a0, a1, a2, a3, a4, a5, a6, a7);
+      } else {
+        switch (arity) {
+          case 1:
+            return app(o(a0), [
+              a1,
+              a2,
+              a3,
+              a4,
+              a5,
+              a6,
+              a7
+            ]);
+          case 2:
+            return app(o(a0, a1), [
+              a2,
+              a3,
+              a4,
+              a5,
+              a6,
+              a7
+            ]);
+          case 3:
+            return app(o(a0, a1, a2), [
+              a3,
+              a4,
+              a5,
+              a6,
+              a7
+            ]);
+          case 4:
+            return app(o(a0, a1, a2, a3), [
+              a4,
+              a5,
+              a6,
+              a7
+            ]);
+          case 5:
+            return app(o(a0, a1, a2, a3, a4), [
+              a5,
+              a6,
+              a7
+            ]);
+          case 6:
+            return app(o(a0, a1, a2, a3, a4, a5), [
+              a6,
+              a7
+            ]);
+          case 7:
+            return app(o(a0, a1, a2, a3, a4, a5, a6), [a7]);
+          default:
+            return app(o, [
+              a0,
+              a1,
+              a2,
+              a3,
+              a4,
+              a5,
+              a6,
+              a7
+            ]);
+        }
+      }
+    }
+    function __8(o) {
+      var arity = o.length;
+      if (arity === 8) {
+        return o;
+      } else {
+        return function(a0, a1, a2, a3, a4, a5, a6, a7) {
+          return _8(o, a0, a1, a2, a3, a4, a5, a6, a7);
+        };
+      }
+    }
+    exports.app = app;
+    exports._1 = _1;
+    exports.__1 = __1;
+    exports._2 = _2;
+    exports.__2 = __2;
+    exports._3 = _3;
+    exports.__3 = __3;
+    exports._4 = _4;
+    exports.__4 = __4;
+    exports._5 = _5;
+    exports.__5 = __5;
+    exports._6 = _6;
+    exports.__6 = __6;
+    exports._7 = _7;
+    exports.__7 = __7;
+    exports._8 = _8;
+    exports.__8 = __8;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_option.js
+  var require_caml_option = __commonJS((exports) => {
+    "use strict";
+    function isNested(x) {
+      return x.BS_PRIVATE_NESTED_SOME_NONE !== void 0;
+    }
+    function some(x) {
+      if (x === void 0) {
+        return {
+          BS_PRIVATE_NESTED_SOME_NONE: 0
+        };
+      } else if (x !== null && x.BS_PRIVATE_NESTED_SOME_NONE !== void 0) {
+        return {
+          BS_PRIVATE_NESTED_SOME_NONE: x.BS_PRIVATE_NESTED_SOME_NONE + 1 | 0
+        };
+      } else {
+        return x;
+      }
+    }
+    function nullable_to_opt(x) {
+      if (x == null) {
+        return;
+      } else {
+        return some(x);
+      }
+    }
+    function undefined_to_opt(x) {
+      if (x === void 0) {
+        return;
+      } else {
+        return some(x);
+      }
+    }
+    function null_to_opt(x) {
+      if (x === null) {
+        return;
+      } else {
+        return some(x);
+      }
+    }
+    function valFromOption(x) {
+      if (!(x !== null && x.BS_PRIVATE_NESTED_SOME_NONE !== void 0)) {
+        return x;
+      }
+      var depth = x.BS_PRIVATE_NESTED_SOME_NONE;
+      if (depth === 0) {
+        return;
+      } else {
+        return {
+          BS_PRIVATE_NESTED_SOME_NONE: depth - 1 | 0
+        };
+      }
+    }
+    function option_get(x) {
+      if (x === void 0) {
+        return;
+      } else {
+        return valFromOption(x);
+      }
+    }
+    function option_unwrap(x) {
+      if (x !== void 0) {
+        return x.VAL;
+      } else {
+        return x;
+      }
+    }
+    exports.nullable_to_opt = nullable_to_opt;
+    exports.undefined_to_opt = undefined_to_opt;
+    exports.null_to_opt = null_to_opt;
+    exports.valFromOption = valFromOption;
+    exports.some = some;
+    exports.isNested = isNested;
+    exports.option_get = option_get;
+    exports.option_unwrap = option_unwrap;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_exceptions.js
+  var require_caml_exceptions = __commonJS((exports) => {
+    "use strict";
+    var id = {
+      contents: 0
+    };
+    function create(str) {
+      id.contents = id.contents + 1 | 0;
+      return str + ("/" + id.contents);
+    }
+    function caml_is_extension(e) {
+      if (e == null) {
+        return false;
+      } else {
+        return typeof e.RE_EXN_ID === "string";
+      }
+    }
+    function caml_exn_slot_name(x) {
+      return x.RE_EXN_ID;
+    }
+    exports.id = id;
+    exports.create = create;
+    exports.caml_is_extension = caml_is_extension;
+    exports.caml_exn_slot_name = caml_exn_slot_name;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_js_exceptions.js
+  var require_caml_js_exceptions = __commonJS((exports) => {
+    "use strict";
+    var Caml_option = require_caml_option();
+    var Caml_exceptions = require_caml_exceptions();
+    var $$Error = /* @__PURE__ */ Caml_exceptions.create("Caml_js_exceptions.Error");
+    function internalToOCamlException(e) {
+      if (Caml_exceptions.caml_is_extension(e)) {
+        return e;
+      } else {
+        return {
+          RE_EXN_ID: $$Error,
+          _1: e
+        };
+      }
+    }
+    function caml_as_js_exn(exn) {
+      if (exn.RE_EXN_ID === $$Error) {
+        return Caml_option.some(exn._1);
+      }
+    }
+    exports.$$Error = $$Error;
+    exports.internalToOCamlException = internalToOCamlException;
+    exports.caml_as_js_exn = caml_as_js_exn;
+  });
+
+  // node_modules/bs-platform/lib/js/js_exn.js
+  var require_js_exn = __commonJS((exports) => {
+    "use strict";
+    var Caml_js_exceptions = require_caml_js_exceptions();
+    var anyToExnInternal = Caml_js_exceptions.internalToOCamlException;
+    function raiseError(str) {
+      throw new Error(str);
+    }
+    function raiseEvalError(str) {
+      throw new EvalError(str);
+    }
+    function raiseRangeError(str) {
+      throw new RangeError(str);
+    }
+    function raiseReferenceError(str) {
+      throw new ReferenceError(str);
+    }
+    function raiseSyntaxError(str) {
+      throw new SyntaxError(str);
+    }
+    function raiseTypeError(str) {
+      throw new TypeError(str);
+    }
+    function raiseUriError(str) {
+      throw new URIError(str);
+    }
+    var $$Error$1 = Caml_js_exceptions.$$Error;
+    exports.$$Error = $$Error$1;
+    exports.anyToExnInternal = anyToExnInternal;
+    exports.raiseError = raiseError;
+    exports.raiseEvalError = raiseEvalError;
+    exports.raiseRangeError = raiseRangeError;
+    exports.raiseReferenceError = raiseReferenceError;
+    exports.raiseSyntaxError = raiseSyntaxError;
+    exports.raiseTypeError = raiseTypeError;
+    exports.raiseUriError = raiseUriError;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_bytes.js
+  var require_caml_bytes = __commonJS((exports) => {
+    "use strict";
+    function set(s, i, ch) {
+      if (i < 0 || i >= s.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "index out of bounds",
+          Error: new Error()
+        };
+      }
+      s[i] = ch;
+    }
+    function get(s, i) {
+      if (i < 0 || i >= s.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "index out of bounds",
+          Error: new Error()
+        };
+      }
+      return s[i];
+    }
+    function caml_fill_bytes(s, i, l, c) {
+      if (l <= 0) {
+        return;
+      }
+      for (var k = i, k_finish = l + i | 0; k < k_finish; ++k) {
+        s[k] = c;
+      }
+    }
+    function caml_create_bytes(len) {
+      if (len < 0) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.create",
+          Error: new Error()
+        };
+      }
+      var result = new Array(len);
+      for (var i = 0; i < len; ++i) {
+        result[i] = 0;
+      }
+      return result;
+    }
+    function caml_blit_bytes(s1, i1, s2, i2, len) {
+      if (len <= 0) {
+        return;
+      }
+      if (s1 === s2) {
+        if (i1 < i2) {
+          var range_a = (s1.length - i2 | 0) - 1 | 0;
+          var range_b = len - 1 | 0;
+          var range = range_a > range_b ? range_b : range_a;
+          for (var j = range; j >= 0; --j) {
+            s1[i2 + j | 0] = s1[i1 + j | 0];
+          }
+          return;
+        }
+        if (i1 <= i2) {
+          return;
+        }
+        var range_a$1 = (s1.length - i1 | 0) - 1 | 0;
+        var range_b$1 = len - 1 | 0;
+        var range$1 = range_a$1 > range_b$1 ? range_b$1 : range_a$1;
+        for (var k = 0; k <= range$1; ++k) {
+          s1[i2 + k | 0] = s1[i1 + k | 0];
+        }
+        return;
+      }
+      var off1 = s1.length - i1 | 0;
+      if (len <= off1) {
+        for (var i = 0; i < len; ++i) {
+          s2[i2 + i | 0] = s1[i1 + i | 0];
+        }
+        return;
+      }
+      for (var i$1 = 0; i$1 < off1; ++i$1) {
+        s2[i2 + i$1 | 0] = s1[i1 + i$1 | 0];
+      }
+      for (var i$2 = off1; i$2 < len; ++i$2) {
+        s2[i2 + i$2 | 0] = 0;
+      }
+    }
+    function bytes_to_string(a) {
+      var i = 0;
+      var len = a.length;
+      var s = "";
+      var s_len = len;
+      if (i === 0 && len <= 4096 && len === a.length) {
+        return String.fromCharCode.apply(null, a);
+      }
+      var offset = 0;
+      while (s_len > 0) {
+        var next = s_len < 1024 ? s_len : 1024;
+        var tmp_bytes = new Array(next);
+        for (var k = 0; k < next; ++k) {
+          tmp_bytes[k] = a[k + offset | 0];
+        }
+        s = s + String.fromCharCode.apply(null, tmp_bytes);
+        s_len = s_len - next | 0;
+        offset = offset + next | 0;
+      }
+      ;
+      return s;
+    }
+    function caml_blit_string(s1, i1, s2, i2, len) {
+      if (len <= 0) {
+        return;
+      }
+      var off1 = s1.length - i1 | 0;
+      if (len <= off1) {
+        for (var i = 0; i < len; ++i) {
+          s2[i2 + i | 0] = s1.charCodeAt(i1 + i | 0);
+        }
+        return;
+      }
+      for (var i$1 = 0; i$1 < off1; ++i$1) {
+        s2[i2 + i$1 | 0] = s1.charCodeAt(i1 + i$1 | 0);
+      }
+      for (var i$2 = off1; i$2 < len; ++i$2) {
+        s2[i2 + i$2 | 0] = 0;
+      }
+    }
+    function bytes_of_string(s) {
+      var len = s.length;
+      var res = new Array(len);
+      for (var i = 0; i < len; ++i) {
+        res[i] = s.charCodeAt(i);
+      }
+      return res;
+    }
+    function caml_bytes_compare_aux(s1, s2, _off, len, def) {
+      while (true) {
+        var off = _off;
+        if (off >= len) {
+          return def;
+        }
+        var a = s1[off];
+        var b = s2[off];
+        if (a > b) {
+          return 1;
+        }
+        if (a < b) {
+          return -1;
+        }
+        _off = off + 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function caml_bytes_compare(s1, s2) {
+      var len1 = s1.length;
+      var len2 = s2.length;
+      if (len1 === len2) {
+        return caml_bytes_compare_aux(s1, s2, 0, len1, 0);
+      } else if (len1 < len2) {
+        return caml_bytes_compare_aux(s1, s2, 0, len1, -1);
+      } else {
+        return caml_bytes_compare_aux(s1, s2, 0, len2, 1);
+      }
+    }
+    function caml_bytes_equal(s1, s2) {
+      var len1 = s1.length;
+      var len2 = s2.length;
+      if (len1 === len2) {
+        var _off = 0;
+        while (true) {
+          var off = _off;
+          if (off === len1) {
+            return true;
+          }
+          var a = s1[off];
+          var b = s2[off];
+          if (a !== b) {
+            return false;
+          }
+          _off = off + 1 | 0;
+          continue;
+        }
+        ;
+      } else {
+        return false;
+      }
+    }
+    function caml_bytes_greaterthan(s1, s2) {
+      return caml_bytes_compare(s1, s2) > 0;
+    }
+    function caml_bytes_greaterequal(s1, s2) {
+      return caml_bytes_compare(s1, s2) >= 0;
+    }
+    function caml_bytes_lessthan(s1, s2) {
+      return caml_bytes_compare(s1, s2) < 0;
+    }
+    function caml_bytes_lessequal(s1, s2) {
+      return caml_bytes_compare(s1, s2) <= 0;
+    }
+    exports.caml_create_bytes = caml_create_bytes;
+    exports.caml_fill_bytes = caml_fill_bytes;
+    exports.get = get;
+    exports.set = set;
+    exports.bytes_to_string = bytes_to_string;
+    exports.caml_blit_bytes = caml_blit_bytes;
+    exports.caml_blit_string = caml_blit_string;
+    exports.bytes_of_string = bytes_of_string;
+    exports.caml_bytes_compare = caml_bytes_compare;
+    exports.caml_bytes_greaterthan = caml_bytes_greaterthan;
+    exports.caml_bytes_greaterequal = caml_bytes_greaterequal;
+    exports.caml_bytes_lessthan = caml_bytes_lessthan;
+    exports.caml_bytes_lessequal = caml_bytes_lessequal;
+    exports.caml_bytes_equal = caml_bytes_equal;
+  });
+
+  // node_modules/bs-platform/lib/js/char.js
+  var require_char = __commonJS((exports) => {
+    "use strict";
+    var Caml_bytes = require_caml_bytes();
+    function chr(n) {
+      if (n < 0 || n > 255) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "Char.chr",
+          Error: new Error()
+        };
+      }
+      return n;
+    }
+    function escaped(c) {
+      var exit = 0;
+      if (c >= 40) {
+        if (c === 92) {
+          return "\\\\";
+        }
+        exit = c >= 127 ? 1 : 2;
+      } else if (c >= 32) {
+        if (c >= 39) {
+          return "\\'";
+        }
+        exit = 2;
+      } else if (c >= 14) {
+        exit = 1;
+      } else {
+        switch (c) {
+          case 8:
+            return "\\b";
+          case 9:
+            return "\\t";
+          case 10:
+            return "\\n";
+          case 0:
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+          case 5:
+          case 6:
+          case 7:
+          case 11:
+          case 12:
+            exit = 1;
+            break;
+          case 13:
+            return "\\r";
+        }
+      }
+      switch (exit) {
+        case 1:
+          var s = [
+            0,
+            0,
+            0,
+            0
+          ];
+          s[0] = 92;
+          s[1] = 48 + (c / 100 | 0) | 0;
+          s[2] = 48 + (c / 10 | 0) % 10 | 0;
+          s[3] = 48 + c % 10 | 0;
+          return Caml_bytes.bytes_to_string(s);
+        case 2:
+          var s$1 = [0];
+          s$1[0] = c;
+          return Caml_bytes.bytes_to_string(s$1);
+      }
+    }
+    function lowercase(c) {
+      if (c >= 65 && c <= 90 || c >= 192 && c <= 214 || c >= 216 && c <= 222) {
+        return c + 32 | 0;
+      } else {
+        return c;
+      }
+    }
+    function uppercase(c) {
+      if (c >= 97 && c <= 122 || c >= 224 && c <= 246 || c >= 248 && c <= 254) {
+        return c - 32 | 0;
+      } else {
+        return c;
+      }
+    }
+    function lowercase_ascii(c) {
+      if (c >= 65 && c <= 90) {
+        return c + 32 | 0;
+      } else {
+        return c;
+      }
+    }
+    function uppercase_ascii(c) {
+      if (c >= 97 && c <= 122) {
+        return c - 32 | 0;
+      } else {
+        return c;
+      }
+    }
+    function compare(c1, c2) {
+      return c1 - c2 | 0;
+    }
+    function equal(c1, c2) {
+      return (c1 - c2 | 0) === 0;
+    }
+    exports.chr = chr;
+    exports.escaped = escaped;
+    exports.lowercase = lowercase;
+    exports.uppercase = uppercase;
+    exports.lowercase_ascii = lowercase_ascii;
+    exports.uppercase_ascii = uppercase_ascii;
+    exports.compare = compare;
+    exports.equal = equal;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_primitive.js
+  var require_caml_primitive = __commonJS((exports) => {
+    "use strict";
+    function caml_int_compare(x, y) {
+      if (x < y) {
+        return -1;
+      } else if (x === y) {
+        return 0;
+      } else {
+        return 1;
+      }
+    }
+    function caml_bool_compare(x, y) {
+      if (x) {
+        if (y) {
+          return 0;
+        } else {
+          return 1;
+        }
+      } else if (y) {
+        return -1;
+      } else {
+        return 0;
+      }
+    }
+    function caml_float_compare(x, y) {
+      if (x === y) {
+        return 0;
+      } else if (x < y) {
+        return -1;
+      } else if (x > y || x === x) {
+        return 1;
+      } else if (y === y) {
+        return -1;
+      } else {
+        return 0;
+      }
+    }
+    function caml_string_compare(s1, s2) {
+      if (s1 === s2) {
+        return 0;
+      } else if (s1 < s2) {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
+    function caml_bool_min(x, y) {
+      if (x) {
+        return y;
+      } else {
+        return x;
+      }
+    }
+    function caml_int_min(x, y) {
+      if (x < y) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function caml_float_min(x, y) {
+      if (x < y) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function caml_string_min(x, y) {
+      if (x < y) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function caml_int32_min(x, y) {
+      if (x < y) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function caml_bool_max(x, y) {
+      if (x) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function caml_int_max(x, y) {
+      if (x > y) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function caml_float_max(x, y) {
+      if (x > y) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function caml_string_max(x, y) {
+      if (x > y) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function caml_int32_max(x, y) {
+      if (x > y) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    var caml_int32_compare = caml_int_compare;
+    exports.caml_int_compare = caml_int_compare;
+    exports.caml_bool_compare = caml_bool_compare;
+    exports.caml_float_compare = caml_float_compare;
+    exports.caml_string_compare = caml_string_compare;
+    exports.caml_int32_compare = caml_int32_compare;
+    exports.caml_bool_min = caml_bool_min;
+    exports.caml_int_min = caml_int_min;
+    exports.caml_float_min = caml_float_min;
+    exports.caml_string_min = caml_string_min;
+    exports.caml_int32_min = caml_int32_min;
+    exports.caml_bool_max = caml_bool_max;
+    exports.caml_int_max = caml_int_max;
+    exports.caml_float_max = caml_float_max;
+    exports.caml_string_max = caml_string_max;
+    exports.caml_int32_max = caml_int32_max;
+  });
+
+  // node_modules/bs-platform/lib/js/bytes.js
+  var require_bytes = __commonJS((exports) => {
+    "use strict";
+    var Char = require_char();
+    var Curry = require_curry();
+    var Caml_bytes = require_caml_bytes();
+    var Caml_primitive = require_caml_primitive();
+    var Caml_js_exceptions = require_caml_js_exceptions();
+    function make(n, c) {
+      var s = Caml_bytes.caml_create_bytes(n);
+      Caml_bytes.caml_fill_bytes(s, 0, n, c);
+      return s;
+    }
+    function init(n, f) {
+      var s = Caml_bytes.caml_create_bytes(n);
+      for (var i = 0; i < n; ++i) {
+        s[i] = Curry._1(f, i);
+      }
+      return s;
+    }
+    var empty = [];
+    function copy(s) {
+      var len = s.length;
+      var r = Caml_bytes.caml_create_bytes(len);
+      Caml_bytes.caml_blit_bytes(s, 0, r, 0, len);
+      return r;
+    }
+    function to_string(b) {
+      return Caml_bytes.bytes_to_string(copy(b));
+    }
+    function of_string(s) {
+      return copy(Caml_bytes.bytes_of_string(s));
+    }
+    function sub(s, ofs, len) {
+      if (ofs < 0 || len < 0 || ofs > (s.length - len | 0)) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.sub / Bytes.sub",
+          Error: new Error()
+        };
+      }
+      var r = Caml_bytes.caml_create_bytes(len);
+      Caml_bytes.caml_blit_bytes(s, ofs, r, 0, len);
+      return r;
+    }
+    function sub_string(b, ofs, len) {
+      return Caml_bytes.bytes_to_string(sub(b, ofs, len));
+    }
+    function $plus$plus(a, b) {
+      var c = a + b | 0;
+      var match = a < 0;
+      var match$1 = b < 0;
+      var match$2 = c < 0;
+      if (match) {
+        if (!match$1) {
+          return c;
+        }
+        if (match$2) {
+          return c;
+        }
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "Bytes.extend",
+          Error: new Error()
+        };
+      }
+      if (match$1) {
+        return c;
+      }
+      if (match$2) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "Bytes.extend",
+          Error: new Error()
+        };
+      }
+      return c;
+    }
+    function extend(s, left, right) {
+      var len = $plus$plus($plus$plus(s.length, left), right);
+      var r = Caml_bytes.caml_create_bytes(len);
+      var match = left < 0 ? [
+        -left | 0,
+        0
+      ] : [
+        0,
+        left
+      ];
+      var dstoff = match[1];
+      var srcoff = match[0];
+      var cpylen = Caml_primitive.caml_int_min(s.length - srcoff | 0, len - dstoff | 0);
+      if (cpylen > 0) {
+        Caml_bytes.caml_blit_bytes(s, srcoff, r, dstoff, cpylen);
+      }
+      return r;
+    }
+    function fill(s, ofs, len, c) {
+      if (ofs < 0 || len < 0 || ofs > (s.length - len | 0)) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.fill / Bytes.fill",
+          Error: new Error()
+        };
+      }
+      return Caml_bytes.caml_fill_bytes(s, ofs, len, c);
+    }
+    function blit(s1, ofs1, s2, ofs2, len) {
+      if (len < 0 || ofs1 < 0 || ofs1 > (s1.length - len | 0) || ofs2 < 0 || ofs2 > (s2.length - len | 0)) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "Bytes.blit",
+          Error: new Error()
+        };
+      }
+      return Caml_bytes.caml_blit_bytes(s1, ofs1, s2, ofs2, len);
+    }
+    function blit_string(s1, ofs1, s2, ofs2, len) {
+      if (len < 0 || ofs1 < 0 || ofs1 > (s1.length - len | 0) || ofs2 < 0 || ofs2 > (s2.length - len | 0)) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.blit / Bytes.blit_string",
+          Error: new Error()
+        };
+      }
+      return Caml_bytes.caml_blit_string(s1, ofs1, s2, ofs2, len);
+    }
+    function iter(f, a) {
+      for (var i = 0, i_finish = a.length; i < i_finish; ++i) {
+        Curry._1(f, a[i]);
+      }
+    }
+    function iteri(f, a) {
+      for (var i = 0, i_finish = a.length; i < i_finish; ++i) {
+        Curry._2(f, i, a[i]);
+      }
+    }
+    function ensure_ge(x, y) {
+      if (x >= y) {
+        return x;
+      }
+      throw {
+        RE_EXN_ID: "Invalid_argument",
+        _1: "Bytes.concat",
+        Error: new Error()
+      };
+    }
+    function sum_lengths(_acc, seplen, _param) {
+      while (true) {
+        var param = _param;
+        var acc = _acc;
+        if (!param) {
+          return acc;
+        }
+        var tl = param.tl;
+        var hd = param.hd;
+        if (!tl) {
+          return hd.length + acc | 0;
+        }
+        _param = tl;
+        _acc = ensure_ge((hd.length + seplen | 0) + acc | 0, acc);
+        continue;
+      }
+      ;
+    }
+    function concat(sep, l) {
+      if (!l) {
+        return empty;
+      }
+      var seplen = sep.length;
+      var dst = Caml_bytes.caml_create_bytes(sum_lengths(0, seplen, l));
+      var _pos = 0;
+      var _param = l;
+      while (true) {
+        var param = _param;
+        var pos = _pos;
+        if (!param) {
+          return dst;
+        }
+        var tl = param.tl;
+        var hd = param.hd;
+        if (tl) {
+          Caml_bytes.caml_blit_bytes(hd, 0, dst, pos, hd.length);
+          Caml_bytes.caml_blit_bytes(sep, 0, dst, pos + hd.length | 0, seplen);
+          _param = tl;
+          _pos = (pos + hd.length | 0) + seplen | 0;
+          continue;
+        }
+        Caml_bytes.caml_blit_bytes(hd, 0, dst, pos, hd.length);
+        return dst;
+      }
+      ;
+    }
+    function cat(s1, s2) {
+      var l1 = s1.length;
+      var l2 = s2.length;
+      var r = Caml_bytes.caml_create_bytes(l1 + l2 | 0);
+      Caml_bytes.caml_blit_bytes(s1, 0, r, 0, l1);
+      Caml_bytes.caml_blit_bytes(s2, 0, r, l1, l2);
+      return r;
+    }
+    function is_space(param) {
+      if (param > 13 || param < 9) {
+        return param === 32;
+      } else {
+        return param !== 11;
+      }
+    }
+    function trim(s) {
+      var len = s.length;
+      var i = 0;
+      while (i < len && is_space(s[i])) {
+        i = i + 1 | 0;
+      }
+      ;
+      var j = len - 1 | 0;
+      while (j >= i && is_space(s[j])) {
+        j = j - 1 | 0;
+      }
+      ;
+      if (j >= i) {
+        return sub(s, i, (j - i | 0) + 1 | 0);
+      } else {
+        return empty;
+      }
+    }
+    function escaped(s) {
+      var n = 0;
+      for (var i = 0, i_finish = s.length; i < i_finish; ++i) {
+        var match = s[i];
+        n = n + (match >= 32 ? match > 92 || match < 34 ? match >= 127 ? 4 : 1 : match > 91 || match < 35 ? 2 : 1 : match >= 11 ? match !== 13 ? 4 : 2 : match >= 8 ? 2 : 4) | 0;
+      }
+      if (n === s.length) {
+        return copy(s);
+      }
+      var s$prime = Caml_bytes.caml_create_bytes(n);
+      n = 0;
+      for (var i$1 = 0, i_finish$1 = s.length; i$1 < i_finish$1; ++i$1) {
+        var c = s[i$1];
+        var exit = 0;
+        if (c >= 35) {
+          if (c !== 92) {
+            if (c >= 127) {
+              exit = 1;
+            } else {
+              s$prime[n] = c;
+            }
+          } else {
+            exit = 2;
+          }
+        } else if (c >= 32) {
+          if (c >= 34) {
+            exit = 2;
+          } else {
+            s$prime[n] = c;
+          }
+        } else if (c >= 14) {
+          exit = 1;
+        } else {
+          switch (c) {
+            case 8:
+              s$prime[n] = 92;
+              n = n + 1 | 0;
+              s$prime[n] = 98;
+              break;
+            case 9:
+              s$prime[n] = 92;
+              n = n + 1 | 0;
+              s$prime[n] = 116;
+              break;
+            case 10:
+              s$prime[n] = 92;
+              n = n + 1 | 0;
+              s$prime[n] = 110;
+              break;
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 11:
+            case 12:
+              exit = 1;
+              break;
+            case 13:
+              s$prime[n] = 92;
+              n = n + 1 | 0;
+              s$prime[n] = 114;
+              break;
+          }
+        }
+        switch (exit) {
+          case 1:
+            s$prime[n] = 92;
+            n = n + 1 | 0;
+            s$prime[n] = 48 + (c / 100 | 0) | 0;
+            n = n + 1 | 0;
+            s$prime[n] = 48 + (c / 10 | 0) % 10 | 0;
+            n = n + 1 | 0;
+            s$prime[n] = 48 + c % 10 | 0;
+            break;
+          case 2:
+            s$prime[n] = 92;
+            n = n + 1 | 0;
+            s$prime[n] = c;
+            break;
+        }
+        n = n + 1 | 0;
+      }
+      return s$prime;
+    }
+    function map(f, s) {
+      var l = s.length;
+      if (l === 0) {
+        return s;
+      }
+      var r = Caml_bytes.caml_create_bytes(l);
+      for (var i = 0; i < l; ++i) {
+        r[i] = Curry._1(f, s[i]);
+      }
+      return r;
+    }
+    function mapi(f, s) {
+      var l = s.length;
+      if (l === 0) {
+        return s;
+      }
+      var r = Caml_bytes.caml_create_bytes(l);
+      for (var i = 0; i < l; ++i) {
+        r[i] = Curry._2(f, i, s[i]);
+      }
+      return r;
+    }
+    function uppercase_ascii(s) {
+      return map(Char.uppercase_ascii, s);
+    }
+    function lowercase_ascii(s) {
+      return map(Char.lowercase_ascii, s);
+    }
+    function apply1(f, s) {
+      if (s.length === 0) {
+        return s;
+      }
+      var r = copy(s);
+      r[0] = Curry._1(f, s[0]);
+      return r;
+    }
+    function capitalize_ascii(s) {
+      return apply1(Char.uppercase_ascii, s);
+    }
+    function uncapitalize_ascii(s) {
+      return apply1(Char.lowercase_ascii, s);
+    }
+    function index_rec(s, lim, _i, c) {
+      while (true) {
+        var i = _i;
+        if (i >= lim) {
+          throw {
+            RE_EXN_ID: "Not_found",
+            Error: new Error()
+          };
+        }
+        if (s[i] === c) {
+          return i;
+        }
+        _i = i + 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function index(s, c) {
+      return index_rec(s, s.length, 0, c);
+    }
+    function index_rec_opt(s, lim, _i, c) {
+      while (true) {
+        var i = _i;
+        if (i >= lim) {
+          return;
+        }
+        if (s[i] === c) {
+          return i;
+        }
+        _i = i + 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function index_opt(s, c) {
+      return index_rec_opt(s, s.length, 0, c);
+    }
+    function index_from(s, i, c) {
+      var l = s.length;
+      if (i < 0 || i > l) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.index_from / Bytes.index_from",
+          Error: new Error()
+        };
+      }
+      return index_rec(s, l, i, c);
+    }
+    function index_from_opt(s, i, c) {
+      var l = s.length;
+      if (i < 0 || i > l) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.index_from_opt / Bytes.index_from_opt",
+          Error: new Error()
+        };
+      }
+      return index_rec_opt(s, l, i, c);
+    }
+    function rindex_rec(s, _i, c) {
+      while (true) {
+        var i = _i;
+        if (i < 0) {
+          throw {
+            RE_EXN_ID: "Not_found",
+            Error: new Error()
+          };
+        }
+        if (s[i] === c) {
+          return i;
+        }
+        _i = i - 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function rindex(s, c) {
+      return rindex_rec(s, s.length - 1 | 0, c);
+    }
+    function rindex_from(s, i, c) {
+      if (i < -1 || i >= s.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.rindex_from / Bytes.rindex_from",
+          Error: new Error()
+        };
+      }
+      return rindex_rec(s, i, c);
+    }
+    function rindex_rec_opt(s, _i, c) {
+      while (true) {
+        var i = _i;
+        if (i < 0) {
+          return;
+        }
+        if (s[i] === c) {
+          return i;
+        }
+        _i = i - 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function rindex_opt(s, c) {
+      return rindex_rec_opt(s, s.length - 1 | 0, c);
+    }
+    function rindex_from_opt(s, i, c) {
+      if (i < -1 || i >= s.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.rindex_from_opt / Bytes.rindex_from_opt",
+          Error: new Error()
+        };
+      }
+      return rindex_rec_opt(s, i, c);
+    }
+    function contains_from(s, i, c) {
+      var l = s.length;
+      if (i < 0 || i > l) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.contains_from / Bytes.contains_from",
+          Error: new Error()
+        };
+      }
+      try {
+        index_rec(s, l, i, c);
+        return true;
+      } catch (raw_exn) {
+        var exn = Caml_js_exceptions.internalToOCamlException(raw_exn);
+        if (exn.RE_EXN_ID === "Not_found") {
+          return false;
+        }
+        throw exn;
+      }
+    }
+    function contains(s, c) {
+      return contains_from(s, 0, c);
+    }
+    function rcontains_from(s, i, c) {
+      if (i < 0 || i >= s.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.rcontains_from / Bytes.rcontains_from",
+          Error: new Error()
+        };
+      }
+      try {
+        rindex_rec(s, i, c);
+        return true;
+      } catch (raw_exn) {
+        var exn = Caml_js_exceptions.internalToOCamlException(raw_exn);
+        if (exn.RE_EXN_ID === "Not_found") {
+          return false;
+        }
+        throw exn;
+      }
+    }
+    var compare = Caml_bytes.caml_bytes_compare;
+    function uppercase(s) {
+      return map(Char.uppercase, s);
+    }
+    function lowercase(s) {
+      return map(Char.lowercase, s);
+    }
+    function capitalize(s) {
+      return apply1(Char.uppercase, s);
+    }
+    function uncapitalize(s) {
+      return apply1(Char.lowercase, s);
+    }
+    var equal = Caml_bytes.caml_bytes_equal;
+    var unsafe_to_string = Caml_bytes.bytes_to_string;
+    var unsafe_of_string = Caml_bytes.bytes_of_string;
+    exports.make = make;
+    exports.init = init;
+    exports.empty = empty;
+    exports.copy = copy;
+    exports.of_string = of_string;
+    exports.to_string = to_string;
+    exports.sub = sub;
+    exports.sub_string = sub_string;
+    exports.extend = extend;
+    exports.fill = fill;
+    exports.blit = blit;
+    exports.blit_string = blit_string;
+    exports.concat = concat;
+    exports.cat = cat;
+    exports.iter = iter;
+    exports.iteri = iteri;
+    exports.map = map;
+    exports.mapi = mapi;
+    exports.trim = trim;
+    exports.escaped = escaped;
+    exports.index = index;
+    exports.index_opt = index_opt;
+    exports.rindex = rindex;
+    exports.rindex_opt = rindex_opt;
+    exports.index_from = index_from;
+    exports.index_from_opt = index_from_opt;
+    exports.rindex_from = rindex_from;
+    exports.rindex_from_opt = rindex_from_opt;
+    exports.contains = contains;
+    exports.contains_from = contains_from;
+    exports.rcontains_from = rcontains_from;
+    exports.uppercase = uppercase;
+    exports.lowercase = lowercase;
+    exports.capitalize = capitalize;
+    exports.uncapitalize = uncapitalize;
+    exports.uppercase_ascii = uppercase_ascii;
+    exports.lowercase_ascii = lowercase_ascii;
+    exports.capitalize_ascii = capitalize_ascii;
+    exports.uncapitalize_ascii = uncapitalize_ascii;
+    exports.compare = compare;
+    exports.equal = equal;
+    exports.unsafe_to_string = unsafe_to_string;
+    exports.unsafe_of_string = unsafe_of_string;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_string.js
+  var require_caml_string = __commonJS((exports) => {
+    "use strict";
+    function get(s, i) {
+      if (i >= s.length || i < 0) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "index out of bounds",
+          Error: new Error()
+        };
+      }
+      return s.charCodeAt(i);
+    }
+    function make(n, ch) {
+      return String.fromCharCode(ch).repeat(n);
+    }
+    exports.get = get;
+    exports.make = make;
+  });
+
+  // node_modules/bs-platform/lib/js/string.js
+  var require_string = __commonJS((exports) => {
+    "use strict";
+    var Bytes = require_bytes();
+    var Curry = require_curry();
+    var Caml_bytes = require_caml_bytes();
+    var Caml_string = require_caml_string();
+    var Caml_primitive = require_caml_primitive();
+    var Caml_js_exceptions = require_caml_js_exceptions();
+    function init(n, f) {
+      return Caml_bytes.bytes_to_string(Bytes.init(n, f));
+    }
+    function copy(s) {
+      return Caml_bytes.bytes_to_string(Bytes.copy(Caml_bytes.bytes_of_string(s)));
+    }
+    function sub(s, ofs, len) {
+      return Caml_bytes.bytes_to_string(Bytes.sub(Caml_bytes.bytes_of_string(s), ofs, len));
+    }
+    function ensure_ge(x, y) {
+      if (x >= y) {
+        return x;
+      }
+      throw {
+        RE_EXN_ID: "Invalid_argument",
+        _1: "String.concat",
+        Error: new Error()
+      };
+    }
+    function sum_lengths(_acc, seplen, _param) {
+      while (true) {
+        var param = _param;
+        var acc = _acc;
+        if (!param) {
+          return acc;
+        }
+        var tl = param.tl;
+        var hd = param.hd;
+        if (!tl) {
+          return hd.length + acc | 0;
+        }
+        _param = tl;
+        _acc = ensure_ge((hd.length + seplen | 0) + acc | 0, acc);
+        continue;
+      }
+      ;
+    }
+    function unsafe_blits(dst, _pos, sep, seplen, _param) {
+      while (true) {
+        var param = _param;
+        var pos = _pos;
+        if (!param) {
+          return dst;
+        }
+        var tl = param.tl;
+        var hd = param.hd;
+        if (tl) {
+          Caml_bytes.caml_blit_string(hd, 0, dst, pos, hd.length);
+          Caml_bytes.caml_blit_string(sep, 0, dst, pos + hd.length | 0, seplen);
+          _param = tl;
+          _pos = (pos + hd.length | 0) + seplen | 0;
+          continue;
+        }
+        Caml_bytes.caml_blit_string(hd, 0, dst, pos, hd.length);
+        return dst;
+      }
+      ;
+    }
+    function concat(sep, l) {
+      if (!l) {
+        return "";
+      }
+      var seplen = sep.length;
+      return Caml_bytes.bytes_to_string(unsafe_blits(Caml_bytes.caml_create_bytes(sum_lengths(0, seplen, l)), 0, sep, seplen, l));
+    }
+    function iter(f, s) {
+      for (var i = 0, i_finish = s.length; i < i_finish; ++i) {
+        Curry._1(f, s.charCodeAt(i));
+      }
+    }
+    function iteri(f, s) {
+      for (var i = 0, i_finish = s.length; i < i_finish; ++i) {
+        Curry._2(f, i, s.charCodeAt(i));
+      }
+    }
+    function map(f, s) {
+      return Caml_bytes.bytes_to_string(Bytes.map(f, Caml_bytes.bytes_of_string(s)));
+    }
+    function mapi(f, s) {
+      return Caml_bytes.bytes_to_string(Bytes.mapi(f, Caml_bytes.bytes_of_string(s)));
+    }
+    function is_space(param) {
+      if (param > 13 || param < 9) {
+        return param === 32;
+      } else {
+        return param !== 11;
+      }
+    }
+    function trim(s) {
+      if (s === "" || !(is_space(s.charCodeAt(0)) || is_space(s.charCodeAt(s.length - 1 | 0)))) {
+        return s;
+      } else {
+        return Caml_bytes.bytes_to_string(Bytes.trim(Caml_bytes.bytes_of_string(s)));
+      }
+    }
+    function escaped(s) {
+      var needs_escape = function(_i) {
+        while (true) {
+          var i = _i;
+          if (i >= s.length) {
+            return false;
+          }
+          var match = s.charCodeAt(i);
+          if (match < 32) {
+            return true;
+          }
+          if (match > 92 || match < 34) {
+            if (match >= 127) {
+              return true;
+            }
+            _i = i + 1 | 0;
+            continue;
+          }
+          if (match > 91 || match < 35) {
+            return true;
+          }
+          _i = i + 1 | 0;
+          continue;
+        }
+        ;
+      };
+      if (needs_escape(0)) {
+        return Caml_bytes.bytes_to_string(Bytes.escaped(Caml_bytes.bytes_of_string(s)));
+      } else {
+        return s;
+      }
+    }
+    function index_rec(s, lim, _i, c) {
+      while (true) {
+        var i = _i;
+        if (i >= lim) {
+          throw {
+            RE_EXN_ID: "Not_found",
+            Error: new Error()
+          };
+        }
+        if (s.charCodeAt(i) === c) {
+          return i;
+        }
+        _i = i + 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function index(s, c) {
+      return index_rec(s, s.length, 0, c);
+    }
+    function index_rec_opt(s, lim, _i, c) {
+      while (true) {
+        var i = _i;
+        if (i >= lim) {
+          return;
+        }
+        if (s.charCodeAt(i) === c) {
+          return i;
+        }
+        _i = i + 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function index_opt(s, c) {
+      return index_rec_opt(s, s.length, 0, c);
+    }
+    function index_from(s, i, c) {
+      var l = s.length;
+      if (i < 0 || i > l) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.index_from / Bytes.index_from",
+          Error: new Error()
+        };
+      }
+      return index_rec(s, l, i, c);
+    }
+    function index_from_opt(s, i, c) {
+      var l = s.length;
+      if (i < 0 || i > l) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.index_from_opt / Bytes.index_from_opt",
+          Error: new Error()
+        };
+      }
+      return index_rec_opt(s, l, i, c);
+    }
+    function rindex_rec(s, _i, c) {
+      while (true) {
+        var i = _i;
+        if (i < 0) {
+          throw {
+            RE_EXN_ID: "Not_found",
+            Error: new Error()
+          };
+        }
+        if (s.charCodeAt(i) === c) {
+          return i;
+        }
+        _i = i - 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function rindex(s, c) {
+      return rindex_rec(s, s.length - 1 | 0, c);
+    }
+    function rindex_from(s, i, c) {
+      if (i < -1 || i >= s.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.rindex_from / Bytes.rindex_from",
+          Error: new Error()
+        };
+      }
+      return rindex_rec(s, i, c);
+    }
+    function rindex_rec_opt(s, _i, c) {
+      while (true) {
+        var i = _i;
+        if (i < 0) {
+          return;
+        }
+        if (s.charCodeAt(i) === c) {
+          return i;
+        }
+        _i = i - 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function rindex_opt(s, c) {
+      return rindex_rec_opt(s, s.length - 1 | 0, c);
+    }
+    function rindex_from_opt(s, i, c) {
+      if (i < -1 || i >= s.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.rindex_from_opt / Bytes.rindex_from_opt",
+          Error: new Error()
+        };
+      }
+      return rindex_rec_opt(s, i, c);
+    }
+    function contains_from(s, i, c) {
+      var l = s.length;
+      if (i < 0 || i > l) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.contains_from / Bytes.contains_from",
+          Error: new Error()
+        };
+      }
+      try {
+        index_rec(s, l, i, c);
+        return true;
+      } catch (raw_exn) {
+        var exn = Caml_js_exceptions.internalToOCamlException(raw_exn);
+        if (exn.RE_EXN_ID === "Not_found") {
+          return false;
+        }
+        throw exn;
+      }
+    }
+    function contains(s, c) {
+      return contains_from(s, 0, c);
+    }
+    function rcontains_from(s, i, c) {
+      if (i < 0 || i >= s.length) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "String.rcontains_from / Bytes.rcontains_from",
+          Error: new Error()
+        };
+      }
+      try {
+        rindex_rec(s, i, c);
+        return true;
+      } catch (raw_exn) {
+        var exn = Caml_js_exceptions.internalToOCamlException(raw_exn);
+        if (exn.RE_EXN_ID === "Not_found") {
+          return false;
+        }
+        throw exn;
+      }
+    }
+    function uppercase_ascii(s) {
+      return Caml_bytes.bytes_to_string(Bytes.uppercase_ascii(Caml_bytes.bytes_of_string(s)));
+    }
+    function lowercase_ascii(s) {
+      return Caml_bytes.bytes_to_string(Bytes.lowercase_ascii(Caml_bytes.bytes_of_string(s)));
+    }
+    function capitalize_ascii(s) {
+      return Caml_bytes.bytes_to_string(Bytes.capitalize_ascii(Caml_bytes.bytes_of_string(s)));
+    }
+    function uncapitalize_ascii(s) {
+      return Caml_bytes.bytes_to_string(Bytes.uncapitalize_ascii(Caml_bytes.bytes_of_string(s)));
+    }
+    var compare = Caml_primitive.caml_string_compare;
+    function split_on_char(sep, s) {
+      var r = 0;
+      var j = s.length;
+      for (var i = s.length - 1 | 0; i >= 0; --i) {
+        if (s.charCodeAt(i) === sep) {
+          r = {
+            hd: sub(s, i + 1 | 0, (j - i | 0) - 1 | 0),
+            tl: r
+          };
+          j = i;
+        }
+      }
+      return {
+        hd: sub(s, 0, j),
+        tl: r
+      };
+    }
+    function uppercase(s) {
+      return Caml_bytes.bytes_to_string(Bytes.uppercase(Caml_bytes.bytes_of_string(s)));
+    }
+    function lowercase(s) {
+      return Caml_bytes.bytes_to_string(Bytes.lowercase(Caml_bytes.bytes_of_string(s)));
+    }
+    function capitalize(s) {
+      return Caml_bytes.bytes_to_string(Bytes.capitalize(Caml_bytes.bytes_of_string(s)));
+    }
+    function uncapitalize(s) {
+      return Caml_bytes.bytes_to_string(Bytes.uncapitalize(Caml_bytes.bytes_of_string(s)));
+    }
+    var make = Caml_string.make;
+    var fill = Bytes.fill;
+    var blit = Bytes.blit_string;
+    function equal(prim, prim$1) {
+      return prim === prim$1;
+    }
+    exports.make = make;
+    exports.init = init;
+    exports.copy = copy;
+    exports.sub = sub;
+    exports.fill = fill;
+    exports.blit = blit;
+    exports.concat = concat;
+    exports.iter = iter;
+    exports.iteri = iteri;
+    exports.map = map;
+    exports.mapi = mapi;
+    exports.trim = trim;
+    exports.escaped = escaped;
+    exports.index = index;
+    exports.index_opt = index_opt;
+    exports.rindex = rindex;
+    exports.rindex_opt = rindex_opt;
+    exports.index_from = index_from;
+    exports.index_from_opt = index_from_opt;
+    exports.rindex_from = rindex_from;
+    exports.rindex_from_opt = rindex_from_opt;
+    exports.contains = contains;
+    exports.contains_from = contains_from;
+    exports.rcontains_from = rcontains_from;
+    exports.uppercase = uppercase;
+    exports.lowercase = lowercase;
+    exports.capitalize = capitalize;
+    exports.uncapitalize = uncapitalize;
+    exports.uppercase_ascii = uppercase_ascii;
+    exports.lowercase_ascii = lowercase_ascii;
+    exports.capitalize_ascii = capitalize_ascii;
+    exports.uncapitalize_ascii = uncapitalize_ascii;
+    exports.compare = compare;
+    exports.equal = equal;
+    exports.split_on_char = split_on_char;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_obj.js
+  var require_caml_obj = __commonJS((exports) => {
+    "use strict";
+    var Caml_primitive = require_caml_primitive();
+    var for_in = function(o, foo) {
+      for (var x in o) {
+        foo(x);
+      }
+    };
+    var caml_obj_dup = function(x) {
+      if (Array.isArray(x)) {
+        var len = x.length;
+        var v = new Array(len);
+        for (var i = 0; i < len; ++i) {
+          v[i] = x[i];
+        }
+        if (x.TAG !== void 0) {
+          v.TAG = x.TAG;
+        }
+        return v;
+      }
+      return Object.assign({}, x);
+    };
+    var update_dummy = function(x, y) {
+      var k;
+      if (Array.isArray(y)) {
+        for (k = 0; k < y.length; ++k) {
+          x[k] = y[k];
+        }
+        if (y.TAG !== void 0) {
+          x.TAG = y.TAG;
+        }
+      } else {
+        for (var k in y) {
+          x[k] = y[k];
+        }
+      }
+    };
+    function caml_compare(a, b) {
+      if (a === b) {
+        return 0;
+      }
+      var a_type = typeof a;
+      var b_type = typeof b;
+      switch (a_type) {
+        case "boolean":
+          if (b_type === "boolean") {
+            return Caml_primitive.caml_bool_compare(a, b);
+          }
+          break;
+        case "function":
+          if (b_type === "function") {
+            throw {
+              RE_EXN_ID: "Invalid_argument",
+              _1: "compare: functional value",
+              Error: new Error()
+            };
+          }
+          break;
+        case "number":
+          if (b_type === "number") {
+            return Caml_primitive.caml_int_compare(a, b);
+          }
+          break;
+        case "string":
+          if (b_type === "string") {
+            return Caml_primitive.caml_string_compare(a, b);
+          } else {
+            return 1;
+          }
+        case "undefined":
+          return -1;
+        default:
+      }
+      switch (b_type) {
+        case "string":
+          return -1;
+        case "undefined":
+          return 1;
+        default:
+          if (a_type === "boolean") {
+            return 1;
+          }
+          if (b_type === "boolean") {
+            return -1;
+          }
+          if (a_type === "function") {
+            return 1;
+          }
+          if (b_type === "function") {
+            return -1;
+          }
+          if (a_type === "number") {
+            if (b === null || b.BS_PRIVATE_NESTED_SOME_NONE !== void 0) {
+              return 1;
+            } else {
+              return -1;
+            }
+          }
+          if (b_type === "number") {
+            if (a === null || a.BS_PRIVATE_NESTED_SOME_NONE !== void 0) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }
+          if (a === null) {
+            if (b.BS_PRIVATE_NESTED_SOME_NONE !== void 0) {
+              return 1;
+            } else {
+              return -1;
+            }
+          }
+          if (b === null) {
+            if (a.BS_PRIVATE_NESTED_SOME_NONE !== void 0) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }
+          if (a.BS_PRIVATE_NESTED_SOME_NONE !== void 0) {
+            if (b.BS_PRIVATE_NESTED_SOME_NONE !== void 0) {
+              return aux_obj_compare(a, b);
+            } else {
+              return -1;
+            }
+          }
+          var tag_a = a.TAG | 0;
+          var tag_b = b.TAG | 0;
+          if (tag_a === 248) {
+            return Caml_primitive.caml_int_compare(a[1], b[1]);
+          }
+          if (tag_a === 251) {
+            throw {
+              RE_EXN_ID: "Invalid_argument",
+              _1: "equal: abstract value",
+              Error: new Error()
+            };
+          }
+          if (tag_a !== tag_b) {
+            if (tag_a < tag_b) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }
+          var len_a = a.length | 0;
+          var len_b = b.length | 0;
+          if (len_a === len_b) {
+            if (Array.isArray(a)) {
+              var _i = 0;
+              while (true) {
+                var i = _i;
+                if (i === len_a) {
+                  return 0;
+                }
+                var res = caml_compare(a[i], b[i]);
+                if (res !== 0) {
+                  return res;
+                }
+                _i = i + 1 | 0;
+                continue;
+              }
+              ;
+            } else if (a instanceof Date && b instanceof Date) {
+              return a - b;
+            } else {
+              return aux_obj_compare(a, b);
+            }
+          } else if (len_a < len_b) {
+            var _i$1 = 0;
+            while (true) {
+              var i$1 = _i$1;
+              if (i$1 === len_a) {
+                return -1;
+              }
+              var res$1 = caml_compare(a[i$1], b[i$1]);
+              if (res$1 !== 0) {
+                return res$1;
+              }
+              _i$1 = i$1 + 1 | 0;
+              continue;
+            }
+            ;
+          } else {
+            var _i$2 = 0;
+            while (true) {
+              var i$2 = _i$2;
+              if (i$2 === len_b) {
+                return 1;
+              }
+              var res$2 = caml_compare(a[i$2], b[i$2]);
+              if (res$2 !== 0) {
+                return res$2;
+              }
+              _i$2 = i$2 + 1 | 0;
+              continue;
+            }
+            ;
+          }
+      }
+    }
+    function aux_obj_compare(a, b) {
+      var min_key_lhs = {
+        contents: void 0
+      };
+      var min_key_rhs = {
+        contents: void 0
+      };
+      var do_key = function(param, key) {
+        var min_key = param[2];
+        var b2 = param[1];
+        if (!(!b2.hasOwnProperty(key) || caml_compare(param[0][key], b2[key]) > 0)) {
+          return;
+        }
+        var mk = min_key.contents;
+        if (mk !== void 0 && key >= mk) {
+          return;
+        } else {
+          min_key.contents = key;
+          return;
+        }
+      };
+      var partial_arg = [
+        a,
+        b,
+        min_key_rhs
+      ];
+      var do_key_a = function(param) {
+        return do_key(partial_arg, param);
+      };
+      var partial_arg$1 = [
+        b,
+        a,
+        min_key_lhs
+      ];
+      var do_key_b = function(param) {
+        return do_key(partial_arg$1, param);
+      };
+      for_in(a, do_key_a);
+      for_in(b, do_key_b);
+      var match = min_key_lhs.contents;
+      var match$1 = min_key_rhs.contents;
+      if (match !== void 0) {
+        if (match$1 !== void 0) {
+          return Caml_primitive.caml_string_compare(match, match$1);
+        } else {
+          return -1;
+        }
+      } else if (match$1 !== void 0) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    function caml_equal(a, b) {
+      if (a === b) {
+        return true;
+      }
+      var a_type = typeof a;
+      if (a_type === "string" || a_type === "number" || a_type === "boolean" || a_type === "undefined" || a === null) {
+        return false;
+      }
+      var b_type = typeof b;
+      if (a_type === "function" || b_type === "function") {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "equal: functional value",
+          Error: new Error()
+        };
+      }
+      if (b_type === "number" || b_type === "undefined" || b === null) {
+        return false;
+      }
+      var tag_a = a.TAG | 0;
+      var tag_b = b.TAG | 0;
+      if (tag_a === 248) {
+        return a[1] === b[1];
+      }
+      if (tag_a === 251) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "equal: abstract value",
+          Error: new Error()
+        };
+      }
+      if (tag_a !== tag_b) {
+        return false;
+      }
+      var len_a = a.length | 0;
+      var len_b = b.length | 0;
+      if (len_a === len_b) {
+        if (Array.isArray(a)) {
+          var _i = 0;
+          while (true) {
+            var i = _i;
+            if (i === len_a) {
+              return true;
+            }
+            if (!caml_equal(a[i], b[i])) {
+              return false;
+            }
+            _i = i + 1 | 0;
+            continue;
+          }
+          ;
+        } else if (a instanceof Date && b instanceof Date) {
+          return !(a > b || a < b);
+        } else {
+          var result = {
+            contents: true
+          };
+          var do_key_a = function(key) {
+            if (!b.hasOwnProperty(key)) {
+              result.contents = false;
+              return;
+            }
+          };
+          var do_key_b = function(key) {
+            if (!a.hasOwnProperty(key) || !caml_equal(b[key], a[key])) {
+              result.contents = false;
+              return;
+            }
+          };
+          for_in(a, do_key_a);
+          if (result.contents) {
+            for_in(b, do_key_b);
+          }
+          return result.contents;
+        }
+      } else {
+        return false;
+      }
+    }
+    function caml_equal_null(x, y) {
+      if (y !== null) {
+        return caml_equal(x, y);
+      } else {
+        return x === y;
+      }
+    }
+    function caml_equal_undefined(x, y) {
+      if (y !== void 0) {
+        return caml_equal(x, y);
+      } else {
+        return x === y;
+      }
+    }
+    function caml_equal_nullable(x, y) {
+      if (y == null) {
+        return x === y;
+      } else {
+        return caml_equal(x, y);
+      }
+    }
+    function caml_notequal(a, b) {
+      return !caml_equal(a, b);
+    }
+    function caml_greaterequal(a, b) {
+      return caml_compare(a, b) >= 0;
+    }
+    function caml_greaterthan(a, b) {
+      return caml_compare(a, b) > 0;
+    }
+    function caml_lessequal(a, b) {
+      return caml_compare(a, b) <= 0;
+    }
+    function caml_lessthan(a, b) {
+      return caml_compare(a, b) < 0;
+    }
+    function caml_min(x, y) {
+      if (caml_compare(x, y) <= 0) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function caml_max(x, y) {
+      if (caml_compare(x, y) >= 0) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    exports.caml_obj_dup = caml_obj_dup;
+    exports.update_dummy = update_dummy;
+    exports.caml_compare = caml_compare;
+    exports.caml_equal = caml_equal;
+    exports.caml_equal_null = caml_equal_null;
+    exports.caml_equal_undefined = caml_equal_undefined;
+    exports.caml_equal_nullable = caml_equal_nullable;
+    exports.caml_notequal = caml_notequal;
+    exports.caml_greaterequal = caml_greaterequal;
+    exports.caml_greaterthan = caml_greaterthan;
+    exports.caml_lessthan = caml_lessthan;
+    exports.caml_lessequal = caml_lessequal;
+    exports.caml_min = caml_min;
+    exports.caml_max = caml_max;
+  });
+
+  // node_modules/bs-platform/lib/js/camlinternalLazy.js
+  var require_camlinternalLazy = __commonJS((exports) => {
+    "use strict";
+    var Caml_exceptions = require_caml_exceptions();
+    function is_val(l) {
+      return l.LAZY_DONE;
+    }
+    var Undefined = /* @__PURE__ */ Caml_exceptions.create("CamlinternalLazy.Undefined");
+    function forward_with_closure(blk, closure) {
+      var result = closure();
+      blk.VAL = result;
+      blk.LAZY_DONE = true;
+      return result;
+    }
+    function raise_undefined() {
+      throw {
+        RE_EXN_ID: Undefined,
+        Error: new Error()
+      };
+    }
+    function force(lzv) {
+      if (lzv.LAZY_DONE) {
+        return lzv.VAL;
+      } else {
+        var closure = lzv.VAL;
+        lzv.VAL = raise_undefined;
+        try {
+          return forward_with_closure(lzv, closure);
+        } catch (e) {
+          lzv.VAL = function() {
+            throw e;
+          };
+          throw e;
+        }
+      }
+    }
+    function force_val(lzv) {
+      if (lzv.LAZY_DONE) {
+        return lzv.VAL;
+      } else {
+        var closure = lzv.VAL;
+        lzv.VAL = raise_undefined;
+        return forward_with_closure(lzv, closure);
+      }
+    }
+    exports.Undefined = Undefined;
+    exports.force = force;
+    exports.force_val = force_val;
+    exports.is_val = is_val;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_io.js
+  var require_caml_io = __commonJS((exports) => {
+    "use strict";
+    var stdout = {
+      buffer: "",
+      output: function(param, s) {
+        var v = s.length - 1 | 0;
+        if (typeof process !== "undefined" && process.stdout && process.stdout.write) {
+          return process.stdout.write(s);
+        } else {
+          if (s[v] === "\n") {
+            console.log(s.slice(0, v));
+          } else {
+            console.log(s);
+          }
+          return;
+        }
+      }
+    };
+    var stderr = {
+      buffer: "",
+      output: function(param, s) {
+        var v = s.length - 1 | 0;
+        if (s[v] === "\n") {
+          console.log(s.slice(0, v));
+        } else {
+          console.log(s);
+        }
+      }
+    };
+    function caml_ml_flush(oc) {
+      if (oc.buffer !== "") {
+        oc.output(oc, oc.buffer);
+        oc.buffer = "";
+        return;
+      }
+    }
+    function caml_ml_output(oc, str, offset, len) {
+      var str$1 = offset === 0 && len === str.length ? str : str.slice(offset, len);
+      if (typeof process !== "undefined" && process.stdout && process.stdout.write && oc === stdout) {
+        return process.stdout.write(str$1);
+      }
+      var id = str$1.lastIndexOf("\n");
+      if (id < 0) {
+        oc.buffer = oc.buffer + str$1;
+      } else {
+        oc.buffer = oc.buffer + str$1.slice(0, id + 1 | 0);
+        caml_ml_flush(oc);
+        oc.buffer = oc.buffer + str$1.slice(id + 1 | 0);
+      }
+    }
+    function caml_ml_output_char(oc, $$char) {
+      return caml_ml_output(oc, String.fromCharCode($$char), 0, 1);
+    }
+    function caml_ml_out_channels_list(param) {
+      return {
+        hd: stdout,
+        tl: {
+          hd: stderr,
+          tl: 0
+        }
+      };
+    }
+    var stdin;
+    exports.stdin = stdin;
+    exports.stdout = stdout;
+    exports.stderr = stderr;
+    exports.caml_ml_flush = caml_ml_flush;
+    exports.caml_ml_output = caml_ml_output;
+    exports.caml_ml_output_char = caml_ml_output_char;
+    exports.caml_ml_out_channels_list = caml_ml_out_channels_list;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_sys.js
+  var require_caml_sys = __commonJS((exports) => {
+    "use strict";
+    function caml_sys_getenv(s) {
+      if (typeof process === "undefined" || process.env === void 0) {
+        throw {
+          RE_EXN_ID: "Not_found",
+          Error: new Error()
+        };
+      }
+      var x = process.env[s];
+      if (x !== void 0) {
+        return x;
+      }
+      throw {
+        RE_EXN_ID: "Not_found",
+        Error: new Error()
+      };
+    }
+    var os_type = function(_) {
+      if (typeof process !== "undefined" && process.platform === "win32") {
+        return "Win32";
+      } else {
+        return "Unix";
+      }
+    };
+    function caml_sys_time(param) {
+      if (typeof process === "undefined" || process.uptime === void 0) {
+        return -1;
+      } else {
+        return process.uptime();
+      }
+    }
+    function caml_sys_system_command(_cmd) {
+      return 127;
+    }
+    var caml_sys_getcwd = function(param) {
+      if (typeof process === "undefined" || process.cwd === void 0) {
+        return "/";
+      }
+      return process.cwd();
+    };
+    function caml_sys_get_argv(param) {
+      if (typeof process === "undefined") {
+        return [
+          "",
+          [""]
+        ];
+      }
+      var argv = process.argv;
+      if (argv == null) {
+        return [
+          "",
+          [""]
+        ];
+      } else {
+        return [
+          argv[0],
+          argv
+        ];
+      }
+    }
+    function caml_sys_exit(exit_code) {
+      if (typeof process !== "undefined") {
+        return process.exit(exit_code);
+      }
+    }
+    function caml_sys_is_directory(_s) {
+      throw {
+        RE_EXN_ID: "Failure",
+        _1: "caml_sys_is_directory not implemented",
+        Error: new Error()
+      };
+    }
+    function caml_sys_file_exists(_s) {
+      throw {
+        RE_EXN_ID: "Failure",
+        _1: "caml_sys_file_exists not implemented",
+        Error: new Error()
+      };
+    }
+    exports.caml_sys_getenv = caml_sys_getenv;
+    exports.caml_sys_time = caml_sys_time;
+    exports.os_type = os_type;
+    exports.caml_sys_system_command = caml_sys_system_command;
+    exports.caml_sys_getcwd = caml_sys_getcwd;
+    exports.caml_sys_get_argv = caml_sys_get_argv;
+    exports.caml_sys_exit = caml_sys_exit;
+    exports.caml_sys_is_directory = caml_sys_is_directory;
+    exports.caml_sys_file_exists = caml_sys_file_exists;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_int64.js
+  var require_caml_int64 = __commonJS((exports) => {
+    "use strict";
+    function mk(lo, hi) {
+      return [
+        hi,
+        lo >>> 0
+      ];
+    }
+    var min_int = [
+      -2147483648,
+      0
+    ];
+    var max_int = [
+      2147483647,
+      4294967295
+    ];
+    var one = [
+      0,
+      1
+    ];
+    var zero = [
+      0,
+      0
+    ];
+    var neg_one = [
+      -1,
+      4294967295
+    ];
+    function neg_signed(x) {
+      return (x & -2147483648) !== 0;
+    }
+    function non_neg_signed(x) {
+      return (x & -2147483648) === 0;
+    }
+    function succ(param) {
+      var x_lo = param[1];
+      var x_hi = param[0];
+      var lo = x_lo + 1 | 0;
+      return [
+        x_hi + (lo === 0 ? 1 : 0) | 0,
+        lo >>> 0
+      ];
+    }
+    function neg(param) {
+      var other_lo = (param[1] ^ -1) + 1 | 0;
+      return [
+        (param[0] ^ -1) + (other_lo === 0 ? 1 : 0) | 0,
+        other_lo >>> 0
+      ];
+    }
+    function add_aux(param, y_lo, y_hi) {
+      var x_lo = param[1];
+      var lo = x_lo + y_lo | 0;
+      var overflow = neg_signed(x_lo) && (neg_signed(y_lo) || non_neg_signed(lo)) || neg_signed(y_lo) && non_neg_signed(lo) ? 1 : 0;
+      return [
+        param[0] + y_hi + overflow | 0,
+        lo >>> 0
+      ];
+    }
+    function add(self2, param) {
+      return add_aux(self2, param[1], param[0]);
+    }
+    function eq(x, y) {
+      if (x[0] === y[0]) {
+        return x[1] === y[1];
+      } else {
+        return false;
+      }
+    }
+    function equal_null(x, y) {
+      if (y !== null) {
+        return eq(x, y);
+      } else {
+        return false;
+      }
+    }
+    function equal_undefined(x, y) {
+      if (y !== void 0) {
+        return eq(x, y);
+      } else {
+        return false;
+      }
+    }
+    function equal_nullable(x, y) {
+      if (y == null) {
+        return false;
+      } else {
+        return eq(x, y);
+      }
+    }
+    function sub_aux(x, lo, hi) {
+      var y_lo = (lo ^ -1) + 1 >>> 0;
+      var y_hi = (hi ^ -1) + (y_lo === 0 ? 1 : 0) | 0;
+      return add_aux(x, y_lo, y_hi);
+    }
+    function sub(self2, param) {
+      return sub_aux(self2, param[1], param[0]);
+    }
+    function lsl_(x, numBits) {
+      if (numBits === 0) {
+        return x;
+      }
+      var lo = x[1];
+      if (numBits >= 32) {
+        return [
+          lo << (numBits - 32 | 0),
+          0
+        ];
+      } else {
+        return [
+          lo >>> (32 - numBits | 0) | x[0] << numBits,
+          lo << numBits >>> 0
+        ];
+      }
+    }
+    function lsr_(x, numBits) {
+      if (numBits === 0) {
+        return x;
+      }
+      var hi = x[0];
+      var offset = numBits - 32 | 0;
+      if (offset === 0) {
+        return [
+          0,
+          hi >>> 0
+        ];
+      } else if (offset > 0) {
+        return [
+          0,
+          hi >>> offset
+        ];
+      } else {
+        return [
+          hi >>> numBits,
+          (hi << (-offset | 0) | x[1] >>> numBits) >>> 0
+        ];
+      }
+    }
+    function asr_(x, numBits) {
+      if (numBits === 0) {
+        return x;
+      }
+      var hi = x[0];
+      if (numBits < 32) {
+        return [
+          hi >> numBits,
+          (hi << (32 - numBits | 0) | x[1] >>> numBits) >>> 0
+        ];
+      } else {
+        return [
+          hi >= 0 ? 0 : -1,
+          hi >> (numBits - 32 | 0) >>> 0
+        ];
+      }
+    }
+    function is_zero(param) {
+      if (param[0] !== 0) {
+        return false;
+      } else {
+        return param[1] === 0;
+      }
+    }
+    function mul(_this, _other) {
+      while (true) {
+        var other = _other;
+        var $$this = _this;
+        var lo;
+        var this_hi = $$this[0];
+        var exit = 0;
+        var exit$1 = 0;
+        var exit$2 = 0;
+        if (this_hi !== 0) {
+          exit$2 = 4;
+        } else {
+          if ($$this[1] === 0) {
+            return zero;
+          }
+          exit$2 = 4;
+        }
+        if (exit$2 === 4) {
+          if (other[0] !== 0) {
+            exit$1 = 3;
+          } else {
+            if (other[1] === 0) {
+              return zero;
+            }
+            exit$1 = 3;
+          }
+        }
+        if (exit$1 === 3) {
+          if (this_hi !== -2147483648 || $$this[1] !== 0) {
+            exit = 2;
+          } else {
+            lo = other[1];
+          }
+        }
+        if (exit === 2) {
+          var other_hi = other[0];
+          var lo$1 = $$this[1];
+          var exit$3 = 0;
+          if (other_hi !== -2147483648 || other[1] !== 0) {
+            exit$3 = 3;
+          } else {
+            lo = lo$1;
+          }
+          if (exit$3 === 3) {
+            var other_lo = other[1];
+            if (this_hi < 0) {
+              if (other_hi >= 0) {
+                return neg(mul(neg($$this), other));
+              }
+              _other = neg(other);
+              _this = neg($$this);
+              continue;
+            }
+            if (other_hi < 0) {
+              return neg(mul($$this, neg(other)));
+            }
+            var a48 = this_hi >>> 16;
+            var a32 = this_hi & 65535;
+            var a16 = lo$1 >>> 16;
+            var a00 = lo$1 & 65535;
+            var b48 = other_hi >>> 16;
+            var b32 = other_hi & 65535;
+            var b16 = other_lo >>> 16;
+            var b00 = other_lo & 65535;
+            var c48 = 0;
+            var c32 = 0;
+            var c16 = 0;
+            var c00 = a00 * b00;
+            c16 = (c00 >>> 16) + a16 * b00;
+            c32 = c16 >>> 16;
+            c16 = (c16 & 65535) + a00 * b16;
+            c32 = c32 + (c16 >>> 16) + a32 * b00;
+            c48 = c32 >>> 16;
+            c32 = (c32 & 65535) + a16 * b16;
+            c48 = c48 + (c32 >>> 16);
+            c32 = (c32 & 65535) + a00 * b32;
+            c48 = c48 + (c32 >>> 16);
+            c32 = c32 & 65535;
+            c48 = c48 + (a48 * b00 + a32 * b16 + a16 * b32 + a00 * b48) & 65535;
+            return [
+              c32 | c48 << 16,
+              (c00 & 65535 | (c16 & 65535) << 16) >>> 0
+            ];
+          }
+        }
+        if ((lo & 1) === 0) {
+          return zero;
+        } else {
+          return min_int;
+        }
+      }
+      ;
+    }
+    function xor(param, param$1) {
+      return [
+        param[0] ^ param$1[0],
+        (param[1] ^ param$1[1]) >>> 0
+      ];
+    }
+    function or_(param, param$1) {
+      return [
+        param[0] | param$1[0],
+        (param[1] | param$1[1]) >>> 0
+      ];
+    }
+    function and_(param, param$1) {
+      return [
+        param[0] & param$1[0],
+        (param[1] & param$1[1]) >>> 0
+      ];
+    }
+    function ge(param, param$1) {
+      var other_hi = param$1[0];
+      var hi = param[0];
+      if (hi > other_hi) {
+        return true;
+      } else if (hi < other_hi) {
+        return false;
+      } else {
+        return param[1] >= param$1[1];
+      }
+    }
+    function neq(x, y) {
+      return !eq(x, y);
+    }
+    function lt(x, y) {
+      return !ge(x, y);
+    }
+    function gt(x, y) {
+      if (x[0] > y[0]) {
+        return true;
+      } else if (x[0] < y[0]) {
+        return false;
+      } else {
+        return x[1] > y[1];
+      }
+    }
+    function le(x, y) {
+      return !gt(x, y);
+    }
+    function min(x, y) {
+      if (ge(x, y)) {
+        return y;
+      } else {
+        return x;
+      }
+    }
+    function max(x, y) {
+      if (gt(x, y)) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+    function to_float(param) {
+      return param[0] * 4294967296 + param[1];
+    }
+    function of_float(x) {
+      if (isNaN(x) || !isFinite(x)) {
+        return zero;
+      }
+      if (x <= -9223372036854776e3) {
+        return min_int;
+      }
+      if (x + 1 >= 9223372036854776e3) {
+        return max_int;
+      }
+      if (x < 0) {
+        return neg(of_float(-x));
+      }
+      var hi = x / 4294967296 | 0;
+      var lo = x % 4294967296 | 0;
+      return [
+        hi,
+        lo >>> 0
+      ];
+    }
+    function isSafeInteger(param) {
+      var hi = param[0];
+      var top11Bits = hi >> 21;
+      if (top11Bits === 0) {
+        return true;
+      } else if (top11Bits === -1) {
+        return !(param[1] === 0 && hi === -2097152);
+      } else {
+        return false;
+      }
+    }
+    function to_string(self2) {
+      if (isSafeInteger(self2)) {
+        return String(to_float(self2));
+      }
+      if (self2[0] < 0) {
+        if (eq(self2, min_int)) {
+          return "-9223372036854775808";
+        } else {
+          return "-" + to_string(neg(self2));
+        }
+      }
+      var approx_div1 = of_float(Math.floor(to_float(self2) / 10));
+      var lo = approx_div1[1];
+      var hi = approx_div1[0];
+      var match = sub_aux(sub_aux(self2, lo << 3, lo >>> 29 | hi << 3), lo << 1, lo >>> 31 | hi << 1);
+      var rem_lo = match[1];
+      var rem_hi = match[0];
+      if (rem_lo === 0 && rem_hi === 0) {
+        return to_string(approx_div1) + "0";
+      }
+      if (rem_hi < 0) {
+        var rem_lo$1 = (rem_lo ^ -1) + 1 >>> 0;
+        var delta = Math.ceil(rem_lo$1 / 10);
+        var remainder = 10 * delta - rem_lo$1;
+        return to_string(sub_aux(approx_div1, delta | 0, 0)) + String(remainder | 0);
+      }
+      var delta$1 = Math.floor(rem_lo / 10);
+      var remainder$1 = rem_lo - 10 * delta$1;
+      return to_string(add_aux(approx_div1, delta$1 | 0, 0)) + String(remainder$1 | 0);
+    }
+    function div(_self, _other) {
+      while (true) {
+        var other = _other;
+        var self2 = _self;
+        var self_hi = self2[0];
+        var exit = 0;
+        var exit$1 = 0;
+        if (other[0] !== 0 || other[1] !== 0) {
+          exit$1 = 2;
+        } else {
+          throw {
+            RE_EXN_ID: "Division_by_zero",
+            Error: new Error()
+          };
+        }
+        if (exit$1 === 2) {
+          if (self_hi !== -2147483648) {
+            if (self_hi !== 0) {
+              exit = 1;
+            } else {
+              if (self2[1] === 0) {
+                return zero;
+              }
+              exit = 1;
+            }
+          } else if (self2[1] !== 0) {
+            exit = 1;
+          } else {
+            if (eq(other, one) || eq(other, neg_one)) {
+              return self2;
+            }
+            if (eq(other, min_int)) {
+              return one;
+            }
+            var half_this = asr_(self2, 1);
+            var approx = lsl_(div(half_this, other), 1);
+            var exit$2 = 0;
+            if (approx[0] !== 0) {
+              exit$2 = 3;
+            } else {
+              if (approx[1] === 0) {
+                if (other[0] < 0) {
+                  return one;
+                } else {
+                  return neg(one);
+                }
+              }
+              exit$2 = 3;
+            }
+            if (exit$2 === 3) {
+              var rem = sub(self2, mul(other, approx));
+              return add(approx, div(rem, other));
+            }
+          }
+        }
+        if (exit === 1) {
+          var other_hi = other[0];
+          var exit$3 = 0;
+          if (other_hi !== -2147483648) {
+            exit$3 = 2;
+          } else {
+            if (other[1] === 0) {
+              return zero;
+            }
+            exit$3 = 2;
+          }
+          if (exit$3 === 2) {
+            if (self_hi < 0) {
+              if (other_hi >= 0) {
+                return neg(div(neg(self2), other));
+              }
+              _other = neg(other);
+              _self = neg(self2);
+              continue;
+            }
+            if (other_hi < 0) {
+              return neg(div(self2, neg(other)));
+            }
+            var res = zero;
+            var rem$1 = self2;
+            while (ge(rem$1, other)) {
+              var b = Math.floor(to_float(rem$1) / to_float(other));
+              var approx$1 = 1 > b ? 1 : b;
+              var log2 = Math.ceil(Math.log(approx$1) / Math.LN2);
+              var delta = log2 <= 48 ? 1 : Math.pow(2, log2 - 48);
+              var approxRes = of_float(approx$1);
+              var approxRem = mul(approxRes, other);
+              while (approxRem[0] < 0 || gt(approxRem, rem$1)) {
+                approx$1 = approx$1 - delta;
+                approxRes = of_float(approx$1);
+                approxRem = mul(approxRes, other);
+              }
+              ;
+              if (is_zero(approxRes)) {
+                approxRes = one;
+              }
+              res = add(res, approxRes);
+              rem$1 = sub(rem$1, approxRem);
+            }
+            ;
+            return res;
+          }
+        }
+      }
+      ;
+    }
+    function mod_(self2, other) {
+      return sub(self2, mul(div(self2, other), other));
+    }
+    function div_mod(self2, other) {
+      var quotient = div(self2, other);
+      return [
+        quotient,
+        sub(self2, mul(quotient, other))
+      ];
+    }
+    function compare(self2, other) {
+      var y = other[0];
+      var x = self2[0];
+      var v = x < y ? -1 : x === y ? 0 : 1;
+      if (v !== 0) {
+        return v;
+      }
+      var y$1 = other[1];
+      var x$1 = self2[1];
+      if (x$1 < y$1) {
+        return -1;
+      } else if (x$1 === y$1) {
+        return 0;
+      } else {
+        return 1;
+      }
+    }
+    function of_int32(lo) {
+      return [
+        lo < 0 ? -1 : 0,
+        lo >>> 0
+      ];
+    }
+    function to_int32(x) {
+      return x[1] | 0;
+    }
+    function to_hex(x) {
+      var x_lo = x[1];
+      var x_hi = x[0];
+      var aux = function(v) {
+        return (v >>> 0).toString(16);
+      };
+      if (x_hi === 0 && x_lo === 0) {
+        return "0";
+      }
+      if (x_lo === 0) {
+        return aux(x_hi) + "00000000";
+      }
+      if (x_hi === 0) {
+        return aux(x_lo);
+      }
+      var lo = aux(x_lo);
+      var pad = 8 - lo.length | 0;
+      if (pad <= 0) {
+        return aux(x_hi) + lo;
+      } else {
+        return aux(x_hi) + ("0".repeat(pad) + lo);
+      }
+    }
+    function discard_sign(x) {
+      return [
+        2147483647 & x[0],
+        x[1]
+      ];
+    }
+    function float_of_bits(x) {
+      return function(lo, hi) {
+        return new Float64Array(new Int32Array([lo, hi]).buffer)[0];
+      }(x[1], x[0]);
+    }
+    function bits_of_float(x) {
+      var match = function(x2) {
+        return new Int32Array(new Float64Array([x2]).buffer);
+      }(x);
+      return [
+        match[1],
+        match[0] >>> 0
+      ];
+    }
+    exports.mk = mk;
+    exports.succ = succ;
+    exports.min_int = min_int;
+    exports.max_int = max_int;
+    exports.one = one;
+    exports.zero = zero;
+    exports.neg_one = neg_one;
+    exports.of_int32 = of_int32;
+    exports.to_int32 = to_int32;
+    exports.add = add;
+    exports.neg = neg;
+    exports.sub = sub;
+    exports.lsl_ = lsl_;
+    exports.lsr_ = lsr_;
+    exports.asr_ = asr_;
+    exports.is_zero = is_zero;
+    exports.mul = mul;
+    exports.xor = xor;
+    exports.or_ = or_;
+    exports.and_ = and_;
+    exports.ge = ge;
+    exports.eq = eq;
+    exports.neq = neq;
+    exports.lt = lt;
+    exports.gt = gt;
+    exports.le = le;
+    exports.equal_null = equal_null;
+    exports.equal_undefined = equal_undefined;
+    exports.equal_nullable = equal_nullable;
+    exports.min = min;
+    exports.max = max;
+    exports.to_float = to_float;
+    exports.of_float = of_float;
+    exports.div = div;
+    exports.mod_ = mod_;
+    exports.compare = compare;
+    exports.float_of_bits = float_of_bits;
+    exports.bits_of_float = bits_of_float;
+    exports.div_mod = div_mod;
+    exports.to_hex = to_hex;
+    exports.discard_sign = discard_sign;
+    exports.to_string = to_string;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_format.js
+  var require_caml_format = __commonJS((exports) => {
+    "use strict";
+    var Caml_int64 = require_caml_int64();
+    function parse_digit(c) {
+      if (c >= 65) {
+        if (c >= 97) {
+          if (c >= 123) {
+            return -1;
+          } else {
+            return c - 87 | 0;
+          }
+        } else if (c >= 91) {
+          return -1;
+        } else {
+          return c - 55 | 0;
+        }
+      } else if (c > 57 || c < 48) {
+        return -1;
+      } else {
+        return c - 48 | 0;
+      }
+    }
+    function int_of_string_base(param) {
+      switch (param) {
+        case 0:
+          return 8;
+        case 1:
+          return 16;
+        case 2:
+          return 10;
+        case 3:
+          return 2;
+      }
+    }
+    function parse_sign_and_base(s) {
+      var sign = 1;
+      var base = 2;
+      var i = 0;
+      var match = s.charCodeAt(i);
+      switch (match) {
+        case 43:
+          i = i + 1 | 0;
+          break;
+        case 44:
+          break;
+        case 45:
+          sign = -1;
+          i = i + 1 | 0;
+          break;
+        default:
+      }
+      if (s[i] === "0") {
+        var match$1 = s.charCodeAt(i + 1 | 0);
+        if (match$1 >= 89) {
+          if (match$1 >= 111) {
+            if (match$1 < 121) {
+              switch (match$1) {
+                case 111:
+                  base = 0;
+                  i = i + 2 | 0;
+                  break;
+                case 117:
+                  i = i + 2 | 0;
+                  break;
+                case 112:
+                case 113:
+                case 114:
+                case 115:
+                case 116:
+                case 118:
+                case 119:
+                  break;
+                case 120:
+                  base = 1;
+                  i = i + 2 | 0;
+                  break;
+              }
+            }
+          } else if (match$1 === 98) {
+            base = 3;
+            i = i + 2 | 0;
+          }
+        } else if (match$1 !== 66) {
+          if (match$1 >= 79) {
+            switch (match$1) {
+              case 79:
+                base = 0;
+                i = i + 2 | 0;
+                break;
+              case 85:
+                i = i + 2 | 0;
+                break;
+              case 80:
+              case 81:
+              case 82:
+              case 83:
+              case 84:
+              case 86:
+              case 87:
+                break;
+              case 88:
+                base = 1;
+                i = i + 2 | 0;
+                break;
+            }
+          }
+        } else {
+          base = 3;
+          i = i + 2 | 0;
+        }
+      }
+      return [
+        i,
+        sign,
+        base
+      ];
+    }
+    function caml_int_of_string(s) {
+      var match = parse_sign_and_base(s);
+      var i = match[0];
+      var base = int_of_string_base(match[2]);
+      var threshold = 4294967295;
+      var len = s.length;
+      var c = i < len ? s.charCodeAt(i) : 0;
+      var d = parse_digit(c);
+      if (d < 0 || d >= base) {
+        throw {
+          RE_EXN_ID: "Failure",
+          _1: "int_of_string",
+          Error: new Error()
+        };
+      }
+      var aux = function(_acc, _k) {
+        while (true) {
+          var k = _k;
+          var acc = _acc;
+          if (k === len) {
+            return acc;
+          }
+          var a = s.charCodeAt(k);
+          if (a === 95) {
+            _k = k + 1 | 0;
+            continue;
+          }
+          var v = parse_digit(a);
+          if (v < 0 || v >= base) {
+            throw {
+              RE_EXN_ID: "Failure",
+              _1: "int_of_string",
+              Error: new Error()
+            };
+          }
+          var acc$1 = base * acc + v;
+          if (acc$1 > threshold) {
+            throw {
+              RE_EXN_ID: "Failure",
+              _1: "int_of_string",
+              Error: new Error()
+            };
+          }
+          _k = k + 1 | 0;
+          _acc = acc$1;
+          continue;
+        }
+        ;
+      };
+      var res = match[1] * aux(d, i + 1 | 0);
+      var or_res = res | 0;
+      if (base === 10 && res !== or_res) {
+        throw {
+          RE_EXN_ID: "Failure",
+          _1: "int_of_string",
+          Error: new Error()
+        };
+      }
+      return or_res;
+    }
+    function caml_int64_of_string(s) {
+      var match = parse_sign_and_base(s);
+      var hbase = match[2];
+      var i = match[0];
+      var base = Caml_int64.of_int32(int_of_string_base(hbase));
+      var sign = Caml_int64.of_int32(match[1]);
+      var threshold;
+      switch (hbase) {
+        case 0:
+          threshold = /* @__PURE__ */ Caml_int64.mk(-1, 536870911);
+          break;
+        case 1:
+          threshold = /* @__PURE__ */ Caml_int64.mk(-1, 268435455);
+          break;
+        case 2:
+          threshold = /* @__PURE__ */ Caml_int64.mk(-1717986919, 429496729);
+          break;
+        case 3:
+          threshold = Caml_int64.max_int;
+          break;
+      }
+      var len = s.length;
+      var c = i < len ? s.charCodeAt(i) : 0;
+      var d = Caml_int64.of_int32(parse_digit(c));
+      if (Caml_int64.lt(d, Caml_int64.zero) || Caml_int64.ge(d, base)) {
+        throw {
+          RE_EXN_ID: "Failure",
+          _1: "int64_of_string",
+          Error: new Error()
+        };
+      }
+      var aux = function(_acc, _k) {
+        while (true) {
+          var k = _k;
+          var acc = _acc;
+          if (k === len) {
+            return acc;
+          }
+          var a = s.charCodeAt(k);
+          if (a === 95) {
+            _k = k + 1 | 0;
+            continue;
+          }
+          var v = Caml_int64.of_int32(parse_digit(a));
+          if (Caml_int64.lt(v, Caml_int64.zero) || Caml_int64.ge(v, base) || Caml_int64.gt(acc, threshold)) {
+            throw {
+              RE_EXN_ID: "Failure",
+              _1: "int64_of_string",
+              Error: new Error()
+            };
+          }
+          var acc$1 = Caml_int64.add(Caml_int64.mul(base, acc), v);
+          _k = k + 1 | 0;
+          _acc = acc$1;
+          continue;
+        }
+        ;
+      };
+      var res = Caml_int64.mul(sign, aux(d, i + 1 | 0));
+      var or_res = Caml_int64.or_(res, Caml_int64.zero);
+      if (Caml_int64.eq(base, /* @__PURE__ */ Caml_int64.mk(10, 0)) && Caml_int64.neq(res, or_res)) {
+        throw {
+          RE_EXN_ID: "Failure",
+          _1: "int64_of_string",
+          Error: new Error()
+        };
+      }
+      return or_res;
+    }
+    function int_of_base(param) {
+      switch (param) {
+        case 0:
+          return 8;
+        case 1:
+          return 16;
+        case 2:
+          return 10;
+      }
+    }
+    function lowercase(c) {
+      if (c >= 65 && c <= 90 || c >= 192 && c <= 214 || c >= 216 && c <= 222) {
+        return c + 32 | 0;
+      } else {
+        return c;
+      }
+    }
+    function parse_format(fmt) {
+      var len = fmt.length;
+      if (len > 31) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "format_int: format too long",
+          Error: new Error()
+        };
+      }
+      var f = {
+        justify: "+",
+        signstyle: "-",
+        filter: " ",
+        alternate: false,
+        base: 2,
+        signedconv: false,
+        width: 0,
+        uppercase: false,
+        sign: 1,
+        prec: -1,
+        conv: "f"
+      };
+      var _i = 0;
+      while (true) {
+        var i = _i;
+        if (i >= len) {
+          return f;
+        }
+        var c = fmt.charCodeAt(i);
+        var exit = 0;
+        if (c >= 69) {
+          if (c >= 88) {
+            if (c >= 121) {
+              exit = 1;
+            } else {
+              switch (c) {
+                case 88:
+                  f.base = 1;
+                  f.uppercase = true;
+                  _i = i + 1 | 0;
+                  continue;
+                case 101:
+                case 102:
+                case 103:
+                  exit = 5;
+                  break;
+                case 100:
+                case 105:
+                  exit = 4;
+                  break;
+                case 111:
+                  f.base = 0;
+                  _i = i + 1 | 0;
+                  continue;
+                case 117:
+                  f.base = 2;
+                  _i = i + 1 | 0;
+                  continue;
+                case 89:
+                case 90:
+                case 91:
+                case 92:
+                case 93:
+                case 94:
+                case 95:
+                case 96:
+                case 97:
+                case 98:
+                case 99:
+                case 104:
+                case 106:
+                case 107:
+                case 108:
+                case 109:
+                case 110:
+                case 112:
+                case 113:
+                case 114:
+                case 115:
+                case 116:
+                case 118:
+                case 119:
+                  exit = 1;
+                  break;
+                case 120:
+                  f.base = 1;
+                  _i = i + 1 | 0;
+                  continue;
+              }
+            }
+          } else if (c >= 72) {
+            exit = 1;
+          } else {
+            f.signedconv = true;
+            f.uppercase = true;
+            f.conv = String.fromCharCode(lowercase(c));
+            _i = i + 1 | 0;
+            continue;
+          }
+        } else {
+          switch (c) {
+            case 35:
+              f.alternate = true;
+              _i = i + 1 | 0;
+              continue;
+            case 32:
+            case 43:
+              exit = 2;
+              break;
+            case 45:
+              f.justify = "-";
+              _i = i + 1 | 0;
+              continue;
+            case 46:
+              f.prec = 0;
+              var j = i + 1 | 0;
+              while (function(j2) {
+                return function() {
+                  var w = fmt.charCodeAt(j2) - 48 | 0;
+                  return w >= 0 && w <= 9;
+                };
+              }(j)()) {
+                f.prec = (Math.imul(f.prec, 10) + fmt.charCodeAt(j) | 0) - 48 | 0;
+                j = j + 1 | 0;
+              }
+              ;
+              _i = j;
+              continue;
+            case 33:
+            case 34:
+            case 36:
+            case 37:
+            case 38:
+            case 39:
+            case 40:
+            case 41:
+            case 42:
+            case 44:
+            case 47:
+              exit = 1;
+              break;
+            case 48:
+              f.filter = "0";
+              _i = i + 1 | 0;
+              continue;
+            case 49:
+            case 50:
+            case 51:
+            case 52:
+            case 53:
+            case 54:
+            case 55:
+            case 56:
+            case 57:
+              exit = 3;
+              break;
+            default:
+              exit = 1;
+          }
+        }
+        switch (exit) {
+          case 1:
+            _i = i + 1 | 0;
+            continue;
+          case 2:
+            f.signstyle = String.fromCharCode(c);
+            _i = i + 1 | 0;
+            continue;
+          case 3:
+            f.width = 0;
+            var j$1 = i;
+            while (function(j$12) {
+              return function() {
+                var w = fmt.charCodeAt(j$12) - 48 | 0;
+                return w >= 0 && w <= 9;
+              };
+            }(j$1)()) {
+              f.width = (Math.imul(f.width, 10) + fmt.charCodeAt(j$1) | 0) - 48 | 0;
+              j$1 = j$1 + 1 | 0;
+            }
+            ;
+            _i = j$1;
+            continue;
+          case 4:
+            f.signedconv = true;
+            f.base = 2;
+            _i = i + 1 | 0;
+            continue;
+          case 5:
+            f.signedconv = true;
+            f.conv = String.fromCharCode(c);
+            _i = i + 1 | 0;
+            continue;
+        }
+      }
+      ;
+    }
+    function finish_formatting(config, rawbuffer) {
+      var justify = config.justify;
+      var signstyle = config.signstyle;
+      var filter = config.filter;
+      var alternate = config.alternate;
+      var base = config.base;
+      var signedconv = config.signedconv;
+      var width = config.width;
+      var uppercase = config.uppercase;
+      var sign = config.sign;
+      var len = rawbuffer.length;
+      if (signedconv && (sign < 0 || signstyle !== "-")) {
+        len = len + 1 | 0;
+      }
+      if (alternate) {
+        if (base === 0) {
+          len = len + 1 | 0;
+        } else if (base === 1) {
+          len = len + 2 | 0;
+        }
+      }
+      var buffer = "";
+      if (justify === "+" && filter === " ") {
+        for (var _for = len; _for < width; ++_for) {
+          buffer = buffer + filter;
+        }
+      }
+      if (signedconv) {
+        if (sign < 0) {
+          buffer = buffer + "-";
+        } else if (signstyle !== "-") {
+          buffer = buffer + signstyle;
+        }
+      }
+      if (alternate && base === 0) {
+        buffer = buffer + "0";
+      }
+      if (alternate && base === 1) {
+        buffer = buffer + "0x";
+      }
+      if (justify === "+" && filter === "0") {
+        for (var _for$1 = len; _for$1 < width; ++_for$1) {
+          buffer = buffer + filter;
+        }
+      }
+      buffer = uppercase ? buffer + rawbuffer.toUpperCase() : buffer + rawbuffer;
+      if (justify === "-") {
+        for (var _for$2 = len; _for$2 < width; ++_for$2) {
+          buffer = buffer + " ";
+        }
+      }
+      return buffer;
+    }
+    function caml_format_int(fmt, i) {
+      if (fmt === "%d") {
+        return String(i);
+      }
+      var f = parse_format(fmt);
+      var i$1 = i < 0 ? f.signedconv ? (f.sign = -1, -i >>> 0) : i >>> 0 : i;
+      var s = i$1.toString(int_of_base(f.base));
+      if (f.prec >= 0) {
+        f.filter = " ";
+        var n = f.prec - s.length | 0;
+        if (n > 0) {
+          s = "0".repeat(n) + s;
+        }
+      }
+      return finish_formatting(f, s);
+    }
+    function dec_of_pos_int64(x) {
+      if (!Caml_int64.lt(x, Caml_int64.zero)) {
+        return Caml_int64.to_string(x);
+      }
+      var wbase = /* @__PURE__ */ Caml_int64.mk(10, 0);
+      var y = Caml_int64.discard_sign(x);
+      var match = Caml_int64.div_mod(y, wbase);
+      var match$1 = Caml_int64.div_mod(Caml_int64.add(/* @__PURE__ */ Caml_int64.mk(8, 0), match[1]), wbase);
+      var quotient = Caml_int64.add(Caml_int64.add(/* @__PURE__ */ Caml_int64.mk(-858993460, 214748364), match[0]), match$1[0]);
+      return Caml_int64.to_string(quotient) + "0123456789"[Caml_int64.to_int32(match$1[1])];
+    }
+    function oct_of_int64(x) {
+      var s = "";
+      var wbase = /* @__PURE__ */ Caml_int64.mk(8, 0);
+      var cvtbl = "01234567";
+      if (Caml_int64.lt(x, Caml_int64.zero)) {
+        var y = Caml_int64.discard_sign(x);
+        var match = Caml_int64.div_mod(y, wbase);
+        var quotient = Caml_int64.add(/* @__PURE__ */ Caml_int64.mk(0, 268435456), match[0]);
+        var modulus = match[1];
+        s = cvtbl[Caml_int64.to_int32(modulus)] + s;
+        while (Caml_int64.neq(quotient, Caml_int64.zero)) {
+          var match$1 = Caml_int64.div_mod(quotient, wbase);
+          quotient = match$1[0];
+          modulus = match$1[1];
+          s = cvtbl[Caml_int64.to_int32(modulus)] + s;
+        }
+        ;
+      } else {
+        var match$2 = Caml_int64.div_mod(x, wbase);
+        var quotient$1 = match$2[0];
+        var modulus$1 = match$2[1];
+        s = cvtbl[Caml_int64.to_int32(modulus$1)] + s;
+        while (Caml_int64.neq(quotient$1, Caml_int64.zero)) {
+          var match$3 = Caml_int64.div_mod(quotient$1, wbase);
+          quotient$1 = match$3[0];
+          modulus$1 = match$3[1];
+          s = cvtbl[Caml_int64.to_int32(modulus$1)] + s;
+        }
+        ;
+      }
+      return s;
+    }
+    function caml_int64_format(fmt, x) {
+      if (fmt === "%d") {
+        return Caml_int64.to_string(x);
+      }
+      var f = parse_format(fmt);
+      var x$1 = f.signedconv && Caml_int64.lt(x, Caml_int64.zero) ? (f.sign = -1, Caml_int64.neg(x)) : x;
+      var match = f.base;
+      var s;
+      switch (match) {
+        case 0:
+          s = oct_of_int64(x$1);
+          break;
+        case 1:
+          s = Caml_int64.to_hex(x$1);
+          break;
+        case 2:
+          s = dec_of_pos_int64(x$1);
+          break;
+      }
+      var fill_s;
+      if (f.prec >= 0) {
+        f.filter = " ";
+        var n = f.prec - s.length | 0;
+        fill_s = n > 0 ? "0".repeat(n) + s : s;
+      } else {
+        fill_s = s;
+      }
+      return finish_formatting(f, fill_s);
+    }
+    function caml_format_float(fmt, x) {
+      var f = parse_format(fmt);
+      var prec = f.prec < 0 ? 6 : f.prec;
+      var x$1 = x < 0 ? (f.sign = -1, -x) : x;
+      var s = "";
+      if (isNaN(x$1)) {
+        s = "nan";
+        f.filter = " ";
+      } else if (isFinite(x$1)) {
+        var match = f.conv;
+        switch (match) {
+          case "e":
+            s = x$1.toExponential(prec);
+            var i = s.length;
+            if (s[i - 3 | 0] === "e") {
+              s = s.slice(0, i - 1 | 0) + ("0" + s.slice(i - 1 | 0));
+            }
+            break;
+          case "f":
+            s = x$1.toFixed(prec);
+            break;
+          case "g":
+            var prec$1 = prec !== 0 ? prec : 1;
+            s = x$1.toExponential(prec$1 - 1 | 0);
+            var j = s.indexOf("e");
+            var exp = Number(s.slice(j + 1 | 0)) | 0;
+            if (exp < -4 || x$1 >= 1e21 || x$1.toFixed().length > prec$1) {
+              var i$1 = j - 1 | 0;
+              while (s[i$1] === "0") {
+                i$1 = i$1 - 1 | 0;
+              }
+              ;
+              if (s[i$1] === ".") {
+                i$1 = i$1 - 1 | 0;
+              }
+              s = s.slice(0, i$1 + 1 | 0) + s.slice(j);
+              var i$2 = s.length;
+              if (s[i$2 - 3 | 0] === "e") {
+                s = s.slice(0, i$2 - 1 | 0) + ("0" + s.slice(i$2 - 1 | 0));
+              }
+            } else {
+              var p = prec$1;
+              if (exp < 0) {
+                p = p - (exp + 1 | 0) | 0;
+                s = x$1.toFixed(p);
+              } else {
+                while (function() {
+                  s = x$1.toFixed(p);
+                  return s.length > (prec$1 + 1 | 0);
+                }()) {
+                  p = p - 1 | 0;
+                }
+                ;
+              }
+              if (p !== 0) {
+                var k = s.length - 1 | 0;
+                while (s[k] === "0") {
+                  k = k - 1 | 0;
+                }
+                ;
+                if (s[k] === ".") {
+                  k = k - 1 | 0;
+                }
+                s = s.slice(0, k + 1 | 0);
+              }
+            }
+            break;
+          default:
+        }
+      } else {
+        s = "inf";
+        f.filter = " ";
+      }
+      return finish_formatting(f, s);
+    }
+    var caml_hexstring_of_float = function(x, prec, style) {
+      if (!isFinite(x)) {
+        if (isNaN(x))
+          return "nan";
+        return x > 0 ? "infinity" : "-infinity";
+      }
+      var sign = x == 0 && 1 / x == -Infinity ? 1 : x >= 0 ? 0 : 1;
+      if (sign)
+        x = -x;
+      var exp = 0;
+      if (x == 0) {
+      } else if (x < 1) {
+        while (x < 1 && exp > -1022) {
+          x *= 2;
+          exp--;
+        }
+      } else {
+        while (x >= 2) {
+          x /= 2;
+          exp++;
+        }
+      }
+      var exp_sign = exp < 0 ? "" : "+";
+      var sign_str = "";
+      if (sign)
+        sign_str = "-";
+      else {
+        switch (style) {
+          case 43:
+            sign_str = "+";
+            break;
+          case 32:
+            sign_str = " ";
+            break;
+          default:
+            break;
+        }
+      }
+      if (prec >= 0 && prec < 13) {
+        var cst = Math.pow(2, prec * 4);
+        x = Math.round(x * cst) / cst;
+      }
+      var x_str = x.toString(16);
+      if (prec >= 0) {
+        var idx = x_str.indexOf(".");
+        if (idx < 0) {
+          x_str += "." + "0".repeat(prec);
+        } else {
+          var size = idx + 1 + prec;
+          if (x_str.length < size)
+            x_str += "0".repeat(size - x_str.length);
+          else
+            x_str = x_str.substr(0, size);
+        }
+      }
+      return sign_str + "0x" + x_str + "p" + exp_sign + exp.toString(10);
+    };
+    var float_of_string = function(s, exn) {
+      var res = +s;
+      if (s.length > 0 && res === res)
+        return res;
+      s = s.replace(/_/g, "");
+      res = +s;
+      if (s.length > 0 && res === res || /^[+-]?nan$/i.test(s)) {
+        return res;
+      }
+      ;
+      var m = /^ *([+-]?)0x([0-9a-f]+)\.?([0-9a-f]*)p([+-]?[0-9]+)/i.exec(s);
+      if (m) {
+        var m3 = m[3].replace(/0+$/, "");
+        var mantissa = parseInt(m[1] + m[2] + m3, 16);
+        var exponent = (m[4] | 0) - 4 * m3.length;
+        res = mantissa * Math.pow(2, exponent);
+        return res;
+      }
+      if (/^\+?inf(inity)?$/i.test(s))
+        return Infinity;
+      if (/^-inf(inity)?$/i.test(s))
+        return -Infinity;
+      throw exn;
+    };
+    function caml_float_of_string(s) {
+      return float_of_string(s, {
+        RE_EXN_ID: "Failure",
+        _1: "float_of_string"
+      });
+    }
+    var caml_nativeint_format = caml_format_int;
+    var caml_int32_format = caml_format_int;
+    var caml_int32_of_string = caml_int_of_string;
+    var caml_nativeint_of_string = caml_int_of_string;
+    exports.caml_format_float = caml_format_float;
+    exports.caml_hexstring_of_float = caml_hexstring_of_float;
+    exports.caml_format_int = caml_format_int;
+    exports.caml_nativeint_format = caml_nativeint_format;
+    exports.caml_int32_format = caml_int32_format;
+    exports.caml_float_of_string = caml_float_of_string;
+    exports.caml_int64_format = caml_int64_format;
+    exports.caml_int_of_string = caml_int_of_string;
+    exports.caml_int32_of_string = caml_int32_of_string;
+    exports.caml_int64_of_string = caml_int64_of_string;
+    exports.caml_nativeint_of_string = caml_nativeint_of_string;
+  });
+
+  // node_modules/bs-platform/lib/js/caml_external_polyfill.js
+  var require_caml_external_polyfill = __commonJS((exports) => {
+    "use strict";
+    var getGlobalThis = function() {
+      if (typeof globalThis !== "undefined")
+        return globalThis;
+      if (typeof self !== "undefined")
+        return self;
+      if (typeof window !== "undefined")
+        return window;
+      if (typeof global !== "undefined")
+        return global;
+      if (typeof this !== "undefined")
+        return this;
+      throw new Error("Unable to locate global `this`");
+    };
+    var resolve = function(s) {
+      var myGlobal = getGlobalThis();
+      if (myGlobal[s] === void 0) {
+        throw new Error(s + " not polyfilled by BuckleScript yet\n");
+      }
+      return myGlobal[s];
+    };
+    var register = function(s, fn) {
+      var myGlobal = getGlobalThis();
+      myGlobal[s] = fn;
+      return 0;
+    };
+    exports.getGlobalThis = getGlobalThis;
+    exports.resolve = resolve;
+    exports.register = register;
+  });
+
+  // node_modules/bs-platform/lib/js/pervasives.js
+  var require_pervasives = __commonJS((exports) => {
+    "use strict";
+    var Curry = require_curry();
+    var Caml_io = require_caml_io();
+    var Caml_sys = require_caml_sys();
+    var Caml_bytes = require_caml_bytes();
+    var Caml_format = require_caml_format();
+    var Caml_string = require_caml_string();
+    var Caml_exceptions = require_caml_exceptions();
+    var Caml_js_exceptions = require_caml_js_exceptions();
+    var Caml_external_polyfill = require_caml_external_polyfill();
+    function failwith(s) {
+      throw {
+        RE_EXN_ID: "Failure",
+        _1: s,
+        Error: new Error()
+      };
+    }
+    function invalid_arg(s) {
+      throw {
+        RE_EXN_ID: "Invalid_argument",
+        _1: s,
+        Error: new Error()
+      };
+    }
+    var Exit = /* @__PURE__ */ Caml_exceptions.create("Pervasives.Exit");
+    function abs(x) {
+      if (x >= 0) {
+        return x;
+      } else {
+        return -x | 0;
+      }
+    }
+    function lnot(x) {
+      return x ^ -1;
+    }
+    var min_int = -2147483648;
+    function classify_float(x) {
+      if (isFinite(x)) {
+        if (Math.abs(x) >= 22250738585072014e-324) {
+          return 0;
+        } else if (x !== 0) {
+          return 1;
+        } else {
+          return 2;
+        }
+      } else if (isNaN(x)) {
+        return 4;
+      } else {
+        return 3;
+      }
+    }
+    function char_of_int(n) {
+      if (n < 0 || n > 255) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "char_of_int",
+          Error: new Error()
+        };
+      }
+      return n;
+    }
+    function string_of_bool(b) {
+      if (b) {
+        return "true";
+      } else {
+        return "false";
+      }
+    }
+    function bool_of_string(param) {
+      switch (param) {
+        case "false":
+          return false;
+        case "true":
+          return true;
+        default:
+          throw {
+            RE_EXN_ID: "Invalid_argument",
+            _1: "bool_of_string",
+            Error: new Error()
+          };
+      }
+    }
+    function bool_of_string_opt(param) {
+      switch (param) {
+        case "false":
+          return false;
+        case "true":
+          return true;
+        default:
+          return;
+      }
+    }
+    function int_of_string_opt(s) {
+      try {
+        return Caml_format.caml_int_of_string(s);
+      } catch (raw_exn) {
+        var exn = Caml_js_exceptions.internalToOCamlException(raw_exn);
+        if (exn.RE_EXN_ID === "Failure") {
+          return;
+        }
+        throw exn;
+      }
+    }
+    function valid_float_lexem(s) {
+      var l = s.length;
+      var _i = 0;
+      while (true) {
+        var i = _i;
+        if (i >= l) {
+          return s + ".";
+        }
+        var match = Caml_string.get(s, i);
+        if (match >= 48) {
+          if (match >= 58) {
+            return s;
+          }
+          _i = i + 1 | 0;
+          continue;
+        }
+        if (match !== 45) {
+          return s;
+        }
+        _i = i + 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function string_of_float(f) {
+      return valid_float_lexem(Caml_format.caml_format_float("%.12g", f));
+    }
+    function float_of_string_opt(s) {
+      try {
+        return Caml_format.caml_float_of_string(s);
+      } catch (raw_exn) {
+        var exn = Caml_js_exceptions.internalToOCamlException(raw_exn);
+        if (exn.RE_EXN_ID === "Failure") {
+          return;
+        }
+        throw exn;
+      }
+    }
+    function $at(l1, l2) {
+      if (l1) {
+        return {
+          hd: l1.hd,
+          tl: $at(l1.tl, l2)
+        };
+      } else {
+        return l2;
+      }
+    }
+    var stdin = Caml_io.stdin;
+    var stdout = Caml_io.stdout;
+    var stderr = Caml_io.stderr;
+    function open_out_gen(mode, perm, name) {
+      var c = Caml_external_polyfill.resolve("caml_ml_open_descriptor_out")(Caml_external_polyfill.resolve("caml_sys_open")(name, mode, perm));
+      Caml_external_polyfill.resolve("caml_ml_set_channel_name")(c, name);
+      return c;
+    }
+    function open_out(name) {
+      return open_out_gen({
+        hd: 1,
+        tl: {
+          hd: 3,
+          tl: {
+            hd: 4,
+            tl: {
+              hd: 7,
+              tl: 0
+            }
+          }
+        }
+      }, 438, name);
+    }
+    function open_out_bin(name) {
+      return open_out_gen({
+        hd: 1,
+        tl: {
+          hd: 3,
+          tl: {
+            hd: 4,
+            tl: {
+              hd: 6,
+              tl: 0
+            }
+          }
+        }
+      }, 438, name);
+    }
+    function flush_all(param) {
+      var _param = Caml_io.caml_ml_out_channels_list(void 0);
+      while (true) {
+        var param$1 = _param;
+        if (!param$1) {
+          return;
+        }
+        try {
+          Caml_io.caml_ml_flush(param$1.hd);
+        } catch (raw_exn) {
+          var exn = Caml_js_exceptions.internalToOCamlException(raw_exn);
+          if (exn.RE_EXN_ID !== "Sys_error") {
+            throw exn;
+          }
+        }
+        _param = param$1.tl;
+        continue;
+      }
+      ;
+    }
+    function output_bytes(oc, s) {
+      return Caml_external_polyfill.resolve("caml_ml_output_bytes")(oc, s, 0, s.length);
+    }
+    function output_string(oc, s) {
+      return Caml_io.caml_ml_output(oc, s, 0, s.length);
+    }
+    function output(oc, s, ofs, len) {
+      if (ofs < 0 || len < 0 || ofs > (s.length - len | 0)) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "output",
+          Error: new Error()
+        };
+      }
+      return Caml_external_polyfill.resolve("caml_ml_output_bytes")(oc, s, ofs, len);
+    }
+    function output_substring(oc, s, ofs, len) {
+      if (ofs < 0 || len < 0 || ofs > (s.length - len | 0)) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "output_substring",
+          Error: new Error()
+        };
+      }
+      return Caml_io.caml_ml_output(oc, s, ofs, len);
+    }
+    function output_value(chan, v) {
+      return Caml_external_polyfill.resolve("caml_output_value")(chan, v, 0);
+    }
+    function close_out(oc) {
+      Caml_io.caml_ml_flush(oc);
+      return Caml_external_polyfill.resolve("caml_ml_close_channel")(oc);
+    }
+    function close_out_noerr(oc) {
+      try {
+        Caml_io.caml_ml_flush(oc);
+      } catch (exn) {
+      }
+      try {
+        return Caml_external_polyfill.resolve("caml_ml_close_channel")(oc);
+      } catch (exn$1) {
+        return;
+      }
+    }
+    function open_in_gen(mode, perm, name) {
+      var c = Caml_external_polyfill.resolve("caml_ml_open_descriptor_in")(Caml_external_polyfill.resolve("caml_sys_open")(name, mode, perm));
+      Caml_external_polyfill.resolve("caml_ml_set_channel_name")(c, name);
+      return c;
+    }
+    function open_in(name) {
+      return open_in_gen({
+        hd: 0,
+        tl: {
+          hd: 7,
+          tl: 0
+        }
+      }, 0, name);
+    }
+    function open_in_bin(name) {
+      return open_in_gen({
+        hd: 0,
+        tl: {
+          hd: 6,
+          tl: 0
+        }
+      }, 0, name);
+    }
+    function input(ic, s, ofs, len) {
+      if (ofs < 0 || len < 0 || ofs > (s.length - len | 0)) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "input",
+          Error: new Error()
+        };
+      }
+      return Caml_external_polyfill.resolve("caml_ml_input")(ic, s, ofs, len);
+    }
+    function unsafe_really_input(ic, s, _ofs, _len) {
+      while (true) {
+        var len = _len;
+        var ofs = _ofs;
+        if (len <= 0) {
+          return;
+        }
+        var r = Caml_external_polyfill.resolve("caml_ml_input")(ic, s, ofs, len);
+        if (r === 0) {
+          throw {
+            RE_EXN_ID: "End_of_file",
+            Error: new Error()
+          };
+        }
+        _len = len - r | 0;
+        _ofs = ofs + r | 0;
+        continue;
+      }
+      ;
+    }
+    function really_input(ic, s, ofs, len) {
+      if (ofs < 0 || len < 0 || ofs > (s.length - len | 0)) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "really_input",
+          Error: new Error()
+        };
+      }
+      return unsafe_really_input(ic, s, ofs, len);
+    }
+    function really_input_string(ic, len) {
+      var s = Caml_bytes.caml_create_bytes(len);
+      really_input(ic, s, 0, len);
+      return Caml_bytes.bytes_to_string(s);
+    }
+    function input_line(chan) {
+      var build_result = function(buf, _pos, _param) {
+        while (true) {
+          var param = _param;
+          var pos = _pos;
+          if (!param) {
+            return buf;
+          }
+          var hd = param.hd;
+          var len = hd.length;
+          Caml_bytes.caml_blit_bytes(hd, 0, buf, pos - len | 0, len);
+          _param = param.tl;
+          _pos = pos - len | 0;
+          continue;
+        }
+        ;
+      };
+      var scan = function(_accu, _len) {
+        while (true) {
+          var len = _len;
+          var accu = _accu;
+          var n = Caml_external_polyfill.resolve("caml_ml_input_scan_line")(chan);
+          if (n === 0) {
+            if (accu) {
+              return build_result(Caml_bytes.caml_create_bytes(len), len, accu);
+            }
+            throw {
+              RE_EXN_ID: "End_of_file",
+              Error: new Error()
+            };
+          }
+          if (n > 0) {
+            var res = Caml_bytes.caml_create_bytes(n - 1 | 0);
+            Caml_external_polyfill.resolve("caml_ml_input")(chan, res, 0, n - 1 | 0);
+            Caml_external_polyfill.resolve("caml_ml_input_char")(chan);
+            if (!accu) {
+              return res;
+            }
+            var len$1 = (len + n | 0) - 1 | 0;
+            return build_result(Caml_bytes.caml_create_bytes(len$1), len$1, {
+              hd: res,
+              tl: accu
+            });
+          }
+          var beg = Caml_bytes.caml_create_bytes(-n | 0);
+          Caml_external_polyfill.resolve("caml_ml_input")(chan, beg, 0, -n | 0);
+          _len = len - n | 0;
+          _accu = {
+            hd: beg,
+            tl: accu
+          };
+          continue;
+        }
+        ;
+      };
+      return Caml_bytes.bytes_to_string(scan(0, 0));
+    }
+    function close_in_noerr(ic) {
+      try {
+        return Caml_external_polyfill.resolve("caml_ml_close_channel")(ic);
+      } catch (exn) {
+        return;
+      }
+    }
+    function print_char(c) {
+      return Caml_io.caml_ml_output_char(stdout, c);
+    }
+    function print_string(s) {
+      return output_string(stdout, s);
+    }
+    function print_bytes(s) {
+      return output_bytes(stdout, s);
+    }
+    function print_int(i) {
+      return output_string(stdout, String(i));
+    }
+    function print_float(f) {
+      return output_string(stdout, valid_float_lexem(Caml_format.caml_format_float("%.12g", f)));
+    }
+    function print_newline(param) {
+      Caml_io.caml_ml_output_char(stdout, 10);
+      return Caml_io.caml_ml_flush(stdout);
+    }
+    function prerr_char(c) {
+      return Caml_io.caml_ml_output_char(stderr, c);
+    }
+    function prerr_string(s) {
+      return output_string(stderr, s);
+    }
+    function prerr_bytes(s) {
+      return output_bytes(stderr, s);
+    }
+    function prerr_int(i) {
+      return output_string(stderr, String(i));
+    }
+    function prerr_float(f) {
+      return output_string(stderr, valid_float_lexem(Caml_format.caml_format_float("%.12g", f)));
+    }
+    function prerr_newline(param) {
+      Caml_io.caml_ml_output_char(stderr, 10);
+      return Caml_io.caml_ml_flush(stderr);
+    }
+    function read_line(param) {
+      Caml_io.caml_ml_flush(stdout);
+      return input_line(stdin);
+    }
+    function read_int(param) {
+      return Caml_format.caml_int_of_string((Caml_io.caml_ml_flush(stdout), input_line(stdin)));
+    }
+    function read_int_opt(param) {
+      return int_of_string_opt((Caml_io.caml_ml_flush(stdout), input_line(stdin)));
+    }
+    function read_float(param) {
+      return Caml_format.caml_float_of_string((Caml_io.caml_ml_flush(stdout), input_line(stdin)));
+    }
+    function read_float_opt(param) {
+      return float_of_string_opt((Caml_io.caml_ml_flush(stdout), input_line(stdin)));
+    }
+    function string_of_format(param) {
+      return param._1;
+    }
+    var exit_function = {
+      contents: flush_all
+    };
+    function at_exit(f) {
+      var g = exit_function.contents;
+      exit_function.contents = function(param) {
+        Curry._1(f, void 0);
+        return Curry._1(g, void 0);
+      };
+    }
+    function do_at_exit(param) {
+      return Curry._1(exit_function.contents, void 0);
+    }
+    function exit(retcode) {
+      do_at_exit(void 0);
+      return Caml_sys.caml_sys_exit(retcode);
+    }
+    var max_int = 2147483647;
+    var infinity = Infinity;
+    var neg_infinity = -Infinity;
+    var max_float = 17976931348623157e292;
+    var min_float = 22250738585072014e-324;
+    var epsilon_float = 2220446049250313e-31;
+    var flush = Caml_io.caml_ml_flush;
+    var output_char = Caml_io.caml_ml_output_char;
+    var output_byte = Caml_io.caml_ml_output_char;
+    function output_binary_int(prim, prim$1) {
+      return Caml_external_polyfill.resolve("caml_ml_output_int")(prim, prim$1);
+    }
+    function seek_out(prim, prim$1) {
+      return Caml_external_polyfill.resolve("caml_ml_seek_out")(prim, prim$1);
+    }
+    function pos_out(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_pos_out")(prim);
+    }
+    function out_channel_length(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_channel_size")(prim);
+    }
+    function set_binary_mode_out(prim, prim$1) {
+      return Caml_external_polyfill.resolve("caml_ml_set_binary_mode")(prim, prim$1);
+    }
+    function input_char(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_input_char")(prim);
+    }
+    function input_byte(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_input_char")(prim);
+    }
+    function input_binary_int(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_input_int")(prim);
+    }
+    function input_value(prim) {
+      return Caml_external_polyfill.resolve("caml_input_value")(prim);
+    }
+    function seek_in(prim, prim$1) {
+      return Caml_external_polyfill.resolve("caml_ml_seek_in")(prim, prim$1);
+    }
+    function pos_in(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_pos_in")(prim);
+    }
+    function in_channel_length(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_channel_size")(prim);
+    }
+    function close_in(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_close_channel")(prim);
+    }
+    function set_binary_mode_in(prim, prim$1) {
+      return Caml_external_polyfill.resolve("caml_ml_set_binary_mode")(prim, prim$1);
+    }
+    function LargeFile_seek_out(prim, prim$1) {
+      return Caml_external_polyfill.resolve("caml_ml_seek_out_64")(prim, prim$1);
+    }
+    function LargeFile_pos_out(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_pos_out_64")(prim);
+    }
+    function LargeFile_out_channel_length(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_channel_size_64")(prim);
+    }
+    function LargeFile_seek_in(prim, prim$1) {
+      return Caml_external_polyfill.resolve("caml_ml_seek_in_64")(prim, prim$1);
+    }
+    function LargeFile_pos_in(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_pos_in_64")(prim);
+    }
+    function LargeFile_in_channel_length(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_channel_size_64")(prim);
+    }
+    var LargeFile = {
+      seek_out: LargeFile_seek_out,
+      pos_out: LargeFile_pos_out,
+      out_channel_length: LargeFile_out_channel_length,
+      seek_in: LargeFile_seek_in,
+      pos_in: LargeFile_pos_in,
+      in_channel_length: LargeFile_in_channel_length
+    };
+    exports.invalid_arg = invalid_arg;
+    exports.failwith = failwith;
+    exports.Exit = Exit;
+    exports.abs = abs;
+    exports.max_int = max_int;
+    exports.min_int = min_int;
+    exports.lnot = lnot;
+    exports.infinity = infinity;
+    exports.neg_infinity = neg_infinity;
+    exports.max_float = max_float;
+    exports.min_float = min_float;
+    exports.epsilon_float = epsilon_float;
+    exports.classify_float = classify_float;
+    exports.char_of_int = char_of_int;
+    exports.string_of_bool = string_of_bool;
+    exports.bool_of_string = bool_of_string;
+    exports.bool_of_string_opt = bool_of_string_opt;
+    exports.int_of_string_opt = int_of_string_opt;
+    exports.string_of_float = string_of_float;
+    exports.float_of_string_opt = float_of_string_opt;
+    exports.$at = $at;
+    exports.stdin = stdin;
+    exports.stdout = stdout;
+    exports.stderr = stderr;
+    exports.print_char = print_char;
+    exports.print_string = print_string;
+    exports.print_bytes = print_bytes;
+    exports.print_int = print_int;
+    exports.print_float = print_float;
+    exports.print_newline = print_newline;
+    exports.prerr_char = prerr_char;
+    exports.prerr_string = prerr_string;
+    exports.prerr_bytes = prerr_bytes;
+    exports.prerr_int = prerr_int;
+    exports.prerr_float = prerr_float;
+    exports.prerr_newline = prerr_newline;
+    exports.read_line = read_line;
+    exports.read_int = read_int;
+    exports.read_int_opt = read_int_opt;
+    exports.read_float = read_float;
+    exports.read_float_opt = read_float_opt;
+    exports.open_out = open_out;
+    exports.open_out_bin = open_out_bin;
+    exports.open_out_gen = open_out_gen;
+    exports.flush = flush;
+    exports.flush_all = flush_all;
+    exports.output_char = output_char;
+    exports.output_string = output_string;
+    exports.output_bytes = output_bytes;
+    exports.output = output;
+    exports.output_substring = output_substring;
+    exports.output_byte = output_byte;
+    exports.output_binary_int = output_binary_int;
+    exports.output_value = output_value;
+    exports.seek_out = seek_out;
+    exports.pos_out = pos_out;
+    exports.out_channel_length = out_channel_length;
+    exports.close_out = close_out;
+    exports.close_out_noerr = close_out_noerr;
+    exports.set_binary_mode_out = set_binary_mode_out;
+    exports.open_in = open_in;
+    exports.open_in_bin = open_in_bin;
+    exports.open_in_gen = open_in_gen;
+    exports.input_char = input_char;
+    exports.input_line = input_line;
+    exports.input = input;
+    exports.really_input = really_input;
+    exports.really_input_string = really_input_string;
+    exports.input_byte = input_byte;
+    exports.input_binary_int = input_binary_int;
+    exports.input_value = input_value;
+    exports.seek_in = seek_in;
+    exports.pos_in = pos_in;
+    exports.in_channel_length = in_channel_length;
+    exports.close_in = close_in;
+    exports.close_in_noerr = close_in_noerr;
+    exports.set_binary_mode_in = set_binary_mode_in;
+    exports.LargeFile = LargeFile;
+    exports.string_of_format = string_of_format;
+    exports.exit = exit;
+    exports.at_exit = at_exit;
+    exports.valid_float_lexem = valid_float_lexem;
+    exports.unsafe_really_input = unsafe_really_input;
+    exports.do_at_exit = do_at_exit;
+  });
+
+  // node_modules/bs-platform/lib/js/list.js
+  var require_list = __commonJS((exports) => {
+    "use strict";
+    var Curry = require_curry();
+    var Caml_obj = require_caml_obj();
+    var Pervasives = require_pervasives();
+    var Caml_option = require_caml_option();
+    function length(l) {
+      var _len = 0;
+      var _param = l;
+      while (true) {
+        var param = _param;
+        var len = _len;
+        if (!param) {
+          return len;
+        }
+        _param = param.tl;
+        _len = len + 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function cons(a, l) {
+      return {
+        hd: a,
+        tl: l
+      };
+    }
+    function hd(param) {
+      if (param) {
+        return param.hd;
+      }
+      throw {
+        RE_EXN_ID: "Failure",
+        _1: "hd",
+        Error: new Error()
+      };
+    }
+    function tl(param) {
+      if (param) {
+        return param.tl;
+      }
+      throw {
+        RE_EXN_ID: "Failure",
+        _1: "tl",
+        Error: new Error()
+      };
+    }
+    function nth(l, n) {
+      if (n < 0) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.nth",
+          Error: new Error()
+        };
+      }
+      var _l = l;
+      var _n = n;
+      while (true) {
+        var n$1 = _n;
+        var l$1 = _l;
+        if (l$1) {
+          if (n$1 === 0) {
+            return l$1.hd;
+          }
+          _n = n$1 - 1 | 0;
+          _l = l$1.tl;
+          continue;
+        }
+        throw {
+          RE_EXN_ID: "Failure",
+          _1: "nth",
+          Error: new Error()
+        };
+      }
+      ;
+    }
+    function nth_opt(l, n) {
+      if (n < 0) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.nth",
+          Error: new Error()
+        };
+      }
+      var _l = l;
+      var _n = n;
+      while (true) {
+        var n$1 = _n;
+        var l$1 = _l;
+        if (!l$1) {
+          return;
+        }
+        if (n$1 === 0) {
+          return Caml_option.some(l$1.hd);
+        }
+        _n = n$1 - 1 | 0;
+        _l = l$1.tl;
+        continue;
+      }
+      ;
+    }
+    function rev_append(_l1, _l2) {
+      while (true) {
+        var l2 = _l2;
+        var l1 = _l1;
+        if (!l1) {
+          return l2;
+        }
+        _l2 = {
+          hd: l1.hd,
+          tl: l2
+        };
+        _l1 = l1.tl;
+        continue;
+      }
+      ;
+    }
+    function rev(l) {
+      return rev_append(l, 0);
+    }
+    function init_tailrec_aux(_acc, _i, n, f) {
+      while (true) {
+        var i = _i;
+        var acc = _acc;
+        if (i >= n) {
+          return acc;
+        }
+        _i = i + 1 | 0;
+        _acc = {
+          hd: Curry._1(f, i),
+          tl: acc
+        };
+        continue;
+      }
+      ;
+    }
+    function init_aux(i, n, f) {
+      if (i >= n) {
+        return 0;
+      }
+      var r = Curry._1(f, i);
+      return {
+        hd: r,
+        tl: init_aux(i + 1 | 0, n, f)
+      };
+    }
+    function init(len, f) {
+      if (len < 0) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.init",
+          Error: new Error()
+        };
+      }
+      if (len > 1e4) {
+        return rev_append(init_tailrec_aux(0, 0, len, f), 0);
+      } else {
+        return init_aux(0, len, f);
+      }
+    }
+    function flatten(param) {
+      if (param) {
+        return Pervasives.$at(param.hd, flatten(param.tl));
+      } else {
+        return 0;
+      }
+    }
+    function map(f, param) {
+      if (!param) {
+        return 0;
+      }
+      var r = Curry._1(f, param.hd);
+      return {
+        hd: r,
+        tl: map(f, param.tl)
+      };
+    }
+    function mapi(i, f, param) {
+      if (!param) {
+        return 0;
+      }
+      var r = Curry._2(f, i, param.hd);
+      return {
+        hd: r,
+        tl: mapi(i + 1 | 0, f, param.tl)
+      };
+    }
+    function mapi$1(f, l) {
+      return mapi(0, f, l);
+    }
+    function rev_map(f, l) {
+      var _accu = 0;
+      var _param = l;
+      while (true) {
+        var param = _param;
+        var accu = _accu;
+        if (!param) {
+          return accu;
+        }
+        _param = param.tl;
+        _accu = {
+          hd: Curry._1(f, param.hd),
+          tl: accu
+        };
+        continue;
+      }
+      ;
+    }
+    function iter(f, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return;
+        }
+        Curry._1(f, param.hd);
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function iteri(f, l) {
+      var _i = 0;
+      var _param = l;
+      while (true) {
+        var param = _param;
+        var i = _i;
+        if (!param) {
+          return;
+        }
+        Curry._2(f, i, param.hd);
+        _param = param.tl;
+        _i = i + 1 | 0;
+        continue;
+      }
+      ;
+    }
+    function fold_left(f, _accu, _l) {
+      while (true) {
+        var l = _l;
+        var accu = _accu;
+        if (!l) {
+          return accu;
+        }
+        _l = l.tl;
+        _accu = Curry._2(f, accu, l.hd);
+        continue;
+      }
+      ;
+    }
+    function fold_right(f, l, accu) {
+      if (l) {
+        return Curry._2(f, l.hd, fold_right(f, l.tl, accu));
+      } else {
+        return accu;
+      }
+    }
+    function map2(f, l1, l2) {
+      if (l1) {
+        if (l2) {
+          var r = Curry._2(f, l1.hd, l2.hd);
+          return {
+            hd: r,
+            tl: map2(f, l1.tl, l2.tl)
+          };
+        }
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.map2",
+          Error: new Error()
+        };
+      }
+      if (!l2) {
+        return 0;
+      }
+      throw {
+        RE_EXN_ID: "Invalid_argument",
+        _1: "List.map2",
+        Error: new Error()
+      };
+    }
+    function rev_map2(f, l1, l2) {
+      var _accu = 0;
+      var _l1 = l1;
+      var _l2 = l2;
+      while (true) {
+        var l2$1 = _l2;
+        var l1$1 = _l1;
+        var accu = _accu;
+        if (l1$1) {
+          if (l2$1) {
+            _l2 = l2$1.tl;
+            _l1 = l1$1.tl;
+            _accu = {
+              hd: Curry._2(f, l1$1.hd, l2$1.hd),
+              tl: accu
+            };
+            continue;
+          }
+          throw {
+            RE_EXN_ID: "Invalid_argument",
+            _1: "List.rev_map2",
+            Error: new Error()
+          };
+        }
+        if (l2$1) {
+          throw {
+            RE_EXN_ID: "Invalid_argument",
+            _1: "List.rev_map2",
+            Error: new Error()
+          };
+        }
+        return accu;
+      }
+      ;
+    }
+    function iter2(f, _l1, _l2) {
+      while (true) {
+        var l2 = _l2;
+        var l1 = _l1;
+        if (l1) {
+          if (l2) {
+            Curry._2(f, l1.hd, l2.hd);
+            _l2 = l2.tl;
+            _l1 = l1.tl;
+            continue;
+          }
+          throw {
+            RE_EXN_ID: "Invalid_argument",
+            _1: "List.iter2",
+            Error: new Error()
+          };
+        }
+        if (!l2) {
+          return;
+        }
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.iter2",
+          Error: new Error()
+        };
+      }
+      ;
+    }
+    function fold_left2(f, _accu, _l1, _l2) {
+      while (true) {
+        var l2 = _l2;
+        var l1 = _l1;
+        var accu = _accu;
+        if (l1) {
+          if (l2) {
+            _l2 = l2.tl;
+            _l1 = l1.tl;
+            _accu = Curry._3(f, accu, l1.hd, l2.hd);
+            continue;
+          }
+          throw {
+            RE_EXN_ID: "Invalid_argument",
+            _1: "List.fold_left2",
+            Error: new Error()
+          };
+        }
+        if (l2) {
+          throw {
+            RE_EXN_ID: "Invalid_argument",
+            _1: "List.fold_left2",
+            Error: new Error()
+          };
+        }
+        return accu;
+      }
+      ;
+    }
+    function fold_right2(f, l1, l2, accu) {
+      if (l1) {
+        if (l2) {
+          return Curry._3(f, l1.hd, l2.hd, fold_right2(f, l1.tl, l2.tl, accu));
+        }
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.fold_right2",
+          Error: new Error()
+        };
+      }
+      if (l2) {
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.fold_right2",
+          Error: new Error()
+        };
+      }
+      return accu;
+    }
+    function for_all(p, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return true;
+        }
+        if (!Curry._1(p, param.hd)) {
+          return false;
+        }
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function exists(p, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return false;
+        }
+        if (Curry._1(p, param.hd)) {
+          return true;
+        }
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function for_all2(p, _l1, _l2) {
+      while (true) {
+        var l2 = _l2;
+        var l1 = _l1;
+        if (l1) {
+          if (l2) {
+            if (!Curry._2(p, l1.hd, l2.hd)) {
+              return false;
+            }
+            _l2 = l2.tl;
+            _l1 = l1.tl;
+            continue;
+          }
+          throw {
+            RE_EXN_ID: "Invalid_argument",
+            _1: "List.for_all2",
+            Error: new Error()
+          };
+        }
+        if (!l2) {
+          return true;
+        }
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.for_all2",
+          Error: new Error()
+        };
+      }
+      ;
+    }
+    function exists2(p, _l1, _l2) {
+      while (true) {
+        var l2 = _l2;
+        var l1 = _l1;
+        if (l1) {
+          if (l2) {
+            if (Curry._2(p, l1.hd, l2.hd)) {
+              return true;
+            }
+            _l2 = l2.tl;
+            _l1 = l1.tl;
+            continue;
+          }
+          throw {
+            RE_EXN_ID: "Invalid_argument",
+            _1: "List.exists2",
+            Error: new Error()
+          };
+        }
+        if (!l2) {
+          return false;
+        }
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.exists2",
+          Error: new Error()
+        };
+      }
+      ;
+    }
+    function mem(x, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return false;
+        }
+        if (Caml_obj.caml_equal(param.hd, x)) {
+          return true;
+        }
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function memq(x, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return false;
+        }
+        if (param.hd === x) {
+          return true;
+        }
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function assoc(x, _param) {
+      while (true) {
+        var param = _param;
+        if (param) {
+          var match = param.hd;
+          if (Caml_obj.caml_equal(match[0], x)) {
+            return match[1];
+          }
+          _param = param.tl;
+          continue;
+        }
+        throw {
+          RE_EXN_ID: "Not_found",
+          Error: new Error()
+        };
+      }
+      ;
+    }
+    function assoc_opt(x, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return;
+        }
+        var match = param.hd;
+        if (Caml_obj.caml_equal(match[0], x)) {
+          return Caml_option.some(match[1]);
+        }
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function assq(x, _param) {
+      while (true) {
+        var param = _param;
+        if (param) {
+          var match = param.hd;
+          if (match[0] === x) {
+            return match[1];
+          }
+          _param = param.tl;
+          continue;
+        }
+        throw {
+          RE_EXN_ID: "Not_found",
+          Error: new Error()
+        };
+      }
+      ;
+    }
+    function assq_opt(x, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return;
+        }
+        var match = param.hd;
+        if (match[0] === x) {
+          return Caml_option.some(match[1]);
+        }
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function mem_assoc(x, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return false;
+        }
+        if (Caml_obj.caml_equal(param.hd[0], x)) {
+          return true;
+        }
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function mem_assq(x, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return false;
+        }
+        if (param.hd[0] === x) {
+          return true;
+        }
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function remove_assoc(x, param) {
+      if (!param) {
+        return 0;
+      }
+      var l = param.tl;
+      var pair = param.hd;
+      if (Caml_obj.caml_equal(pair[0], x)) {
+        return l;
+      } else {
+        return {
+          hd: pair,
+          tl: remove_assoc(x, l)
+        };
+      }
+    }
+    function remove_assq(x, param) {
+      if (!param) {
+        return 0;
+      }
+      var l = param.tl;
+      var pair = param.hd;
+      if (pair[0] === x) {
+        return l;
+      } else {
+        return {
+          hd: pair,
+          tl: remove_assq(x, l)
+        };
+      }
+    }
+    function find(p, _param) {
+      while (true) {
+        var param = _param;
+        if (param) {
+          var x = param.hd;
+          if (Curry._1(p, x)) {
+            return x;
+          }
+          _param = param.tl;
+          continue;
+        }
+        throw {
+          RE_EXN_ID: "Not_found",
+          Error: new Error()
+        };
+      }
+      ;
+    }
+    function find_opt(p, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return;
+        }
+        var x = param.hd;
+        if (Curry._1(p, x)) {
+          return Caml_option.some(x);
+        }
+        _param = param.tl;
+        continue;
+      }
+      ;
+    }
+    function find_all(p) {
+      return function(param) {
+        var _accu = 0;
+        var _param = param;
+        while (true) {
+          var param$1 = _param;
+          var accu = _accu;
+          if (!param$1) {
+            return rev_append(accu, 0);
+          }
+          var l = param$1.tl;
+          var x = param$1.hd;
+          if (Curry._1(p, x)) {
+            _param = l;
+            _accu = {
+              hd: x,
+              tl: accu
+            };
+            continue;
+          }
+          _param = l;
+          continue;
+        }
+        ;
+      };
+    }
+    function partition(p, l) {
+      var _yes = 0;
+      var _no = 0;
+      var _param = l;
+      while (true) {
+        var param = _param;
+        var no = _no;
+        var yes = _yes;
+        if (!param) {
+          return [
+            rev_append(yes, 0),
+            rev_append(no, 0)
+          ];
+        }
+        var l$1 = param.tl;
+        var x = param.hd;
+        if (Curry._1(p, x)) {
+          _param = l$1;
+          _yes = {
+            hd: x,
+            tl: yes
+          };
+          continue;
+        }
+        _param = l$1;
+        _no = {
+          hd: x,
+          tl: no
+        };
+        continue;
+      }
+      ;
+    }
+    function split(param) {
+      if (!param) {
+        return [
+          0,
+          0
+        ];
+      }
+      var match = param.hd;
+      var match$1 = split(param.tl);
+      return [
+        {
+          hd: match[0],
+          tl: match$1[0]
+        },
+        {
+          hd: match[1],
+          tl: match$1[1]
+        }
+      ];
+    }
+    function combine(l1, l2) {
+      if (l1) {
+        if (l2) {
+          return {
+            hd: [
+              l1.hd,
+              l2.hd
+            ],
+            tl: combine(l1.tl, l2.tl)
+          };
+        }
+        throw {
+          RE_EXN_ID: "Invalid_argument",
+          _1: "List.combine",
+          Error: new Error()
+        };
+      }
+      if (!l2) {
+        return 0;
+      }
+      throw {
+        RE_EXN_ID: "Invalid_argument",
+        _1: "List.combine",
+        Error: new Error()
+      };
+    }
+    function merge(cmp, l1, l2) {
+      if (!l1) {
+        return l2;
+      }
+      if (!l2) {
+        return l1;
+      }
+      var h2 = l2.hd;
+      var h1 = l1.hd;
+      if (Curry._2(cmp, h1, h2) <= 0) {
+        return {
+          hd: h1,
+          tl: merge(cmp, l1.tl, l2)
+        };
+      } else {
+        return {
+          hd: h2,
+          tl: merge(cmp, l1, l2.tl)
+        };
+      }
+    }
+    function chop(_k, _l) {
+      while (true) {
+        var l = _l;
+        var k = _k;
+        if (k === 0) {
+          return l;
+        }
+        if (l) {
+          _l = l.tl;
+          _k = k - 1 | 0;
+          continue;
+        }
+        throw {
+          RE_EXN_ID: "Assert_failure",
+          _1: [
+            "list.ml",
+            262,
+            11
+          ],
+          Error: new Error()
+        };
+      }
+      ;
+    }
+    function stable_sort(cmp, l) {
+      var sort2 = function(n, l2) {
+        if (n !== 2) {
+          if (n === 3 && l2) {
+            var match = l2.tl;
+            if (match) {
+              var match$1 = match.tl;
+              if (match$1) {
+                var x3 = match$1.hd;
+                var x2 = match.hd;
+                var x1 = l2.hd;
+                if (Curry._2(cmp, x1, x2) <= 0) {
+                  if (Curry._2(cmp, x2, x3) <= 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x2,
+                        tl: {
+                          hd: x3,
+                          tl: 0
+                        }
+                      }
+                    };
+                  } else if (Curry._2(cmp, x1, x3) <= 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x3,
+                        tl: {
+                          hd: x2,
+                          tl: 0
+                        }
+                      }
+                    };
+                  } else {
+                    return {
+                      hd: x3,
+                      tl: {
+                        hd: x1,
+                        tl: {
+                          hd: x2,
+                          tl: 0
+                        }
+                      }
+                    };
+                  }
+                } else if (Curry._2(cmp, x1, x3) <= 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x1,
+                      tl: {
+                        hd: x3,
+                        tl: 0
+                      }
+                    }
+                  };
+                } else if (Curry._2(cmp, x2, x3) <= 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x3,
+                      tl: {
+                        hd: x1,
+                        tl: 0
+                      }
+                    }
+                  };
+                } else {
+                  return {
+                    hd: x3,
+                    tl: {
+                      hd: x2,
+                      tl: {
+                        hd: x1,
+                        tl: 0
+                      }
+                    }
+                  };
+                }
+              }
+            }
+          }
+        } else if (l2) {
+          var match$2 = l2.tl;
+          if (match$2) {
+            var x2$1 = match$2.hd;
+            var x1$1 = l2.hd;
+            if (Curry._2(cmp, x1$1, x2$1) <= 0) {
+              return {
+                hd: x1$1,
+                tl: {
+                  hd: x2$1,
+                  tl: 0
+                }
+              };
+            } else {
+              return {
+                hd: x2$1,
+                tl: {
+                  hd: x1$1,
+                  tl: 0
+                }
+              };
+            }
+          }
+        }
+        var n1 = n >> 1;
+        var n2 = n - n1 | 0;
+        var l22 = chop(n1, l2);
+        var s1 = rev_sort(n1, l2);
+        var s2 = rev_sort(n2, l22);
+        var _l1 = s1;
+        var _l2 = s2;
+        var _accu = 0;
+        while (true) {
+          var accu = _accu;
+          var l2$1 = _l2;
+          var l1 = _l1;
+          if (!l1) {
+            return rev_append(l2$1, accu);
+          }
+          if (!l2$1) {
+            return rev_append(l1, accu);
+          }
+          var h2 = l2$1.hd;
+          var h1 = l1.hd;
+          if (Curry._2(cmp, h1, h2) > 0) {
+            _accu = {
+              hd: h1,
+              tl: accu
+            };
+            _l1 = l1.tl;
+            continue;
+          }
+          _accu = {
+            hd: h2,
+            tl: accu
+          };
+          _l2 = l2$1.tl;
+          continue;
+        }
+        ;
+      };
+      var rev_sort = function(n, l2) {
+        if (n !== 2) {
+          if (n === 3 && l2) {
+            var match = l2.tl;
+            if (match) {
+              var match$1 = match.tl;
+              if (match$1) {
+                var x3 = match$1.hd;
+                var x2 = match.hd;
+                var x1 = l2.hd;
+                if (Curry._2(cmp, x1, x2) > 0) {
+                  if (Curry._2(cmp, x2, x3) > 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x2,
+                        tl: {
+                          hd: x3,
+                          tl: 0
+                        }
+                      }
+                    };
+                  } else if (Curry._2(cmp, x1, x3) > 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x3,
+                        tl: {
+                          hd: x2,
+                          tl: 0
+                        }
+                      }
+                    };
+                  } else {
+                    return {
+                      hd: x3,
+                      tl: {
+                        hd: x1,
+                        tl: {
+                          hd: x2,
+                          tl: 0
+                        }
+                      }
+                    };
+                  }
+                } else if (Curry._2(cmp, x1, x3) > 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x1,
+                      tl: {
+                        hd: x3,
+                        tl: 0
+                      }
+                    }
+                  };
+                } else if (Curry._2(cmp, x2, x3) > 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x3,
+                      tl: {
+                        hd: x1,
+                        tl: 0
+                      }
+                    }
+                  };
+                } else {
+                  return {
+                    hd: x3,
+                    tl: {
+                      hd: x2,
+                      tl: {
+                        hd: x1,
+                        tl: 0
+                      }
+                    }
+                  };
+                }
+              }
+            }
+          }
+        } else if (l2) {
+          var match$2 = l2.tl;
+          if (match$2) {
+            var x2$1 = match$2.hd;
+            var x1$1 = l2.hd;
+            if (Curry._2(cmp, x1$1, x2$1) > 0) {
+              return {
+                hd: x1$1,
+                tl: {
+                  hd: x2$1,
+                  tl: 0
+                }
+              };
+            } else {
+              return {
+                hd: x2$1,
+                tl: {
+                  hd: x1$1,
+                  tl: 0
+                }
+              };
+            }
+          }
+        }
+        var n1 = n >> 1;
+        var n2 = n - n1 | 0;
+        var l22 = chop(n1, l2);
+        var s1 = sort2(n1, l2);
+        var s2 = sort2(n2, l22);
+        var _l1 = s1;
+        var _l2 = s2;
+        var _accu = 0;
+        while (true) {
+          var accu = _accu;
+          var l2$1 = _l2;
+          var l1 = _l1;
+          if (!l1) {
+            return rev_append(l2$1, accu);
+          }
+          if (!l2$1) {
+            return rev_append(l1, accu);
+          }
+          var h2 = l2$1.hd;
+          var h1 = l1.hd;
+          if (Curry._2(cmp, h1, h2) <= 0) {
+            _accu = {
+              hd: h1,
+              tl: accu
+            };
+            _l1 = l1.tl;
+            continue;
+          }
+          _accu = {
+            hd: h2,
+            tl: accu
+          };
+          _l2 = l2$1.tl;
+          continue;
+        }
+        ;
+      };
+      var len = length(l);
+      if (len < 2) {
+        return l;
+      } else {
+        return sort2(len, l);
+      }
+    }
+    function sort_uniq(cmp, l) {
+      var sort2 = function(n, l2) {
+        if (n !== 2) {
+          if (n === 3 && l2) {
+            var match = l2.tl;
+            if (match) {
+              var match$1 = match.tl;
+              if (match$1) {
+                var x3 = match$1.hd;
+                var x2 = match.hd;
+                var x1 = l2.hd;
+                var c = Curry._2(cmp, x1, x2);
+                if (c === 0) {
+                  var c$1 = Curry._2(cmp, x2, x3);
+                  if (c$1 === 0) {
+                    return {
+                      hd: x2,
+                      tl: 0
+                    };
+                  } else if (c$1 < 0) {
+                    return {
+                      hd: x2,
+                      tl: {
+                        hd: x3,
+                        tl: 0
+                      }
+                    };
+                  } else {
+                    return {
+                      hd: x3,
+                      tl: {
+                        hd: x2,
+                        tl: 0
+                      }
+                    };
+                  }
+                }
+                if (c < 0) {
+                  var c$2 = Curry._2(cmp, x2, x3);
+                  if (c$2 === 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x2,
+                        tl: 0
+                      }
+                    };
+                  }
+                  if (c$2 < 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x2,
+                        tl: {
+                          hd: x3,
+                          tl: 0
+                        }
+                      }
+                    };
+                  }
+                  var c$3 = Curry._2(cmp, x1, x3);
+                  if (c$3 === 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x2,
+                        tl: 0
+                      }
+                    };
+                  } else if (c$3 < 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x3,
+                        tl: {
+                          hd: x2,
+                          tl: 0
+                        }
+                      }
+                    };
+                  } else {
+                    return {
+                      hd: x3,
+                      tl: {
+                        hd: x1,
+                        tl: {
+                          hd: x2,
+                          tl: 0
+                        }
+                      }
+                    };
+                  }
+                }
+                var c$4 = Curry._2(cmp, x1, x3);
+                if (c$4 === 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x1,
+                      tl: 0
+                    }
+                  };
+                }
+                if (c$4 < 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x1,
+                      tl: {
+                        hd: x3,
+                        tl: 0
+                      }
+                    }
+                  };
+                }
+                var c$5 = Curry._2(cmp, x2, x3);
+                if (c$5 === 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x1,
+                      tl: 0
+                    }
+                  };
+                } else if (c$5 < 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x3,
+                      tl: {
+                        hd: x1,
+                        tl: 0
+                      }
+                    }
+                  };
+                } else {
+                  return {
+                    hd: x3,
+                    tl: {
+                      hd: x2,
+                      tl: {
+                        hd: x1,
+                        tl: 0
+                      }
+                    }
+                  };
+                }
+              }
+            }
+          }
+        } else if (l2) {
+          var match$2 = l2.tl;
+          if (match$2) {
+            var x2$1 = match$2.hd;
+            var x1$1 = l2.hd;
+            var c$6 = Curry._2(cmp, x1$1, x2$1);
+            if (c$6 === 0) {
+              return {
+                hd: x1$1,
+                tl: 0
+              };
+            } else if (c$6 < 0) {
+              return {
+                hd: x1$1,
+                tl: {
+                  hd: x2$1,
+                  tl: 0
+                }
+              };
+            } else {
+              return {
+                hd: x2$1,
+                tl: {
+                  hd: x1$1,
+                  tl: 0
+                }
+              };
+            }
+          }
+        }
+        var n1 = n >> 1;
+        var n2 = n - n1 | 0;
+        var l22 = chop(n1, l2);
+        var s1 = rev_sort(n1, l2);
+        var s2 = rev_sort(n2, l22);
+        var _l1 = s1;
+        var _l2 = s2;
+        var _accu = 0;
+        while (true) {
+          var accu = _accu;
+          var l2$1 = _l2;
+          var l1 = _l1;
+          if (!l1) {
+            return rev_append(l2$1, accu);
+          }
+          if (!l2$1) {
+            return rev_append(l1, accu);
+          }
+          var t2 = l2$1.tl;
+          var h2 = l2$1.hd;
+          var t1 = l1.tl;
+          var h1 = l1.hd;
+          var c$7 = Curry._2(cmp, h1, h2);
+          if (c$7 === 0) {
+            _accu = {
+              hd: h1,
+              tl: accu
+            };
+            _l2 = t2;
+            _l1 = t1;
+            continue;
+          }
+          if (c$7 > 0) {
+            _accu = {
+              hd: h1,
+              tl: accu
+            };
+            _l1 = t1;
+            continue;
+          }
+          _accu = {
+            hd: h2,
+            tl: accu
+          };
+          _l2 = t2;
+          continue;
+        }
+        ;
+      };
+      var rev_sort = function(n, l2) {
+        if (n !== 2) {
+          if (n === 3 && l2) {
+            var match = l2.tl;
+            if (match) {
+              var match$1 = match.tl;
+              if (match$1) {
+                var x3 = match$1.hd;
+                var x2 = match.hd;
+                var x1 = l2.hd;
+                var c = Curry._2(cmp, x1, x2);
+                if (c === 0) {
+                  var c$1 = Curry._2(cmp, x2, x3);
+                  if (c$1 === 0) {
+                    return {
+                      hd: x2,
+                      tl: 0
+                    };
+                  } else if (c$1 > 0) {
+                    return {
+                      hd: x2,
+                      tl: {
+                        hd: x3,
+                        tl: 0
+                      }
+                    };
+                  } else {
+                    return {
+                      hd: x3,
+                      tl: {
+                        hd: x2,
+                        tl: 0
+                      }
+                    };
+                  }
+                }
+                if (c > 0) {
+                  var c$2 = Curry._2(cmp, x2, x3);
+                  if (c$2 === 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x2,
+                        tl: 0
+                      }
+                    };
+                  }
+                  if (c$2 > 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x2,
+                        tl: {
+                          hd: x3,
+                          tl: 0
+                        }
+                      }
+                    };
+                  }
+                  var c$3 = Curry._2(cmp, x1, x3);
+                  if (c$3 === 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x2,
+                        tl: 0
+                      }
+                    };
+                  } else if (c$3 > 0) {
+                    return {
+                      hd: x1,
+                      tl: {
+                        hd: x3,
+                        tl: {
+                          hd: x2,
+                          tl: 0
+                        }
+                      }
+                    };
+                  } else {
+                    return {
+                      hd: x3,
+                      tl: {
+                        hd: x1,
+                        tl: {
+                          hd: x2,
+                          tl: 0
+                        }
+                      }
+                    };
+                  }
+                }
+                var c$4 = Curry._2(cmp, x1, x3);
+                if (c$4 === 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x1,
+                      tl: 0
+                    }
+                  };
+                }
+                if (c$4 > 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x1,
+                      tl: {
+                        hd: x3,
+                        tl: 0
+                      }
+                    }
+                  };
+                }
+                var c$5 = Curry._2(cmp, x2, x3);
+                if (c$5 === 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x1,
+                      tl: 0
+                    }
+                  };
+                } else if (c$5 > 0) {
+                  return {
+                    hd: x2,
+                    tl: {
+                      hd: x3,
+                      tl: {
+                        hd: x1,
+                        tl: 0
+                      }
+                    }
+                  };
+                } else {
+                  return {
+                    hd: x3,
+                    tl: {
+                      hd: x2,
+                      tl: {
+                        hd: x1,
+                        tl: 0
+                      }
+                    }
+                  };
+                }
+              }
+            }
+          }
+        } else if (l2) {
+          var match$2 = l2.tl;
+          if (match$2) {
+            var x2$1 = match$2.hd;
+            var x1$1 = l2.hd;
+            var c$6 = Curry._2(cmp, x1$1, x2$1);
+            if (c$6 === 0) {
+              return {
+                hd: x1$1,
+                tl: 0
+              };
+            } else if (c$6 > 0) {
+              return {
+                hd: x1$1,
+                tl: {
+                  hd: x2$1,
+                  tl: 0
+                }
+              };
+            } else {
+              return {
+                hd: x2$1,
+                tl: {
+                  hd: x1$1,
+                  tl: 0
+                }
+              };
+            }
+          }
+        }
+        var n1 = n >> 1;
+        var n2 = n - n1 | 0;
+        var l22 = chop(n1, l2);
+        var s1 = sort2(n1, l2);
+        var s2 = sort2(n2, l22);
+        var _l1 = s1;
+        var _l2 = s2;
+        var _accu = 0;
+        while (true) {
+          var accu = _accu;
+          var l2$1 = _l2;
+          var l1 = _l1;
+          if (!l1) {
+            return rev_append(l2$1, accu);
+          }
+          if (!l2$1) {
+            return rev_append(l1, accu);
+          }
+          var t2 = l2$1.tl;
+          var h2 = l2$1.hd;
+          var t1 = l1.tl;
+          var h1 = l1.hd;
+          var c$7 = Curry._2(cmp, h1, h2);
+          if (c$7 === 0) {
+            _accu = {
+              hd: h1,
+              tl: accu
+            };
+            _l2 = t2;
+            _l1 = t1;
+            continue;
+          }
+          if (c$7 < 0) {
+            _accu = {
+              hd: h1,
+              tl: accu
+            };
+            _l1 = t1;
+            continue;
+          }
+          _accu = {
+            hd: h2,
+            tl: accu
+          };
+          _l2 = t2;
+          continue;
+        }
+        ;
+      };
+      var len = length(l);
+      if (len < 2) {
+        return l;
+      } else {
+        return sort2(len, l);
+      }
+    }
+    function compare_lengths(_l1, _l2) {
+      while (true) {
+        var l2 = _l2;
+        var l1 = _l1;
+        if (!l1) {
+          if (l2) {
+            return -1;
+          } else {
+            return 0;
+          }
+        }
+        if (!l2) {
+          return 1;
+        }
+        _l2 = l2.tl;
+        _l1 = l1.tl;
+        continue;
+      }
+      ;
+    }
+    function compare_length_with(_l, _n) {
+      while (true) {
+        var n = _n;
+        var l = _l;
+        if (!l) {
+          if (n === 0) {
+            return 0;
+          } else if (n > 0) {
+            return -1;
+          } else {
+            return 1;
+          }
+        }
+        if (n <= 0) {
+          return 1;
+        }
+        _n = n - 1 | 0;
+        _l = l.tl;
+        continue;
+      }
+      ;
+    }
+    var append = Pervasives.$at;
+    var concat = flatten;
+    var filter = find_all;
+    var sort = stable_sort;
+    var fast_sort = stable_sort;
+    exports.length = length;
+    exports.compare_lengths = compare_lengths;
+    exports.compare_length_with = compare_length_with;
+    exports.cons = cons;
+    exports.hd = hd;
+    exports.tl = tl;
+    exports.nth = nth;
+    exports.nth_opt = nth_opt;
+    exports.rev = rev;
+    exports.init = init;
+    exports.append = append;
+    exports.rev_append = rev_append;
+    exports.concat = concat;
+    exports.flatten = flatten;
+    exports.iter = iter;
+    exports.iteri = iteri;
+    exports.map = map;
+    exports.mapi = mapi$1;
+    exports.rev_map = rev_map;
+    exports.fold_left = fold_left;
+    exports.fold_right = fold_right;
+    exports.iter2 = iter2;
+    exports.map2 = map2;
+    exports.rev_map2 = rev_map2;
+    exports.fold_left2 = fold_left2;
+    exports.fold_right2 = fold_right2;
+    exports.for_all = for_all;
+    exports.exists = exists;
+    exports.for_all2 = for_all2;
+    exports.exists2 = exists2;
+    exports.mem = mem;
+    exports.memq = memq;
+    exports.find = find;
+    exports.find_opt = find_opt;
+    exports.filter = filter;
+    exports.find_all = find_all;
+    exports.partition = partition;
+    exports.assoc = assoc;
+    exports.assoc_opt = assoc_opt;
+    exports.assq = assq;
+    exports.assq_opt = assq_opt;
+    exports.mem_assoc = mem_assoc;
+    exports.mem_assq = mem_assq;
+    exports.remove_assoc = remove_assoc;
+    exports.remove_assq = remove_assq;
+    exports.split = split;
+    exports.combine = combine;
+    exports.sort = sort;
+    exports.stable_sort = stable_sort;
+    exports.fast_sort = fast_sort;
+    exports.sort_uniq = sort_uniq;
+    exports.merge = merge;
+  });
+
+  // _build/default/src/CompatibilityCrap.bs.js
+  var require_CompatibilityCrap_bs = __commonJS((exports) => {
+    "use strict";
+    var List = require_list();
+    var Curry = require_curry();
+    var Caml_option = require_caml_option();
+    function $at(a, b) {
+      return List.concat({
+        hd: a,
+        tl: {
+          hd: b,
+          tl: 0
+        }
+      });
+    }
+    function print_newline(param) {
+      console.log("\n");
+    }
+    function bind(a, f) {
+      if (a !== void 0) {
+        return Curry._1(f, Caml_option.valFromOption(a));
+      }
+    }
+    function map(f, a) {
+      if (a !== void 0) {
+        return Caml_option.some(Curry._1(f, Caml_option.valFromOption(a)));
+      }
+    }
+    var $$Option = {
+      bind,
+      map
+    };
+    function empty(param) {
+      return 0;
+    }
+    function $$return(x, param) {
+      return {
+        _0: x,
+        _1: empty
+      };
+    }
+    function cons(x, next, param) {
+      return {
+        _0: x,
+        _1: next
+      };
+    }
+    function append(seq1, seq2, param) {
+      var match = Curry._1(seq1, void 0);
+      if (!match) {
+        return Curry._1(seq2, void 0);
+      }
+      var next = match._1;
+      return {
+        _0: match._0,
+        _1: function(param2) {
+          return append(next, seq2, param2);
+        }
+      };
+    }
+    function flat_map(f, seq, param) {
+      var match = Curry._1(seq, void 0);
+      if (!match) {
+        return 0;
+      }
+      var next = match._1;
+      return append(Curry._1(f, match._0), function(param2) {
+        return flat_map(f, next, param2);
+      }, void 0);
+    }
+    function map$1(f, seq, param) {
+      var match = Curry._1(seq, void 0);
+      if (!match) {
+        return 0;
+      }
+      var next = match._1;
+      return {
+        _0: Curry._1(f, match._0),
+        _1: function(param2) {
+          return map$1(f, next, param2);
+        }
+      };
+    }
+    function iter(f, seq) {
+      var _seq = seq;
+      while (true) {
+        var seq$1 = _seq;
+        var match = Curry._1(seq$1, void 0);
+        if (!match) {
+          return;
+        }
+        Curry._1(f, match._0);
+        _seq = match._1;
+        continue;
+      }
+      ;
+    }
+    var Seq = {
+      empty,
+      $$return,
+      cons,
+      append,
+      flat_map,
+      map: map$1,
+      iter
+    };
+    function concat_map(f, l) {
+      return List.concat(List.map(f, l));
+    }
+    function filter_map(f, _param) {
+      while (true) {
+        var param = _param;
+        if (!param) {
+          return 0;
+        }
+        var t = param.tl;
+        var a = Curry._1(f, param.hd);
+        if (a !== void 0) {
+          return {
+            hd: Caml_option.valFromOption(a),
+            tl: filter_map(f, t)
+          };
+        }
+        _param = t;
+        continue;
+      }
+      ;
+    }
+    var List$1 = {
+      length: List.length,
+      compare_lengths: List.compare_lengths,
+      compare_length_with: List.compare_length_with,
+      cons: List.cons,
+      hd: List.hd,
+      tl: List.tl,
+      nth: List.nth,
+      nth_opt: List.nth_opt,
+      rev: List.rev,
+      init: List.init,
+      append: List.append,
+      rev_append: List.rev_append,
+      concat: List.concat,
+      flatten: List.flatten,
+      equal: List.equal,
+      compare: List.compare,
+      iter: List.iter,
+      iteri: List.iteri,
+      map: List.map,
+      mapi: List.mapi,
+      rev_map: List.rev_map,
+      fold_left_map: List.fold_left_map,
+      fold_left: List.fold_left,
+      fold_right: List.fold_right,
+      iter2: List.iter2,
+      map2: List.map2,
+      rev_map2: List.rev_map2,
+      fold_left2: List.fold_left2,
+      fold_right2: List.fold_right2,
+      for_all: List.for_all,
+      exists: List.exists,
+      for_all2: List.for_all2,
+      exists2: List.exists2,
+      mem: List.mem,
+      memq: List.memq,
+      find: List.find,
+      find_opt: List.find_opt,
+      find_map: List.find_map,
+      filter: List.filter,
+      find_all: List.find_all,
+      filteri: List.filteri,
+      partition: List.partition,
+      partition_map: List.partition_map,
+      assoc: List.assoc,
+      assoc_opt: List.assoc_opt,
+      assq: List.assq,
+      assq_opt: List.assq_opt,
+      mem_assoc: List.mem_assoc,
+      mem_assq: List.mem_assq,
+      remove_assoc: List.remove_assoc,
+      remove_assq: List.remove_assq,
+      split: List.split,
+      combine: List.combine,
+      sort: List.sort,
+      stable_sort: List.stable_sort,
+      fast_sort: List.fast_sort,
+      sort_uniq: List.sort_uniq,
+      merge: List.merge,
+      to_seq: List.to_seq,
+      of_seq: List.of_seq,
+      concat_map,
+      filter_map
+    };
+    function map$2(f, e) {
+      if (e.TAG === 0) {
+        return {
+          TAG: 0,
+          _0: Curry._1(f, e._0)
+        };
+      } else {
+        return {
+          TAG: 1,
+          _0: e._0
+        };
+      }
+    }
+    function bind$1(res, f) {
+      if (res.TAG === 0) {
+        return Curry._1(f, res._0);
+      } else {
+        return {
+          TAG: 1,
+          _0: res._0
+        };
+      }
+    }
+    var Result = {
+      map: map$2,
+      bind: bind$1
+    };
+    exports.$at = $at;
+    exports.print_newline = print_newline;
+    exports.$$Option = $$Option;
+    exports.Seq = Seq;
+    exports.List = List$1;
+    exports.Result = Result;
+  });
+
+  // _build/default/src/Prolog.bs.js
+  var require_Prolog_bs = __commonJS((exports) => {
+    "use strict";
+    var Curry = require_curry();
+    var $$String = require_string();
+    var Caml_obj = require_caml_obj();
+    var Caml_string = require_caml_string();
+    var Caml_exceptions = require_caml_exceptions();
+    var CamlinternalLazy = require_camlinternalLazy();
+    var CompatibilityCrap = require_CompatibilityCrap_bs();
+    var Caml_js_exceptions = require_caml_js_exceptions();
+    function string_of_term(t) {
+      if (typeof t === "string") {
+        return "[" + (string_of_tblcontent(t) + "]");
+      }
+      var variant = t.NAME;
+      if (variant === "Table") {
+        return "[" + (string_of_tblcontent(t) + "]");
+      }
+      if (variant === "TableVar") {
+        return t.VAL._0;
+      }
+      if (variant === "GeneralVar") {
+        var s = t.VAL._0;
+        if (Caml_string.get(s, 0) === 95) {
+          return "_";
+        } else {
+          return s;
+        }
+      }
+      var match = t.VAL;
+      var s$1 = match[0];
+      if (match[1]) {
+        return s$1 + ("(" + ($$String.concat(", ", Curry._2(CompatibilityCrap.List.map, string_of_term, match[1])) + ")"));
+      } else {
+        return s$1;
+      }
+    }
+    function string_of_tblcontent(param) {
+      if (typeof param === "string") {
+        return "";
+      }
+      var match = param.VAL;
+      var tail = match[1];
+      var t = match[0];
+      if (typeof tail === "string") {
+        return string_of_term(t);
+      } else if (tail.NAME === "TableVar") {
+        return string_of_term(t) + (" | " + tail.VAL._0);
+      } else {
+        return string_of_term(t) + (", " + string_of_tblcontent(tail));
+      }
+    }
+    function string_of_clause(param) {
+      var tl = param._1;
+      return string_of_term(param._0) + ((Caml_obj.caml_equal(tl, 0) ? "" : " :-" + $$String.concat(",", Curry._2(CompatibilityCrap.List.map, function(t) {
+        return "\n  " + string_of_term(t);
+      }, tl))) + ".");
+    }
+    function string_of_program(cl) {
+      return $$String.concat("\n\n", Curry._2(CompatibilityCrap.List.map, string_of_clause, cl));
+    }
+    function string_of_token(s) {
+      if (typeof s !== "number") {
+        return s._0;
+      }
+      switch (s) {
+        case 0:
+          return "(";
+        case 1:
+          return ")";
+        case 2:
+          return "[";
+        case 3:
+          return "]";
+        case 4:
+          return "|";
+        case 5:
+          return ",";
+        case 6:
+          return ".";
+        case 7:
+          return ":-";
+        case 8:
+          return "EOF";
+      }
+    }
+    function string_of_tokenlist(tl) {
+      return $$String.concat("; ", Curry._2(CompatibilityCrap.List.map, string_of_token, tl));
+    }
+    var TokenNotFound = /* @__PURE__ */ Caml_exceptions.create("Prolog.TokenNotFound");
+    function parse_word(l) {
+      if (!l) {
+        return [
+          0,
+          l
+        ];
+      }
+      var c = l.hd;
+      if (c >= 91) {
+        if (c >= 97) {
+          if (c >= 123) {
+            return [
+              0,
+              l
+            ];
+          }
+        } else if (c !== 95) {
+          return [
+            0,
+            l
+          ];
+        }
+      } else if (c >= 58) {
+        if (c < 65) {
+          return [
+            0,
+            l
+          ];
+        }
+      } else if (c < 48) {
+        return [
+          0,
+          l
+        ];
+      }
+      var match = parse_word(l.tl);
+      return [
+        {
+          hd: c,
+          tl: match[0]
+        },
+        match[1]
+      ];
+    }
+    function string_of_charlist(cl) {
+      return $$String.concat("", Curry._2(CompatibilityCrap.List.map, function(param) {
+        return $$String.make(1, param);
+      }, cl));
+    }
+    function tokenlist_of_charlist(_acc, _param) {
+      while (true) {
+        var param = _param;
+        var acc = _acc;
+        if (!param) {
+          return Curry._1(CompatibilityCrap.List.rev, {
+            hd: 8,
+            tl: acc
+          });
+        }
+        var low = param.hd;
+        if (low < 91) {
+          if (low < 32) {
+            if (!(low === 10 || low === 9)) {
+              throw {
+                RE_EXN_ID: TokenNotFound,
+                _1: low,
+                Error: new Error()
+              };
+            }
+            _param = param.tl;
+            continue;
+          }
+          if (low >= 65) {
+            var match = parse_word(param.tl);
+            _param = match[1];
+            _acc = {
+              hd: {
+                TAG: 1,
+                _0: string_of_charlist({
+                  hd: low,
+                  tl: match[0]
+                })
+              },
+              tl: acc
+            };
+            continue;
+          }
+          switch (low) {
+            case 32:
+              _param = param.tl;
+              continue;
+            case 40:
+              _param = param.tl;
+              _acc = {
+                hd: 0,
+                tl: acc
+              };
+              continue;
+            case 41:
+              _param = param.tl;
+              _acc = {
+                hd: 1,
+                tl: acc
+              };
+              continue;
+            case 44:
+              _param = param.tl;
+              _acc = {
+                hd: 5,
+                tl: acc
+              };
+              continue;
+            case 46:
+              _param = param.tl;
+              _acc = {
+                hd: 6,
+                tl: acc
+              };
+              continue;
+            case 58:
+              var match$1 = param.tl;
+              if (match$1) {
+                if (match$1.hd !== 45) {
+                  throw {
+                    RE_EXN_ID: TokenNotFound,
+                    _1: low,
+                    Error: new Error()
+                  };
+                }
+                _param = match$1.tl;
+                _acc = {
+                  hd: 7,
+                  tl: acc
+                };
+                continue;
+              }
+              throw {
+                RE_EXN_ID: TokenNotFound,
+                _1: low,
+                Error: new Error()
+              };
+            case 33:
+            case 34:
+            case 35:
+            case 36:
+            case 37:
+            case 38:
+            case 39:
+            case 42:
+            case 43:
+            case 45:
+            case 47:
+            case 48:
+            case 49:
+            case 50:
+            case 51:
+            case 52:
+            case 53:
+            case 54:
+            case 55:
+            case 56:
+            case 57:
+            case 59:
+            case 60:
+            case 61:
+            case 62:
+            case 63:
+            case 64:
+              throw {
+                RE_EXN_ID: TokenNotFound,
+                _1: low,
+                Error: new Error()
+              };
+          }
+        } else {
+          if (low >= 123) {
+            if (low !== 124) {
+              throw {
+                RE_EXN_ID: TokenNotFound,
+                _1: low,
+                Error: new Error()
+              };
+            }
+            _param = param.tl;
+            _acc = {
+              hd: 4,
+              tl: acc
+            };
+            continue;
+          }
+          if (low >= 97) {
+            var match$2 = parse_word(param.tl);
+            _param = match$2[1];
+            _acc = {
+              hd: {
+                TAG: 0,
+                _0: string_of_charlist({
+                  hd: low,
+                  tl: match$2[0]
+                })
+              },
+              tl: acc
+            };
+            continue;
+          }
+          switch (low) {
+            case 91:
+              _param = param.tl;
+              _acc = {
+                hd: 2,
+                tl: acc
+              };
+              continue;
+            case 93:
+              _param = param.tl;
+              _acc = {
+                hd: 3,
+                tl: acc
+              };
+              continue;
+            case 95:
+              _param = param.tl;
+              _acc = {
+                hd: {
+                  TAG: 1,
+                  _0: "_"
+                },
+                tl: acc
+              };
+              continue;
+            case 92:
+            case 94:
+            case 96:
+              throw {
+                RE_EXN_ID: TokenNotFound,
+                _1: low,
+                Error: new Error()
+              };
+          }
+        }
+      }
+      ;
+    }
+    function charlist_of_string(s) {
+      return Curry._2(CompatibilityCrap.List.init, s.length, function(param) {
+        return Caml_string.get(s, param);
+      });
+    }
+    function tokenlist_of_string(s) {
+      try {
+        return {
+          TAG: 0,
+          _0: tokenlist_of_charlist(0, charlist_of_string(s))
+        };
+      } catch (raw_tok) {
+        var tok = Caml_js_exceptions.internalToOCamlException(raw_tok);
+        if (tok.RE_EXN_ID === TokenNotFound) {
+          return {
+            TAG: 1,
+            _0: "this token is unknown : '" + ($$String.make(1, tok._1) + "'")
+          };
+        }
+        throw tok;
+      }
+    }
+    var $great$great$eq = CompatibilityCrap.Result.bind;
+    function $star$tilde(p, q, cl) {
+      return $great$great$eq(Curry._1(p, cl), function(param) {
+        var a = param[0];
+        return $great$great$eq(Curry._1(q, param[1]), function(param2) {
+          return {
+            TAG: 0,
+            _0: [
+              [
+                a,
+                param2[0]
+              ],
+              param2[1]
+            ]
+          };
+        });
+      });
+    }
+    function $star$great(p, f, cl) {
+      return $great$great$eq(Curry._1(p, cl), function(param) {
+        return {
+          TAG: 0,
+          _0: [
+            Curry._1(f, param[0]),
+            param[1]
+          ]
+        };
+      });
+    }
+    function ignore_left(param) {
+      return param[1];
+    }
+    function ignore_right(param) {
+      return param[0];
+    }
+    function epsilon(tl) {
+      return {
+        TAG: 0,
+        _0: [
+          void 0,
+          tl
+        ]
+      };
+    }
+    function parse_token(tk, param) {
+      if (!param) {
+        return {
+          TAG: 1,
+          _0: "Unable to parse token : " + string_of_token(tk)
+        };
+      }
+      var t = param.hd;
+      if (Caml_obj.caml_equal(t, tk)) {
+        return {
+          TAG: 0,
+          _0: [
+            t,
+            param.tl
+          ]
+        };
+      } else {
+        return {
+          TAG: 1,
+          _0: "Unable to parse token : " + string_of_token(tk)
+        };
+      }
+    }
+    function look_ahead(tl, f) {
+      if (tl) {
+        return Curry._1(f, [
+          tl.hd,
+          tl.tl
+        ]);
+      } else {
+        return {
+          TAG: 1,
+          _0: "Unexpected end of token stream."
+        };
+      }
+    }
+    function table_of_termlist(tail, param) {
+      if (param) {
+        return {
+          NAME: "Table",
+          VAL: [
+            param.hd,
+            table_of_termlist(tail, param.tl)
+          ]
+        };
+      } else {
+        return tail;
+      }
+    }
+    var counter_unnamed_ids = {
+      contents: 0
+    };
+    function new_id(param) {
+      counter_unnamed_ids.contents = counter_unnamed_ids.contents + 1 | 0;
+      return {
+        _0: "_" + String(counter_unnamed_ids.contents),
+        _1: 0
+      };
+    }
+    function parse_term(tl) {
+      return look_ahead(tl, function(param) {
+        var s = param[0];
+        if (typeof s === "number") {
+          if (s === 2) {
+            return $star$great(parse_table_without_left_bracket, function(tbl) {
+              return tbl;
+            }, param[1]);
+          } else {
+            return {
+              TAG: 1,
+              _0: "Not a valid term : " + string_of_token(s)
+            };
+          }
+        }
+        if (s.TAG === 0) {
+          var s$1 = s._0;
+          return $star$great(parse_predicate_without_string, function(term_list) {
+            return {
+              NAME: "Predicate",
+              VAL: [
+                s$1,
+                term_list
+              ]
+            };
+          }, param[1]);
+        }
+        var s$2 = s._0;
+        return {
+          TAG: 0,
+          _0: [
+            {
+              NAME: "GeneralVar",
+              VAL: s$2 === "_" ? new_id(void 0) : {
+                _0: s$2,
+                _1: 0
+              }
+            },
+            param[1]
+          ]
+        };
+      });
+    }
+    function parse_predicate_without_string(tl) {
+      return look_ahead(tl, function(param) {
+        var match = param[0];
+        if (typeof match === "number" && !match) {
+          return $star$great(function(param2) {
+            return $star$tilde(parse_term_list, function(param3) {
+              return parse_token(1, param3);
+            }, param2);
+          }, ignore_right, param[1]);
+        } else {
+          return {
+            TAG: 0,
+            _0: [
+              0,
+              tl
+            ]
+          };
+        }
+      });
+    }
+    function parse_term_list(tl) {
+      return $star$great(function(param) {
+        return $star$tilde(parse_term, parse_term_list_without_first_term, param);
+      }, function(param) {
+        return {
+          hd: param[0],
+          tl: param[1]
+        };
+      }, tl);
+    }
+    function parse_term_list_without_first_term(tl) {
+      return look_ahead(tl, function(param) {
+        if (param[0] === 5) {
+          return $star$great(function(param2) {
+            return $star$tilde(parse_term, parse_term_list_without_first_term, param2);
+          }, function(param2) {
+            return {
+              hd: param2[0],
+              tl: param2[1]
+            };
+          }, param[1]);
+        } else {
+          return {
+            TAG: 0,
+            _0: [
+              0,
+              tl
+            ]
+          };
+        }
+      });
+    }
+    function parse_table_without_left_bracket(tl) {
+      return look_ahead(tl, function(param) {
+        if (param[0] === 3) {
+          return {
+            TAG: 0,
+            _0: [
+              "EmptyTable",
+              param[1]
+            ]
+          };
+        } else {
+          return $star$great(function(param2) {
+            return $star$tilde(parse_term_list, parse_table_without_term_list, param2);
+          }, function(param2) {
+            return table_of_termlist(param2[1], param2[0]);
+          }, tl);
+        }
+      });
+    }
+    function parse_table_without_term_list(tl) {
+      return look_ahead(tl, function(param) {
+        var tok = param[0];
+        if (typeof tok === "number") {
+          if (tok !== 3) {
+            if (tok !== 4) {
+              return {
+                TAG: 1,
+                _0: "Invalid right part of the table : " + string_of_token(tok)
+              };
+            } else {
+              return parse_table_queue(param[1]);
+            }
+          } else {
+            return {
+              TAG: 0,
+              _0: [
+                "EmptyTable",
+                param[1]
+              ]
+            };
+          }
+        } else {
+          return {
+            TAG: 1,
+            _0: "Invalid right part of the table : " + string_of_token(tok)
+          };
+        }
+      });
+    }
+    function parse_table_queue(tl) {
+      return look_ahead(tl, function(param) {
+        var s = param[0];
+        if (typeof s === "number") {
+          if (s === 2) {
+            return $star$great(function(param2) {
+              return $star$tilde(parse_table_without_left_bracket, function(param3) {
+                return parse_token(3, param3);
+              }, param2);
+            }, ignore_right, param[1]);
+          } else {
+            return {
+              TAG: 1,
+              _0: "Invalid table queue"
+            };
+          }
+        }
+        if (s.TAG !== 1) {
+          return {
+            TAG: 1,
+            _0: "Invalid table queue"
+          };
+        }
+        var s$1 = s._0;
+        return $star$great(function(param2) {
+          return parse_token(3, param2);
+        }, function(param2) {
+          return {
+            NAME: "TableVar",
+            VAL: {
+              _0: s$1,
+              _1: 0
+            }
+          };
+        }, param[1]);
+      });
+    }
+    function parse_right_clause(tl) {
+      return look_ahead(tl, function(param) {
+        if (param[0] === 6) {
+          return {
+            TAG: 0,
+            _0: [
+              0,
+              param[1]
+            ]
+          };
+        } else {
+          return $star$great(function(param2) {
+            return $star$tilde(function(param3) {
+              return $star$great(function(param4) {
+                return $star$tilde(function(param5) {
+                  return parse_token(7, param5);
+                }, parse_term_list, param4);
+              }, ignore_left, param3);
+            }, function(param3) {
+              return parse_token(6, param3);
+            }, param2);
+          }, ignore_right, tl);
+        }
+      });
+    }
+    function parse_clause(tl) {
+      return $star$great(function(param) {
+        return $star$tilde(parse_term, parse_right_clause, param);
+      }, function(param) {
+        return {
+          _0: param[0],
+          _1: param[1]
+        };
+      }, tl);
+    }
+    function parse_program(tl) {
+      return look_ahead(tl, function(param) {
+        var match = param[0];
+        if (typeof match === "number" && match >= 8) {
+          return {
+            TAG: 0,
+            _0: [
+              0,
+              0
+            ]
+          };
+        }
+        return $star$great(function(param2) {
+          return $star$tilde(parse_clause, parse_program, param2);
+        }, function(param2) {
+          return {
+            hd: param2[0],
+            tl: param2[1]
+          };
+        }, tl);
+      });
+    }
+    function parse_request(tl) {
+      return $star$great(function(param) {
+        return $star$tilde(parse_term_list, function(param2) {
+          return parse_token(8, param2);
+        }, param);
+      }, ignore_right, tl);
+    }
+    function map_vars(f, g) {
+      var mapterm = function(tbl) {
+        if (typeof tbl === "string") {
+          return maptable(tbl);
+        }
+        var variant = tbl.NAME;
+        if (variant === "TableVar" || variant === "Table") {
+          return maptable(tbl);
+        }
+        if (variant === "GeneralVar") {
+          return Curry._1(f, tbl);
+        }
+        var match = tbl.VAL;
+        return {
+          NAME: "Predicate",
+          VAL: [
+            match[0],
+            Curry._2(CompatibilityCrap.List.map, mapterm, match[1])
+          ]
+        };
+      };
+      var maptable = function(v) {
+        if (typeof v === "string") {
+          return "EmptyTable";
+        }
+        if (v.NAME === "TableVar") {
+          return Curry._1(g, v);
+        }
+        var match = v.VAL;
+        return {
+          NAME: "Table",
+          VAL: [
+            mapterm(match[0]),
+            maptable(match[1])
+          ]
+        };
+      };
+      return mapterm;
+    }
+    function id(x) {
+      return x;
+    }
+    function apply_subst(param) {
+      if (param.TAG === 0) {
+        var t = param._1;
+        var $$var = param._0;
+        return map_vars(function(v) {
+          if (Caml_obj.caml_equal($$var, v)) {
+            return t;
+          } else {
+            return v;
+          }
+        }, id);
+      }
+      var t$1 = param._1;
+      var $$var$1 = param._0;
+      return map_vars(id, function(v) {
+        if (Caml_obj.caml_equal($$var$1, v)) {
+          return t$1;
+        } else {
+          return v;
+        }
+      });
+    }
+    function apply(s, term) {
+      return Curry._3(CompatibilityCrap.List.fold_right, apply_subst, s, term);
+    }
+    function unify(_t1, _t2) {
+      while (true) {
+        var t2 = _t2;
+        var t1 = _t1;
+        var f = function(ta, tb, s1) {
+          return CompatibilityCrap.$$Option.bind(unify(apply(s1, ta), apply(s1, tb)), function(s2) {
+            return CompatibilityCrap.$at(s2, s1);
+          });
+        };
+        var exit = 0;
+        var exit$1 = 0;
+        if (typeof t1 === "string") {
+          if (typeof t2 === "string") {
+            if (t2 === "EmptyTable") {
+              return 0;
+            }
+            exit$1 = 3;
+          } else {
+            if (t2.NAME === "Table") {
+              return;
+            }
+            exit$1 = 3;
+          }
+        } else {
+          var variant = t1.NAME;
+          if (variant === "Table") {
+            var match = t1.VAL;
+            var t1$1 = match[1];
+            if (typeof t2 === "string") {
+              if (t2 === "EmptyTable") {
+                return;
+              }
+              exit$1 = 3;
+            } else {
+              if (t2.NAME === "Table") {
+                var match$1 = t2.VAL;
+                var t2$1 = match$1[1];
+                return CompatibilityCrap.$$Option.bind(unify(match[0], match$1[0]), function(t1$12, t2$12) {
+                  return function(param) {
+                    return f(t1$12, t2$12, param);
+                  };
+                }(t1$1, t2$1));
+              }
+              exit$1 = 3;
+            }
+          } else if (variant === "TableVar") {
+            if (typeof t2 === "string") {
+              if (t2 === "EmptyTable") {
+                return {
+                  hd: {
+                    TAG: 1,
+                    _0: t1,
+                    _1: t2
+                  },
+                  tl: 0
+                };
+              }
+              exit$1 = 3;
+            } else {
+              var variant$1 = t2.NAME;
+              if (variant$1 === "TableVar" || variant$1 === "Table") {
+                return {
+                  hd: {
+                    TAG: 1,
+                    _0: t1,
+                    _1: t2
+                  },
+                  tl: 0
+                };
+              }
+              exit$1 = 3;
+            }
+          } else {
+            if (variant === "GeneralVar") {
+              return {
+                hd: {
+                  TAG: 0,
+                  _0: t1,
+                  _1: t2
+                },
+                tl: 0
+              };
+            }
+            var match$2 = t1.VAL;
+            var la = match$2[1];
+            if (typeof t2 === "string") {
+              if (t2 === "EmptyTable") {
+                return;
+              }
+              exit$1 = 3;
+            } else {
+              var variant$2 = t2.NAME;
+              if (variant$2 === "Predicate") {
+                var match$3 = t2.VAL;
+                if (match$2[0] !== match$3[0]) {
+                  return;
+                }
+                var lb = match$3[1];
+                if (Curry._1(CompatibilityCrap.List.length, la) !== Curry._1(CompatibilityCrap.List.length, lb)) {
+                  return;
+                } else {
+                  return Curry._4(CompatibilityCrap.List.fold_left2, function(opt_s, ta, tb) {
+                    return CompatibilityCrap.$$Option.bind(opt_s, function(param) {
+                      return f(ta, tb, param);
+                    });
+                  }, 0, la, lb);
+                }
+              }
+              if (variant$2 === "TableVar" || variant$2 === "Table") {
+                return;
+              }
+              exit$1 = 3;
+            }
+          }
+        }
+        if (exit$1 === 3) {
+          if (typeof t2 === "string") {
+            exit = 2;
+          } else {
+            if (t2.NAME === "GeneralVar") {
+              _t2 = t1;
+              _t1 = t2;
+              continue;
+            }
+            exit = 2;
+          }
+        }
+        if (exit === 2) {
+          if (typeof t1 === "string") {
+            if (t1 !== "EmptyTable") {
+              return;
+            }
+          } else if (t1.NAME !== "Table") {
+            return;
+          }
+        }
+        if (typeof t2 === "string") {
+          return;
+        }
+        if (t2.NAME !== "TableVar") {
+          return;
+        }
+        _t2 = t1;
+        _t1 = t2;
+        continue;
+      }
+      ;
+    }
+    function variables_in_term(param) {
+      if (typeof param === "string") {
+        return 0;
+      }
+      var variant = param.NAME;
+      if (variant !== "Table") {
+        if (variant === "TableVar") {
+          return {
+            hd: {
+              NAME: "TableVar",
+              VAL: param.VAL
+            },
+            tl: 0
+          };
+        } else if (variant === "GeneralVar") {
+          return {
+            hd: {
+              NAME: "GeneralVar",
+              VAL: param.VAL
+            },
+            tl: 0
+          };
+        } else {
+          return Curry._1(CompatibilityCrap.List.concat, Curry._2(CompatibilityCrap.List.map, variables_in_term, param.VAL[1]));
+        }
+      }
+      var match = param.VAL;
+      return CompatibilityCrap.$at(variables_in_term(match[0]), variables_in_term(match[1]));
+    }
+    function variables_in_clause(param) {
+      return CompatibilityCrap.List.concat_map(variables_in_term, {
+        hd: param._0,
+        tl: param._1
+      });
+    }
+    function variables_in_request(r) {
+      return CompatibilityCrap.List.concat_map(variables_in_term, r);
+    }
+    function replace_tvars_in_term(tvars) {
+      return map_vars(function(param) {
+        var id2 = param.VAL;
+        if (Curry._2(CompatibilityCrap.List.mem, {
+          NAME: "TableVar",
+          VAL: id2
+        }, tvars)) {
+          return {
+            NAME: "TableVar",
+            VAL: id2
+          };
+        } else {
+          return {
+            NAME: "GeneralVar",
+            VAL: id2
+          };
+        }
+      }, function(x) {
+        return x;
+      });
+    }
+    function type_inference_clause(c) {
+      var f = replace_tvars_in_term(variables_in_clause(c));
+      return {
+        _0: Curry._1(f, c._0),
+        _1: Curry._2(CompatibilityCrap.List.map, f, c._1)
+      };
+    }
+    function type_inference_request(r) {
+      var f = replace_tvars_in_term(CompatibilityCrap.List.concat_map(variables_in_term, r));
+      return Curry._2(CompatibilityCrap.List.map, f, r);
+    }
+    var type_inference_program = Curry._1(CompatibilityCrap.List.map, type_inference_clause);
+    function rename(n, param) {
+      var f = map_vars(function(param2) {
+        return {
+          NAME: "GeneralVar",
+          VAL: {
+            _0: param2.VAL._0,
+            _1: n
+          }
+        };
+      }, function(param2) {
+        return {
+          NAME: "TableVar",
+          VAL: {
+            _0: param2.VAL._0,
+            _1: n
+          }
+        };
+      });
+      return {
+        _0: Curry._1(f, param._0),
+        _1: Curry._2(CompatibilityCrap.List.map, f, param._1)
+      };
+    }
+    function sld_tree(world, request, substitution, n) {
+      if (!request) {
+        return {
+          TAG: 0,
+          _0: substitution
+        };
+      }
+      var other_request_terms = request.tl;
+      var head_request_term = request.hd;
+      var filter_clause = function(c) {
+        var match = rename(n, c);
+        var right_member = match._1;
+        var new_tree = function(unifier) {
+          return {
+            LAZY_DONE: false,
+            VAL: function() {
+              return sld_tree(world, Curry._2(CompatibilityCrap.List.map, function(param) {
+                return apply(unifier, param);
+              }, CompatibilityCrap.$at(right_member, other_request_terms)), CompatibilityCrap.$at(unifier, substitution), n + 1 | 0);
+            }
+          };
+        };
+        return CompatibilityCrap.$$Option.map(new_tree, unify(head_request_term, match._0));
+      };
+      return {
+        TAG: 1,
+        _0: CompatibilityCrap.List.filter_map(filter_clause, world)
+      };
+    }
+    function list_to_seq(l) {
+      return Curry._3(CompatibilityCrap.List.fold_right, function(x, s, param) {
+        return {
+          _0: x,
+          _1: s
+        };
+      }, l, CompatibilityCrap.Seq.empty);
+    }
+    function to_seq(str) {
+      if (str.TAG === 0) {
+        var partial_arg = str._0;
+        return function(param) {
+          return CompatibilityCrap.Seq.$$return(partial_arg, param);
+        };
+      }
+      var partial_arg$1 = list_to_seq(str._0);
+      return function(param) {
+        return CompatibilityCrap.Seq.flat_map(function(par) {
+          return to_seq(CamlinternalLazy.force(par));
+        }, partial_arg$1, param);
+      };
+    }
+    function solutions(tree, vars) {
+      var partial_arg = to_seq(tree);
+      return function(param) {
+        return CompatibilityCrap.Seq.map(function(substitution) {
+          return [
+            vars,
+            Curry._2(CompatibilityCrap.List.map, function(param2) {
+              return apply(substitution, param2);
+            }, vars)
+          ];
+        }, partial_arg, param);
+      };
+    }
+    function program_of_string(s) {
+      return $great$great$eq($great$great$eq(tokenlist_of_string(s), parse_program), function(param) {
+        return {
+          TAG: 0,
+          _0: Curry._1(type_inference_program, param[0])
+        };
+      });
+    }
+    function request_of_string(s) {
+      return $great$great$eq($great$great$eq(tokenlist_of_string(s), parse_request), function(param) {
+        return {
+          TAG: 0,
+          _0: type_inference_request(param[0])
+        };
+      });
+    }
+    function string_sequence_of(parsed_program, parsed_request) {
+      var vars = Curry._2(CompatibilityCrap.List.sort_uniq, Caml_obj.caml_compare, CompatibilityCrap.List.concat_map(variables_in_term, parsed_request));
+      var sol = solutions(sld_tree(parsed_program, parsed_request, 0, 1), vars);
+      var f = function(param) {
+        if (Caml_obj.caml_equal(vars, 0)) {
+          return "This is true.";
+        } else {
+          return "A solution is : " + $$String.concat(", ", Curry._3(CompatibilityCrap.List.map2, function(v, t) {
+            return string_of_term(v) + (" = " + string_of_term(t));
+          }, param[0], param[1]));
+        }
+      };
+      return function(param) {
+        return CompatibilityCrap.Seq.map(f, sol, param);
+      };
+    }
+    function basic_interpreter(program_string, request_string) {
+      var s = program_of_string(program_string);
+      if (s.TAG === 0) {
+        var s$1 = request_of_string(request_string);
+        if (s$1.TAG === 0) {
+          var string_seq = string_sequence_of(s._0, s$1._0);
+          var match = Curry._1(string_seq, void 0);
+          if (match) {
+            console.log(match._0);
+            CompatibilityCrap.Seq.iter(function(prim) {
+              console.log(prim);
+            }, match._1);
+          } else {
+            console.log("No solution found.");
+          }
+        } else {
+          console.log("Unable to parse request :");
+          console.log(s$1._0);
+        }
+        return CompatibilityCrap.print_newline(void 0);
+      }
+      console.log("Unable to parse program :");
+      console.log(s._0);
+    }
+    exports.string_of_term = string_of_term;
+    exports.string_of_tblcontent = string_of_tblcontent;
+    exports.string_of_clause = string_of_clause;
+    exports.string_of_program = string_of_program;
+    exports.string_of_token = string_of_token;
+    exports.string_of_tokenlist = string_of_tokenlist;
+    exports.TokenNotFound = TokenNotFound;
+    exports.parse_word = parse_word;
+    exports.string_of_charlist = string_of_charlist;
+    exports.tokenlist_of_charlist = tokenlist_of_charlist;
+    exports.charlist_of_string = charlist_of_string;
+    exports.tokenlist_of_string = tokenlist_of_string;
+    exports.$great$great$eq = $great$great$eq;
+    exports.$star$tilde = $star$tilde;
+    exports.$star$great = $star$great;
+    exports.ignore_left = ignore_left;
+    exports.ignore_right = ignore_right;
+    exports.epsilon = epsilon;
+    exports.parse_token = parse_token;
+    exports.look_ahead = look_ahead;
+    exports.table_of_termlist = table_of_termlist;
+    exports.new_id = new_id;
+    exports.parse_term = parse_term;
+    exports.parse_predicate_without_string = parse_predicate_without_string;
+    exports.parse_term_list = parse_term_list;
+    exports.parse_term_list_without_first_term = parse_term_list_without_first_term;
+    exports.parse_table_without_left_bracket = parse_table_without_left_bracket;
+    exports.parse_table_without_term_list = parse_table_without_term_list;
+    exports.parse_table_queue = parse_table_queue;
+    exports.parse_right_clause = parse_right_clause;
+    exports.parse_clause = parse_clause;
+    exports.parse_program = parse_program;
+    exports.parse_request = parse_request;
+    exports.map_vars = map_vars;
+    exports.apply_subst = apply_subst;
+    exports.apply = apply;
+    exports.unify = unify;
+    exports.variables_in_term = variables_in_term;
+    exports.variables_in_clause = variables_in_clause;
+    exports.variables_in_request = variables_in_request;
+    exports.replace_tvars_in_term = replace_tvars_in_term;
+    exports.type_inference_clause = type_inference_clause;
+    exports.type_inference_request = type_inference_request;
+    exports.type_inference_program = type_inference_program;
+    exports.rename = rename;
+    exports.sld_tree = sld_tree;
+    exports.list_to_seq = list_to_seq;
+    exports.to_seq = to_seq;
+    exports.solutions = solutions;
+    exports.program_of_string = program_of_string;
+    exports.request_of_string = request_of_string;
+    exports.string_sequence_of = string_sequence_of;
+    exports.basic_interpreter = basic_interpreter;
+  });
+
+  // _build/default/src/Examples.bs.js
+  var require_Examples_bs = __commonJS((exports) => {
+    "use strict";
+    var zebra_code = "member(X, [X | Xs]).\nmember(X, [Y | Ys]) :- member(X, Ys).\nisright(L, R, [L, R | T]).\nisright(L, R, [H | T]) :- isright(L, R, T).\nnextto(A, B, X) :- isright(A, B, X).\nnextto(A, B, X) :- isright(B, A, X).\nequal(X, X).\nzebra(H, W, Z):-\nequal(H, [[norwegian, _, _, _, _], _, [_, _, _, milk, _], _, _]),\nmember([englishman, _, _, _, red], H),\nmember([spaniard, dog, _, _, _], H),\nmember([_, _, _, coffee, green], H),\nmember([ukrainian, _, _, tea, _], H),\nmember([_, snails, winston, _, _], H),\nmember([_, _, kools, _, yellow], H),\nmember([_, _, luckystrike, orangejuice, _], H),\nmember([japanese, _, parliaments, _, _], H),\nnextto([norwegian, _, _, _, _], [_, _, _, _, blue], H),\nisright([_, _, _, _, ivory], [_, _, _, _, green], H),\nnextto([_, _, chesterfields, _, _], [_, fox, _, _, _], H),\nnextto([_, _, kools, _, _], [_, horse, _, _, _], H),\nmember([W, _, _, water, _], H),\nmember([Z, zebra, _, _, _], H).\n";
+    var zebra_request = "zebra(Houses, WaterDrinker, ZebraOwner)";
+    exports.zebra_code = zebra_code;
+    exports.zebra_request = zebra_request;
+  });
+
+  // node_modules/codejar/codejar.js
+  var codejar_exports = {};
+  __export(codejar_exports, {
+    CodeJar: () => CodeJar
+  });
+  function CodeJar(editor, highlight, opt = {}) {
+    const options = Object.assign({tab: "	", indentOn: /{$/, spellcheck: false, catchTab: true, preserveIdent: true, addClosing: true, history: true, window: globalWindow}, opt);
+    const window2 = options.window;
+    const document2 = window2.document;
+    let listeners = [];
+    let history = [];
+    let at = -1;
+    let focus = false;
+    let callback;
+    let prev;
+    let isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
+    editor.setAttribute("contentEditable", isFirefox ? "true" : "plaintext-only");
+    editor.setAttribute("spellcheck", options.spellcheck ? "true" : "false");
+    editor.style.outline = "none";
+    editor.style.overflowWrap = "break-word";
+    editor.style.overflowY = "auto";
+    editor.style.resize = "vertical";
+    editor.style.whiteSpace = "pre-wrap";
+    highlight(editor);
+    const debounceHighlight = debounce(() => {
+      const pos = save();
+      highlight(editor, pos);
+      restore(pos);
+    }, 30);
+    let recording = false;
+    const shouldRecord = (event) => {
+      return !isUndo(event) && !isRedo(event) && event.key !== "Meta" && event.key !== "Control" && event.key !== "Alt" && !event.key.startsWith("Arrow");
+    };
+    const debounceRecordHistory = debounce((event) => {
+      if (shouldRecord(event)) {
+        recordHistory();
+        recording = false;
+      }
+    }, 300);
+    const on = (type, fn) => {
+      listeners.push([type, fn]);
+      editor.addEventListener(type, fn);
+    };
+    on("keydown", (event) => {
+      if (event.defaultPrevented)
+        return;
+      prev = toString();
+      if (options.preserveIdent)
+        handleNewLine(event);
+      else
+        firefoxNewLineFix(event);
+      if (options.catchTab)
+        handleTabCharacters(event);
+      if (options.addClosing)
+        handleSelfClosingCharacters(event);
+      if (options.history) {
+        handleUndoRedo(event);
+        if (shouldRecord(event) && !recording) {
+          recordHistory();
+          recording = true;
+        }
+      }
+    });
+    on("keyup", (event) => {
+      if (event.defaultPrevented)
+        return;
+      if (event.isComposing)
+        return;
+      if (prev !== toString())
+        debounceHighlight();
+      debounceRecordHistory(event);
+      if (callback)
+        callback(toString());
+    });
+    on("focus", (_event) => {
+      focus = true;
+    });
+    on("blur", (_event) => {
+      focus = false;
+    });
+    on("paste", (event) => {
+      recordHistory();
+      handlePaste(event);
+      recordHistory();
+      if (callback)
+        callback(toString());
+    });
+    function save() {
+      const s = getSelection();
+      const pos = {start: 0, end: 0, dir: void 0};
+      visit(editor, (el) => {
+        if (el === s.anchorNode && el === s.focusNode) {
+          pos.start += s.anchorOffset;
+          pos.end += s.focusOffset;
+          pos.dir = s.anchorOffset <= s.focusOffset ? "->" : "<-";
+          return "stop";
+        }
+        if (el === s.anchorNode) {
+          pos.start += s.anchorOffset;
+          if (!pos.dir) {
+            pos.dir = "->";
+          } else {
+            return "stop";
+          }
+        } else if (el === s.focusNode) {
+          pos.end += s.focusOffset;
+          if (!pos.dir) {
+            pos.dir = "<-";
+          } else {
+            return "stop";
+          }
+        }
+        if (el.nodeType === Node.TEXT_NODE) {
+          if (pos.dir != "->")
+            pos.start += el.nodeValue.length;
+          if (pos.dir != "<-")
+            pos.end += el.nodeValue.length;
+        }
+      });
+      return pos;
+    }
+    function restore(pos) {
+      const s = getSelection();
+      let startNode, startOffset = 0;
+      let endNode, endOffset = 0;
+      if (!pos.dir)
+        pos.dir = "->";
+      if (pos.start < 0)
+        pos.start = 0;
+      if (pos.end < 0)
+        pos.end = 0;
+      if (pos.dir == "<-") {
+        const {start, end} = pos;
+        pos.start = end;
+        pos.end = start;
+      }
+      let current = 0;
+      visit(editor, (el) => {
+        if (el.nodeType !== Node.TEXT_NODE)
+          return;
+        const len = (el.nodeValue || "").length;
+        if (current + len >= pos.start) {
+          if (!startNode) {
+            startNode = el;
+            startOffset = pos.start - current;
+          }
+          if (current + len >= pos.end) {
+            endNode = el;
+            endOffset = pos.end - current;
+            return "stop";
+          }
+        }
+        current += len;
+      });
+      if (!startNode)
+        startNode = editor;
+      if (!endNode)
+        endNode = editor;
+      if (pos.dir == "<-") {
+        [startNode, startOffset, endNode, endOffset] = [endNode, endOffset, startNode, startOffset];
+      }
+      s.setBaseAndExtent(startNode, startOffset, endNode, endOffset);
+    }
+    function beforeCursor() {
+      const s = getSelection();
+      const r0 = s.getRangeAt(0);
+      const r = document2.createRange();
+      r.selectNodeContents(editor);
+      r.setEnd(r0.startContainer, r0.startOffset);
+      return r.toString();
+    }
+    function afterCursor() {
+      const s = getSelection();
+      const r0 = s.getRangeAt(0);
+      const r = document2.createRange();
+      r.selectNodeContents(editor);
+      r.setStart(r0.endContainer, r0.endOffset);
+      return r.toString();
+    }
+    function handleNewLine(event) {
+      if (event.key === "Enter") {
+        const before = beforeCursor();
+        const after = afterCursor();
+        let [padding] = findPadding(before);
+        let newLinePadding = padding;
+        if (options.indentOn.test(before)) {
+          newLinePadding += options.tab;
+        }
+        if (newLinePadding.length > 0) {
+          preventDefault(event);
+          event.stopPropagation();
+          insert("\n" + newLinePadding);
+        } else {
+          firefoxNewLineFix(event);
+        }
+        if (newLinePadding !== padding && after[0] === "}") {
+          const pos = save();
+          insert("\n" + padding);
+          restore(pos);
+        }
+      }
+    }
+    function firefoxNewLineFix(event) {
+      if (isFirefox && event.key === "Enter") {
+        preventDefault(event);
+        event.stopPropagation();
+        if (afterCursor() == "") {
+          insert("\n ");
+          const pos = save();
+          pos.start = --pos.end;
+          restore(pos);
+        } else {
+          insert("\n");
+        }
+      }
+    }
+    function handleSelfClosingCharacters(event) {
+      const open = `([{'"`;
+      const close = `)]}'"`;
+      const codeAfter = afterCursor();
+      const codeBefore = beforeCursor();
+      const escapeCharacter = codeBefore.substr(codeBefore.length - 1) === "\\";
+      const charAfter = codeAfter.substr(0, 1);
+      if (close.includes(event.key) && !escapeCharacter && charAfter === event.key) {
+        const pos = save();
+        preventDefault(event);
+        pos.start = ++pos.end;
+        restore(pos);
+      } else if (open.includes(event.key) && !escapeCharacter && (`"'`.includes(event.key) || ["", " ", "\n"].includes(charAfter))) {
+        preventDefault(event);
+        const pos = save();
+        const wrapText = pos.start == pos.end ? "" : getSelection().toString();
+        const text = event.key + wrapText + close[open.indexOf(event.key)];
+        insert(text);
+        pos.start++;
+        pos.end++;
+        restore(pos);
+      }
+    }
+    function handleTabCharacters(event) {
+      if (event.key === "Tab") {
+        preventDefault(event);
+        if (event.shiftKey) {
+          const before = beforeCursor();
+          let [padding, start] = findPadding(before);
+          if (padding.length > 0) {
+            const pos = save();
+            const len = Math.min(options.tab.length, padding.length);
+            restore({start, end: start + len});
+            document2.execCommand("delete");
+            pos.start -= len;
+            pos.end -= len;
+            restore(pos);
+          }
+        } else {
+          insert(options.tab);
+        }
+      }
+    }
+    function handleUndoRedo(event) {
+      if (isUndo(event)) {
+        preventDefault(event);
+        at--;
+        const record = history[at];
+        if (record) {
+          editor.innerHTML = record.html;
+          restore(record.pos);
+        }
+        if (at < 0)
+          at = 0;
+      }
+      if (isRedo(event)) {
+        preventDefault(event);
+        at++;
+        const record = history[at];
+        if (record) {
+          editor.innerHTML = record.html;
+          restore(record.pos);
+        }
+        if (at >= history.length)
+          at--;
+      }
+    }
+    function recordHistory() {
+      if (!focus)
+        return;
+      const html = editor.innerHTML;
+      const pos = save();
+      const lastRecord = history[at];
+      if (lastRecord) {
+        if (lastRecord.html === html && lastRecord.pos.start === pos.start && lastRecord.pos.end === pos.end)
+          return;
+      }
+      at++;
+      history[at] = {html, pos};
+      history.splice(at + 1);
+      const maxHistory = 300;
+      if (at > maxHistory) {
+        at = maxHistory;
+        history.splice(0, 1);
+      }
+    }
+    function handlePaste(event) {
+      preventDefault(event);
+      const text = (event.originalEvent || event).clipboardData.getData("text/plain").replace(/\r/g, "");
+      const pos = save();
+      insert(text);
+      highlight(editor);
+      restore({start: pos.start + text.length, end: pos.start + text.length});
+    }
+    function visit(editor2, visitor) {
+      const queue = [];
+      if (editor2.firstChild)
+        queue.push(editor2.firstChild);
+      let el = queue.pop();
+      while (el) {
+        if (visitor(el) === "stop")
+          break;
+        if (el.nextSibling)
+          queue.push(el.nextSibling);
+        if (el.firstChild)
+          queue.push(el.firstChild);
+        el = queue.pop();
+      }
+    }
+    function isCtrl(event) {
+      return event.metaKey || event.ctrlKey;
+    }
+    function isUndo(event) {
+      return isCtrl(event) && !event.shiftKey && event.key === "z";
+    }
+    function isRedo(event) {
+      return isCtrl(event) && event.shiftKey && event.key === "z";
+    }
+    function insert(text) {
+      text = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+      document2.execCommand("insertHTML", false, text);
+    }
+    function debounce(cb, wait) {
+      let timeout = 0;
+      return (...args) => {
+        clearTimeout(timeout);
+        timeout = window2.setTimeout(() => cb(...args), wait);
+      };
+    }
+    function findPadding(text) {
+      let i = text.length - 1;
+      while (i >= 0 && text[i] !== "\n")
+        i--;
+      i++;
+      let j = i;
+      while (j < text.length && /[ \t]/.test(text[j]))
+        j++;
+      return [text.substring(i, j) || "", i, j];
+    }
+    function toString() {
+      return editor.textContent || "";
+    }
+    function preventDefault(event) {
+      event.preventDefault();
+    }
+    function getSelection() {
+      var _a;
+      if (((_a = editor.parentNode) === null || _a === void 0 ? void 0 : _a.nodeType) == Node.DOCUMENT_FRAGMENT_NODE) {
+        return editor.parentNode.getSelection();
+      }
+      return window2.getSelection();
+    }
+    return {
+      updateOptions(options2) {
+        options2 = Object.assign(Object.assign({}, options2), options2);
+      },
+      updateCode(code) {
+        editor.textContent = code;
+        highlight(editor);
+      },
+      onUpdate(cb) {
+        callback = cb;
+      },
+      toString,
+      save,
+      restore,
+      recordHistory,
+      destroy() {
+        for (let [type, fn] of listeners) {
+          editor.removeEventListener(type, fn);
+        }
+      }
+    };
+  }
+  var globalWindow;
+  var init_codejar = __esm(() => {
+    globalWindow = window;
+  });
+
+  // _build/default/src/Client.bs.js
+  var require_Client_bs = __commonJS((exports) => {
+    "use strict";
+    var Curry = require_curry();
+    var Js_exn = require_js_exn();
+    var Prolog = require_Prolog_bs();
+    var Examples = require_Examples_bs();
+    var Caml_option = require_caml_option();
+    var CompatibilityCrap = require_CompatibilityCrap_bs();
+    var CodejarJs = (init_codejar(), codejar_exports);
+    var CodeJar2 = {};
+    var a = document.querySelector("body");
+    var body = a == null ? Js_exn.raiseError("No <body> found !") : a;
+    function apply(f, a2) {
+      if (a2 !== void 0) {
+        return Curry._1(f, Caml_option.valFromOption(a2));
+      }
+    }
+    function get_value(c) {
+      return c.value;
+    }
+    function set_value(c, s) {
+      c.value = s;
+    }
+    function create_element(text, id, classname, father, attributes, onclick, node_type) {
+      var elt = document.createElement(node_type);
+      apply(function(param) {
+        elt.innerText = param;
+      }, text);
+      apply(function(param) {
+        elt.id = param;
+      }, id);
+      apply(function(param) {
+        elt.className = param;
+      }, classname);
+      apply(function(param) {
+        param.appendChild(elt);
+      }, father);
+      apply(function(param) {
+        elt.onclick = param;
+      }, onclick);
+      apply(Curry._1(CompatibilityCrap.List.iter, function(param) {
+        elt.setAttribute(param[0], param[1]);
+      }), attributes);
+      return elt;
+    }
+    var grid_container = create_element(void 0, void 0, "grid-container", Caml_option.some(body), void 0, void 0, "div");
+    var left = create_element(void 0, void 0, "grid-item left", Caml_option.some(grid_container), void 0, void 0, "div");
+    var right_up = create_element(void 0, void 0, "grid-item rightup", Caml_option.some(grid_container), void 0, void 0, "div");
+    var right_middle = create_element(void 0, void 0, "grid-item rightmiddle", Caml_option.some(grid_container), void 0, void 0, "div");
+    var right_down = create_element(void 0, void 0, "grid-item rightdown", Caml_option.some(grid_container), void 0, void 0, "div");
+    var input_code_div = create_element(void 0, void 0, "jar", Caml_option.some(left), void 0, void 0, "div");
+    var input_request_div = create_element(void 0, void 0, "jar", Caml_option.some(right_middle), void 0, void 0, "div");
+    var $$console = create_element(void 0, void 0, "console-output", Caml_option.some(right_up), {
+      hd: [
+        "readonly",
+        "true"
+      ],
+      tl: 0
+    }, void 0, "textarea");
+    function highlight(editor) {
+      editor.innerHTML = editor.innerText.replace(/(\b[a-z]\w*)/g, '<font color="#48c9b0">$1</font>').replace(/(\b[A-Z]\w*|\b_)/g, '<font color="#ff51b3">$1</font>').replace(/(,)/g, '<font color="#fffffff">$1</font>').replace(/((:-)|\.|\?)/g, '<font color="#ff5733">$1</font>').replace(/([\[\]|])/g, '<font color="#71fb1d">$1</font>').replace(/([\(\)])/g, '<font color="#fef014">$1</font>');
+    }
+    var code_jar = CodejarJs.CodeJar(input_code_div, highlight);
+    var request_jar = CodejarJs.CodeJar(input_request_div, highlight);
+    function getText(jar) {
+      return jar.toString();
+    }
+    function setText(jar, s) {
+      jar.updateCode(s);
+    }
+    function display_text(s) {
+      var s$1 = $$console.value + (s + "\n");
+      $$console.value = s$1;
+    }
+    function html_interpreter(program_string, request_string) {
+      var s = Prolog.program_of_string(program_string);
+      if (s.TAG === 0) {
+        var s$1 = Prolog.request_of_string(request_string);
+        if (s$1.TAG === 0) {
+          var string_seq = Prolog.string_sequence_of(s._0, s$1._0);
+          var match = Curry._1(string_seq, void 0);
+          if (match) {
+            display_text(match._0);
+            CompatibilityCrap.Seq.iter(display_text, match._1);
+          } else {
+            display_text("No solution found.");
+          }
+        } else {
+          display_text("Unable to parse request :");
+          display_text(s$1._0);
+        }
+        return CompatibilityCrap.print_newline(void 0);
+      }
+      display_text("Unable to parse program :");
+      return display_text(s._0);
+    }
+    function execute(param) {
+      display_text("Executing...\n");
+      return html_interpreter(code_jar.toString(), request_jar.toString());
+    }
+    function format_code(param) {
+      var err = Prolog.program_of_string(code_jar.toString());
+      if (err.TAG !== 0) {
+        return display_text(err._0);
+      }
+      var s = Prolog.string_of_program(err._0);
+      code_jar.updateCode(s);
+    }
+    var button = create_element("Execute", void 0, void 0, Caml_option.some(right_down), void 0, execute, "button");
+    var button_format = create_element("Format Code", void 0, void 0, Caml_option.some(right_down), void 0, format_code, "button");
+    code_jar.updateCode(Examples.zebra_code);
+    request_jar.updateCode(Examples.zebra_request);
+    display_text("~ Welcome to my small Prolog interpreter!\n");
+    exports.CodeJar = CodeJar2;
+    exports.body = body;
+    exports.apply = apply;
+    exports.get_value = get_value;
+    exports.set_value = set_value;
+    exports.create_element = create_element;
+    exports.grid_container = grid_container;
+    exports.left = left;
+    exports.right_up = right_up;
+    exports.right_middle = right_middle;
+    exports.right_down = right_down;
+    exports.input_code_div = input_code_div;
+    exports.input_request_div = input_request_div;
+    exports.$$console = $$console;
+    exports.highlight = highlight;
+    exports.code_jar = code_jar;
+    exports.request_jar = request_jar;
+    exports.getText = getText;
+    exports.setText = setText;
+    exports.display_text = display_text;
+    exports.html_interpreter = html_interpreter;
+    exports.execute = execute;
+    exports.format_code = format_code;
+    exports.button = button;
+    exports.button_format = button_format;
+  });
+  require_Client_bs();
+})();
